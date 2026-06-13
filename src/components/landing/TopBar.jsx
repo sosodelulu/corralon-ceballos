@@ -26,13 +26,23 @@ export default function TopBar() {
     <div className="fixed top-0 left-0 right-0 z-[60] h-10 bg-[#1a4731] text-white text-xs flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <a href="tel:+5403543451079" style={tapStyle} className="flex items-center gap-1.5 hover:text-green-300 transition-colors cursor-pointer">
+          
+          <a
+            href="tel:+5403543451079"
+            style={tapStyle}
+            className="flex items-center gap-1.5 hover:text-green-300 transition-colors cursor-pointer"
+          >
             <Phone className="w-3 h-3 shrink-0" />
             <span className="hidden sm:inline">03543 451079</span>
             <span className="sm:hidden font-semibold">Llamar</span>
           </a>
           <span className="text-white/40">|</span>
-          <a href="tel:+5493543530984" style={tapStyle} className="flex items-center gap-1.5 hover:text-green-300 transition-colors cursor-pointer">
+          
+          <a
+            href="tel:+5493543530984"
+            style={tapStyle}
+            className="flex items-center gap-1.5 hover:text-green-300 transition-colors cursor-pointer"
+          >
             <Smartphone className="w-3 h-3 shrink-0" />
             <span className="hidden sm:inline">03543 15-530984</span>
             <span className="sm:hidden font-semibold">Celular</span>
@@ -45,7 +55,8 @@ export default function TopBar() {
         </div>
         <div className="flex items-center gap-3">
           
-            href="https://www.instagram.com/corralonceballos.rc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
+          <a
+            href="https://www.instagram.com/corralonceballos.rc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
             style={tapStyle}
@@ -55,6 +66,7 @@ export default function TopBar() {
             <IconInstagram />
           </a>
           
+          <a
             href="https://www.facebook.com/share/1UXUNaQh8W/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
