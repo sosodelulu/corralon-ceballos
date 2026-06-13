@@ -23,7 +23,7 @@ function IconFacebook() {
 
 export default function TopBar() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] h-10 bg-[#1a4731] text-white text-xs flex items-center">
+    <div className="fixed top-0 left-0 right-0 z-[100] h-10 bg-[#1a4731] text-white text-xs flex items-center pointer-events-auto select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           
@@ -36,6 +36,7 @@ export default function TopBar() {
             <span className="hidden sm:inline">03543 451079</span>
             <span className="sm:hidden font-semibold">Llamar</span>
           </a>
+          
           <span className="text-white/40">|</span>
           
           <a
@@ -47,20 +48,21 @@ export default function TopBar() {
             <span className="hidden sm:inline">03543 15-530984</span>
             <span className="sm:hidden font-semibold">Celular</span>
           </a>
+          
           <span className="hidden md:flex items-center gap-1.5 text-white/80">
             <span className="text-white/40">|</span>
             <Clock className="w-3 h-3 shrink-0" />
             Lun–Vie 8:30–16:30 · Sáb 8:30–12:30
           </span>
         </div>
+        
         <div className="flex items-center gap-3">
-          
           <a
             href="https://www.instagram.com/corralonceballos.rc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
             style={tapStyle}
-            className="hover:text-green-300 transition-colors cursor-pointer"
+            className="hover:text-green-300 transition-colors cursor-pointer p-1 flex items-center justify-center"
             aria-label="Instagram"
           >
             <IconInstagram />
@@ -71,7 +73,7 @@ export default function TopBar() {
             target="_blank"
             rel="noopener noreferrer"
             style={tapStyle}
-            className="hover:text-green-300 transition-colors cursor-pointer"
+            className="hover:text-green-300 transition-colors cursor-pointer p-1 flex items-center justify-center"
             aria-label="Facebook"
           >
             <IconFacebook />
