@@ -51,14 +51,47 @@ function Accordion({ title, children, defaultOpen = false }) {
 }
 
 function ProductCard({ id, src, alt, title, desc, waText }) {
+  const waUrl = `https://wa.me/5493543530984?text=${encodeURIComponent('Hola, quisiera consultar el precio de ' + waText)}`
+
   return (
-    <div className="bg-white rounded-xl border border-border shadow-sm overflow-hidden flex flex-col hover:shadow-md hover:border-primary/20 transition-all duration-300">
-      <img id={id} src={src} alt={alt} style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px 8px 0 0' }} />
-      <div className="p-3 flex flex-col gap-2 flex-1">
+    <div className="group bg-white rounded-xl border border-border shadow-sm hover:shadow-md hover:border-[#166534]/20 overflow-hidden flex flex-col transition-all duration-300">
+      
+      {/* Contenedor de Imagen con Efectos Hover en Desktop */}
+      <div className="relative w-full h-[160px] flex-shrink-0 overflow-hidden">
+        <img
+          id={id}
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        />
+        
+        {/* Botón Hover de Escritorio (Oculto en móviles y táctiles por defecto) */}
+        <a
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Consultar precio de ${title} por WhatsApp`}
+          className="hidden sm:flex absolute bottom-2 left-2 right-2 items-center justify-center gap-1.5 bg-[#166534] hover:bg-[#114f29] text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out no-underline whitespace-nowrap z-10"
+        >
+          <ShoppingBag className="w-3.5 h-3.5 flex-shrink-0" />
+          Consultar precio
+        </a>
+      </div>
+
+      {/* Textos y Botón Mobile */}
+      <div className="p-3 flex flex-col gap-1.5 flex-1">
         <p className="text-sm font-bold text-foreground leading-snug">{title}</p>
         <p className="text-xs text-muted-foreground leading-relaxed flex-1">{desc}</p>
-        <a href={`https://wa.me/5493543530984?text=${encodeURIComponent('Hola, quisiera consultar el precio de ' + waText)}`} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex items-center justify-center gap-1.5 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary text-xs font-semibold px-3 py-2 rounded-lg transition-all duration-200 sm:hidden">
-          <ShoppingBag className="w-3 h-3" />Consultar precio
+
+        {/* Botón Mobile Fijo (Oculto automáticamente en pantallas sm en adelante) */}
+        <a
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-1 inline-flex items-center justify-center gap-1.5 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary text-xs font-semibold px-3 py-2 rounded-lg transition-all duration-200 sm:hidden"
+        >
+          <ShoppingBag className="w-3 h-3" />
+          Consultar precio
         </a>
       </div>
     </div>
@@ -105,7 +138,7 @@ const hierrosItems = [
 ]
 
 const instalacionesItems = [
-  { id: 'img-instalaciones-tanque-talpelit', src: BASE+'b8721ddb4_tanque-agua-talpelit-corralon-ceballos-rio-ceballos.webp', alt: 'Tanque de Agua Talpelit consultar capacidad', title: 'Tanque de Agua Talpelit', desc: 'Consultar capacidad y medidas', waText: 'Tanque de Agua Talpelit' },
+  { id: 'img-instalaciones-tanque-talpelit', src: BASE+'b8721ddb4_tanque-agua-talpelit-corralon-ceballon-rio-ceballos.webp', alt: 'Tanque de Agua Talpelit consultar capacidad', title: 'Tanque de Agua Talpelit', desc: 'Consultar capacidad y medidas', waText: 'Tanque de Agua Talpelit' },
   { id: 'img-instalaciones-casilla-gas', src: BASE+'416ec44db_casilla-gas-premoldeada-talpelit-corralon-ceballos-rio-ceballos.webp', alt: 'Casilla de Gas Premoldeada unidad', title: 'Casilla de Gas Premoldeada', desc: 'Unidad · Consultar disponibilidad', waText: 'Casilla de Gas Premoldeada' },
   { id: 'img-instalaciones-tubos-alcantarilla', src: BASE+'59bacfdbf_tubo-alcantarilla-corralon-ceballos-rio-ceballos.webp', alt: 'Tubo de Alcantarilla consultar diámetro y largo', title: 'Tubo de Alcantarilla', desc: 'Consultar diámetro y largo', waText: 'Tubo de Alcantarilla' },
   { id: 'img-instalaciones-tapa-camara', src: BASE+'b5f82514d_tapa-camara-talpelit-corralon-ceballos-rio-ceballos.webp', alt: 'Tapa de Cámara unidad', title: 'Tapa de Cámara', desc: 'Unidad', waText: 'Tapa de Cámara' },
