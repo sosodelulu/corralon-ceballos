@@ -30,16 +30,21 @@ export default function Header() {
   return (
     <header
       className={`fixed top-10 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-primary/5' : 'bg-transparent'
+        scrolled
+          ? 'bg-white/90 backdrop-blur-xl shadow-lg shadow-primary/5 pointer-events-auto'
+          : 'bg-transparent pointer-events-none'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <button onClick={() => scrollToSection('inicio')} className="flex items-center gap-2.5 shrink-0">
+          <button
+            onClick={() => scrollToSection('inicio')}
+            className="flex items-center gap-2.5 shrink-0 pointer-events-auto"
+          >
             <img src={LOGO_URL} alt="Corralón Ceballos" className="h-14 object-contain" />
           </button>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1 pointer-events-auto">
             {['inicio','servicios','catalogo','marcas','resenas','pagos','contacto'].map((id) => (
               <button
                 key={id}
@@ -51,7 +56,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 pointer-events-auto">
             <Button
               onClick={handleWhatsApp}
               className="hidden sm:flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm px-5 h-10 rounded-full shadow-lg shadow-primary/20"
@@ -76,7 +81,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-border overflow-hidden shadow-xl"
+            className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-border overflow-hidden shadow-xl pointer-events-auto"
           >
             <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
               <button onClick={() => scrollToSection('inicio')} className="text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-secondary/60 rounded-lg transition-colors">Inicio</button>
