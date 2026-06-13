@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* CORRECCIÓN: sin comillas simples dentro de la variable */
+    --font-inter: Inter, sans-serif;
+
+    --background: 0 0% 100%;
+    --foreground: 150 14% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 14% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 14% 12%;
+    --primary: 156 100% 21%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 125 52% 93%;
+    --secondary-foreground: 156 100% 21%;
+    --muted: 125 33% 95%;
+    --muted-foreground: 150 10% 40%;
+    --accent: 162 100% 39%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 20% 90%;
+    --input: 150 20% 90%;
+    --ring: 156 100% 21%;
+    --chart-1: 156 100% 21%;
+    --chart-2: 162 100% 39%;
+    --chart-3: 125 52% 93%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 156 100% 21%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 125 52% 93%;
+    --sidebar-accent-foreground: 156 100% 21%;
+    --sidebar-border: 150 20% 90%;
+    --sidebar-ring: 156 100% 21%;
+  }
+
+  .dark {
+    --background: 150 14% 6%;
+    --foreground: 0 0% 95%;
+    --card: 150 14% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 150 14% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 162 100% 39%;
+    --primary-foreground: 150 14% 6%;
+    --secondary: 150 14% 14%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 150 14% 14%;
+    --muted-foreground: 150 10% 55%;
+    --accent: 156 100% 21%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 14% 16%;
+    --input: 150 14% 16%;
+    --ring: 162 100% 39%;
+    --chart-1: 162 100% 39%;
+    --chart-2: 156 100% 21%;
+    --chart-3: 125 52% 40%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --sidebar-background: 150 14% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 162 100% 39%;
+    --sidebar-primary-foreground: 150 14% 6%;
+    --sidebar-accent: 150 14% 14%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 150 14% 16%;
+    --sidebar-ring: 162 100% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  background: linear-gradient(90deg, hsl(156, 100%, 21%), hsl(162, 100%, 39%));
+  transition: width 0.1s linear;
+}
+
+/* WhatsApp pulse animation */
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 200, 150, 0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(0, 200, 150, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 200, 150, 0); }
+}
+.wa-pulse {
+  animation: wa-pulse 2s infinite;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll offset para header fijo + topbar */
+section[id], div[id] {
+  scroll-margin-top: 80px;
+}
