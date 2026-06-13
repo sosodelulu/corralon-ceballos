@@ -136,11 +136,11 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Mapa embed */}
+            {/* Mapa embed oficial del negocio */}
             <div className="rounded-2xl overflow-hidden border border-border shadow-sm h-64 sm:h-72">
               <iframe
                 title="Ubicación Corralón Ceballos"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3392.885!2d-64.3326!3d-31.1611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942d6c2a3b1d5555%3A0x1a2b3c4d5e6f7890!2sAv.%20Remedios%20de%20Escalada%20975%2C%20R%C3%ADo%20Ceballos%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.587192798428!2d-64.31129732495774!3d-31.1767283743731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432818c10777719%3A0x16d63e330867429e!2sCorral%C3%B3n%20Ceballos!5e0!3m2!1ses-419!2sar!4v1781319509850!5m2!1ses-419!2sar"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
