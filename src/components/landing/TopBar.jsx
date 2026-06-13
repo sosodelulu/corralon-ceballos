@@ -1,5 +1,10 @@
 import { Phone, Smartphone, Clock } from 'lucide-react'
 
+const tapStyle = {
+  WebkitTapHighlightColor: 'rgba(134,239,172,0.3)',
+  touchAction: 'manipulation'
+}
+
 function IconInstagram() {
   return (
     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
@@ -23,8 +28,8 @@ export default function TopBar() {
         <div className="flex items-center gap-3">
           
             href="tel:+5403543451079"
+            style={tapStyle}
             className="flex items-center gap-1.5 hover:text-green-300 transition-colors cursor-pointer"
-            style={{ WebkitTapHighlightColor: 'rgba(134,239,172,0.3)', touchAction: 'manipulation' }}
           >
             <Phone className="w-3 h-3 shrink-0" />
             <span className="hidden sm:inline">03543 451079</span>
@@ -33,8 +38,8 @@ export default function TopBar() {
           <span className="text-white/40">|</span>
           
             href="tel:+5493543530984"
+            style={tapStyle}
             className="flex items-center gap-1.5 hover:text-green-300 transition-colors cursor-pointer"
-            style={{ WebkitTapHighlightColor: 'rgba(134,239,172,0.3)', touchAction: 'manipulation' }}
           >
             <Smartphone className="w-3 h-3 shrink-0" />
             <span className="hidden sm:inline">03543 15-530984</span>
@@ -51,8 +56,8 @@ export default function TopBar() {
             href="https://www.instagram.com/corralonceballos.rc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
+            style={tapStyle}
             className="hover:text-green-300 transition-colors cursor-pointer"
-            style={{ WebkitTapHighlightColor: 'rgba(134,239,172,0.3)', touchAction: 'manipulation' }}
             aria-label="Instagram"
           >
             <IconInstagram />
@@ -61,8 +66,8 @@ export default function TopBar() {
             href="https://www.facebook.com/share/1UXUNaQh8W/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
+            style={tapStyle}
             className="hover:text-green-300 transition-colors cursor-pointer"
-            style={{ WebkitTapHighlightColor: 'rgba(134,239,172,0.3)', touchAction: 'manipulation' }}
             aria-label="Facebook"
           >
             <IconFacebook />
