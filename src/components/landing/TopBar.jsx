@@ -1,10 +1,5 @@
 import { Phone, Smartphone, Clock } from 'lucide-react'
 
-const tapStyle = {
-  WebkitTapHighlightColor: 'rgba(134,239,172,0.3)',
-  touchAction: 'manipulation'
-}
-
 function IconInstagram() {
   return (
     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
@@ -23,14 +18,17 @@ function IconFacebook() {
 
 export default function TopBar() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100] h-10 bg-[#1a4731] text-white text-xs flex items-center pointer-events-auto select-none">
+    <div 
+      className="fixed top-0 left-0 right-0 h-10 bg-[#1a4731] text-white text-xs flex items-center select-none pointer-events-auto"
+      style={{ zIndex: 9999 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between gap-4">
+        
+        {/* Sección Izquierda: Teléfonos */}
         <div className="flex items-center gap-3">
-          
-          <a
-            href="tel:+5403543451079"
-            style={tapStyle}
-            className="flex items-center gap-1.5 hover:text-green-300 transition-colors cursor-pointer"
+          <a 
+            href="tel:+5403543451079" 
+            className="flex items-center gap-1.5 hover:text-green-300 transition-colors py-2"
           >
             <Phone className="w-3 h-3 shrink-0" />
             <span className="hidden sm:inline">03543 451079</span>
@@ -39,10 +37,9 @@ export default function TopBar() {
           
           <span className="text-white/40">|</span>
           
-          <a
-            href="tel:+5493543530984"
-            style={tapStyle}
-            className="flex items-center gap-1.5 hover:text-green-300 transition-colors cursor-pointer"
+          <a 
+            href="tel:+5493543530984" 
+            className="flex items-center gap-1.5 hover:text-green-300 transition-colors py-2"
           >
             <Smartphone className="w-3 h-3 shrink-0" />
             <span className="hidden sm:inline">03543 15-530984</span>
@@ -56,13 +53,13 @@ export default function TopBar() {
           </span>
         </div>
         
+        {/* Sección Derecha: Redes Sociales */}
         <div className="flex items-center gap-3">
           <a
-            href="https://www.instagram.com/corralonceballos.rc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            href="https://www.instagram.com/corralonceballos.rc"
             target="_blank"
             rel="noopener noreferrer"
-            style={tapStyle}
-            className="hover:text-green-300 transition-colors cursor-pointer p-1 flex items-center justify-center"
+            className="hover:text-green-300 transition-colors p-2 flex items-center justify-center"
             aria-label="Instagram"
           >
             <IconInstagram />
@@ -72,13 +69,13 @@ export default function TopBar() {
             href="https://www.facebook.com/share/1UXUNaQh8W/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
-            style={tapStyle}
-            className="hover:text-green-300 transition-colors cursor-pointer p-1 flex items-center justify-center"
+            className="hover:text-green-300 transition-colors p-2 flex items-center justify-center"
             aria-label="Facebook"
           >
             <IconFacebook />
           </a>
         </div>
+
       </div>
     </div>
   )
