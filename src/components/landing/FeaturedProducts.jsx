@@ -149,8 +149,8 @@ const techosItems = [
 ]
 
 const bolsonItems = [
-  { id: 'img-bolson-aridos', src: '/images/granito-triturado-granza-corralon-ceballos-rio-ceballos.webp', alt: 'Bolsón de Áridos entrega Río Ceballos', title: 'Bolsón de Áridos', desc: 'Entrega de áridos en bolsón. No incluye retiro.', waText: 'Bolsón de Áridos' },
-  { id: 'img-bolson-grua-hidraulica', src: '/images/Retroexcavadora-CAT-416E-rio-ceballos-corralon-ceballos-alquiler.webp', alt: 'Servicio de Grúa Hidráulica descarga en obra', title: 'Servicio de Grúa Hidráulica', desc: 'Descarga en obra y movimientos especiales en espacios reducidos. Consultar disponibilidad.', waText: 'Servicio de Grúa Hidráulica' },
+  { id: 'img-bolson-aridos', src: '/images/bolson-grua-corralon-ceballos.webp', alt: 'Bolsón de Áridos entrega Río Ceballos', title: 'Bolsón de Áridos', desc: 'Entrega de áridos en bolsón. No incluye retiro.', waText: 'Bolsón de Áridos' },
+  { id: 'img-bolson-grua-hidraulica', src: '/images/grua-bolson-alquiler-corralon-ceballos-rio-ceballosmm.webp', alt: 'Servicio de Grúa Hidráulica descarga en obra', title: 'Servicio de Grúa Hidráulica', desc: 'Descarga en obra y movimientos especiales en espacios reducidos. Consultar disponibilidad.', waText: 'Servicio de Grúa Hidráulica' },
 ]
 
 export default function FeaturedProducts() {
