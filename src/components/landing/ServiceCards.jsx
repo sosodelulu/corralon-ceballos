@@ -12,7 +12,7 @@ function CardMateriales() {
     >
       <div className="relative h-52 overflow-hidden">
         <img
-          src="https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/44b78ae9a_corralon-ceballos-materiales-venta-rio-ceballos.webp"
+          src="/images/corralon-ceballos-materiales-venta-rio-ceballos.webp"
           alt="Venta de materiales de construcción Río Ceballos Córdoba"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
@@ -59,7 +59,7 @@ function CardMaquinaria() {
     >
       <div className="relative h-52 overflow-hidden">
         <img
-          src="https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/011f59fd9_Retroexcavadora-CAT-416E-rio-ceballos-corralon-ceballos-alquiler.webp"
+          src="/images/Retroexcavadora-CAT-416E-rio-ceballos-corralon-ceballos-alquiler.webp"
           alt="Retroexcavadora CAT 416E alquiler Río Ceballos Córdoba"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
@@ -111,7 +111,7 @@ function CardObradores() {
     >
       <div className="relative h-52 overflow-hidden">
         <img
-          src="https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/7bb1e6743_obrador-alquiler-corralon-ceballos-rio-ceballos-container-obra.webp"
+          src="/images/obrador-alquiler-corralon-ceballos-rio-ceballos-container-obra.webp"
           alt="Alquiler de obradores contenedor obra Río Ceballos Córdoba"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded"
           onError={(e) => { e.currentTarget.style.display = 'none' }}
@@ -161,7 +161,7 @@ function CardGrua() {
     >
       <div className="relative h-52 overflow-hidden">
         <img
-          src="https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/a7735a5ae_grua-bolson-alquiler-corralon-ceballos-rio-ceballos.webp"
+          src="/images/grua-bolson-alquiler-corralon-ceballos-rio-ceballos.webp"
           alt="Camión grúa hidráulica y bolsón áridos Río Ceballos Córdoba"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
