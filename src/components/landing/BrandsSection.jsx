@@ -2,26 +2,26 @@ import { motion } from 'framer-motion'
 
 const marcas = [
   { group: 'Cemento y Cal', items: [
-    { name: 'Holcim', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/887e22bd6_holcim-rio-ceballos-corralon-ceballos.webp', alt: 'Logo Holcim' },
-    { name: 'Cal Andina', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/a5eab9d95_andina-cal-rio-ceballos-corralon-ceballos.webp', alt: 'Logo Cal Andina' },
-    { name: 'FGH', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/8c3208d5f_fgh-cal-rio-ceballos-corralon-ceballos.webp', alt: 'Logo FGH' },
-    { name: 'Canteras Amadeo', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/b16ab816f_cantera-amadeo-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Canteras Amadeo' },
-    { name: 'Abacor', src: 'https://media.base44.com/images/public/6a2a0f48c1091dffe80ef0d6/14facb905_logo-abacor-verde.webp', alt: 'Logo Abacor' },
+    { name: 'Holcim', src: '/images/holcim-rio-ceballos-corralon-ceballos.webp', alt: 'Logo Holcim' },
+    { name: 'Cal Andina', src: '/images/andina-cal-rio-ceballos-corralon-ceballos.webp', alt: 'Logo Cal Andina' },
+    { name: 'FGH', src: '/images/fgh-cal-rio-ceballos-corralon-ceballos.webp', alt: 'Logo FGH' },
+    { name: 'Canteras Amadeo', src: '/images/cantera-amadeo-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Canteras Amadeo' },
+    { name: 'Abacor', src: '/images/logo-abacor-verde-corralon-ceballos.webp', alt: 'Logo Abacor' },
   ]},
   { group: 'Hierros y Estructuras', items: [
-    { name: 'Serin', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/1798b9d75_serin-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Serin' },
+    { name: 'Serin', src: '/images/serin-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Serin' },
   ]},
   { group: 'Bloques y Ladrillos', items: [
-    { name: 'Fantini', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/99d82d6e9_fantini-ceramicos-ladrillos-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Fantini' },
-    { name: 'BlockX', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/978886ebe_blockx-bloque-hormigon-ceramicos-ladrillos-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo BlockX' },
+    { name: 'Fantini', src: '/images/fantini-ceramicos-ladrillos-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Fantini' },
+    { name: 'BlockX', src: '/images/blockx-bloque-hormigon-ceramicos-ladrillos-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo BlockX' },
   ]},
   { group: 'Tanques y Cañerías', items: [
-    { name: 'Talpelit', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/3d89ff4f2_talpelit-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Talpelit' },
-    { name: 'IPS', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/e260c2419_ips-rio-ceballos-corralon-ceballos-conexiones-canerias.webp', alt: 'Logo IPS' },
-    { name: 'Awaduct', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/578fd3557_logo-awaduct-rio-ceballos-corralon-ceballos.webp', alt: 'Logo Awaduct' },
+    { name: 'Talpelit', src: '/images/talpelit-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Talpelit' },
+    { name: 'IPS', src: '/images/ips-rio-ceballos-corralon-ceballos-conexiones-canerias.webp', alt: 'Logo IPS' },
+    { name: 'Awaduct', src: '/images/logo-awaduct-rio-ceballos-corralon-ceballos.webp', alt: 'Logo Awaduct' },
   ]},
   { group: 'Otros', items: [
-    { name: 'Sika', src: 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/35be47f4f_sika-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Sika' },
+    { name: 'Sika', src: '/images/sika-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Sika' },
   ]},
 ]
 
