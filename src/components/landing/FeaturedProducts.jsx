@@ -144,8 +144,8 @@ const instalacionesItems = [
 ]
 
 const techosItems = [
-  { id: 'img-techos-chapas', src: '/images/corralon-ceballos-materiales-venta-rio-ceballos.webp', alt: 'Chapa consultar medidas y disponibilidad', title: 'Chapa', desc: 'Consultar medidas y disponibilidad', waText: 'Chapa' },
-  { id: 'img-techos-teja-colonial', src: '/images/bloques-ceramicos-camion-flete-rio-ceballos-corralon-ceballos.webp', alt: 'Teja Colonial unidad consultar color y disponibilidad', title: 'Teja Colonial', desc: 'Unidad · Consultar color y disponibilidad', waText: 'Teja Colonial' },
+  { id: 'img-techos-chapas', src: '/images/chapa-corralon-ceballos.webp', alt: 'Chapa consultar medidas y disponibilidad', title: 'Chapa', desc: 'Consultar medidas y disponibilidad', waText: 'Chapa' },
+  { id: 'img-techos-teja-colonial', src: '/images/teja-colonial-techo-corralon-ceballos-rio-ceballos.webp', alt: 'Teja Colonial unidad consultar color y disponibilidad', title: 'Teja Colonial', desc: 'Unidad · Consultar color y disponibilidad', waText: 'Teja Colonial' },
 ]
 
 const bolsonItems = [
