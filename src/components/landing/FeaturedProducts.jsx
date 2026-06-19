@@ -118,7 +118,7 @@ const aridosItems = [
 const ladrillsItems = [
   { id: 'img-ladrillos-comun', src: '/images/ladrillo-comun-corralon-ceballos.webp', alt: 'Ladrillo Común por millar', title: 'Ladrillo Común', desc: 'Por millar', waText: 'Ladrillo Común' },
   { id: 'img-ladrillos-semivisto', src: '/images/ladrillo-semivisto-corralon-ceballos.webp', alt: 'Ladrillo Semivisto por millar', title: 'Ladrillo Semivisto', desc: 'Por millar', waText: 'Ladrillo Semivisto' },
-  { id: 'img-ladrillos-ladrillon', src: '/images/ladrillon-corralon-ceballos.webp', alt: 'Ladrillón por millar', title: 'Ladrillón', desc: 'Por millar', waText: 'Ladrillon' },
+  { id: 'img-ladrillos-ladrillon', src: '/images/ladrillon-corralon-ceballos-rio-ceballos.webp', alt: 'Ladrillón por millar', title: 'Ladrillón', desc: 'Por millar', waText: 'Ladrillon' },
   { id: 'img-ladrillos-bovedilla', src: '/images/bovedilla-corralon-ceballos.webp', alt: 'Bovedilla unidad', title: 'Bovedilla', desc: 'Unidad', waText: 'Bovedilla' },
   { id: 'img-ladrillos-liston', src: '/images/ladrillo-liston-corralon-ceballos.webp', alt: 'Listón unidad', title: 'Listón', desc: 'Unidad', waText: 'Listón' },
   { id: 'img-ladrillos-block-ceramico', src: '/images/fantini-ladrillo-ceramico-portante-block-techo-rio-ceballos-corralon-ceballos.webp', alt: 'Block Cerámico Cerámica Fantini unidad varias medidas', title: 'Block Cerámico (Cerámica Fantini)', desc: 'Unidad · Varias medidas', waText: 'Block Cerámico' },
@@ -144,7 +144,7 @@ const instalacionesItems = [
 ]
 
 const techosItems = [
-  { id: 'img-techos-chapas', src: '/images/chapa-corralon-ceballos.webp', alt: 'Chapa consultar medidas y disponibilidad', title: 'Chapa', desc: 'Consultar medidas y disponibilidad', waText: 'Chapa' },
+  { id: 'img-techos-chapas', src: '/images/chapa-corralon-ceballos-rio-ceballos.webp', alt: 'Chapa consultar medidas y disponibilidad', title: 'Chapa', desc: 'Consultar medidas y disponibilidad', waText: 'Chapa' },
   { id: 'img-techos-teja-colonial', src: '/images/teja-colonial-techo-corralon-ceballos-rio-ceballos.webp', alt: 'Teja Colonial unidad consultar color y disponibilidad', title: 'Teja Colonial', desc: 'Unidad · Consultar color y disponibilidad', waText: 'Teja Colonial' },
 ]
 
