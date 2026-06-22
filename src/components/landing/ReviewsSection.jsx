@@ -39,7 +39,7 @@ export default function ReviewsSection() {
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
             Lo que dicen <span className="text-primary">nuestros clientes</span>
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground">Más de 55 años sirviendo a Río Ceballos y la región.</p>
+          <p className="mt-3 text-sm text-muted-foreground">La confianza de los vecinos, respaldada en cada entrega.</p>
           <div className="mt-5 inline-flex items-center gap-3 bg-white border border-yellow-200 rounded-full px-5 py-3 shadow-sm">
             <span style={{ fontSize: '4rem', fontWeight: '800', lineHeight: '1', color: '#1a202c' }}>4.3</span>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '2px' }}>
