@@ -137,7 +137,7 @@ const hierrosItems = [
 const instalacionesItems = [
   { id: 'img-instalaciones-tanque-talpelit', src: '/images/tanque-agua-talpelit-corralon-ceballos-rio-ceballos.webp', alt: 'Tanque de Agua Talpelit consultar capacidad', title: 'Tanque de Agua Talpelit', desc: 'Consultar capacidad y medidas', waText: 'Tanque de Agua Talpelit' },
   { id: 'img-instalaciones-casilla-gas', src: '/images/casilla-gas-premoldeada-talpelit-corralon-ceballos-rio-ceballos.webp', alt: 'Casilla de Gas Premoldeada unidad', title: 'Casilla de Gas Premoldeada', desc: 'Unidad · Consultar disponibilidad', waText: 'Casilla de Gas Premoldeada' },
-  { id: 'img-instalaciones-tubos-alcantarilla', src: '/images/tubo-alcantarilla-corralon-ceballos-rio-ceballos.webp', alt: 'Tubo de Alcantarilla consultar diámetro y largo', title: 'Tubo de Alcantarilla', desc: 'Consultar.', waText: 'Tubo de Alcantarilla' },
+  { id: 'img-instalaciones-tubos-alcantarilla', src: '/images/tubo-alcantarilla-corralon-ceballos-rio-ceballos.webp', alt: 'Tubo de Alcantarilla consultar diámetro y largo', title: 'Tubo de Alcantarilla', desc: 'Consultar disponibilidad', waText: 'Tubo de Alcantarilla' },
   { id: 'img-instalaciones-tapa-camara', src: '/images/tapa-camara-talpelit-corralon-ceballos-rio-ceballos.webp', alt: 'Tapa de Cámara unidad', title: 'Tapa de Cámara', desc: 'Unidad', waText: 'Tapa de Cámara' },
   { id: 'img-instalaciones-camara-septica', src: '/images/camara-septica-talpelit-corralon-ceballos.webp', alt: 'Cámara Séptica consultar medidas', title: 'Cámara Séptica', desc: 'Consultar medidas', waText: 'Cámara Séptica' },
   { id: 'img-instalaciones-canos-pvc', src: '/images/cano-pvc-corralon-ceballos-rio-ceballos.webp', alt: 'Caños y Accesorios PVC agua y cloaca', title: 'Caños PVC polietileno', desc: 'Agua y Cloaca', waText: 'Caños y Accesorios PVC' },
@@ -150,7 +150,7 @@ const techosItems = [
 
 const bolsonItems = [
   { id: 'img-bolson-aridos', src: '/images/bolson-grua-corralon-ceballos.webp', alt: 'Bolsón de Áridos entrega Río Ceballos', title: 'Bolsón de Áridos', desc: 'Entrega de áridos en bolsón', waText: 'Bolsón de Áridos' },
-  { id: 'img-bolson-grua-hidraulica', src: '/images/grua-bolson-alquiler-corralon-ceballos-rio-ceballos.webp', alt: 'Servicio de Grúa Hidráulica descarga en obra', title: 'Servicio de Grúa Hidráulica', desc: 'Descarga en obra y movimientos especiales en espacios reducidos. Consultar disponibilidad.', waText: 'Servicio de Grúa Hidráulica' },
+  { id: 'img-bolson-grua-hidraulica', src: '/images/grua-bolson-alquiler-corralon-ceballos-rio-ceballos.webp', alt: 'Servicio de Grúa Hidráulica descarga en obra', title: 'Servicio de Grúa Hidráulica', desc: 'Descarga en obra y movimientos especiales en espacios reducidos', waText: 'Servicio de Grúa Hidráulica' },
 ]
 
 export default function FeaturedProducts() {
@@ -163,8 +163,8 @@ export default function FeaturedProducts() {
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
             Catálogo de <span className="text-primary">Materiales</span>
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground">Holcim, cal Andina, FGH, Block X, ladrillos, hierros, áridos y más.</p>
-          <p className="mt-2 text-sm font-semibold text-primary">Entregas en Río Ceballos, Unquillo y Salsipuedes. Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</p>
+          <p className="mt-3 text-sm text-muted-foreground">Todo lo que necesitás para tu obra, de las marcas en las que más confiamos: Holcim, Cal Andina, FGH, Block X y muchas más.</p>
+          <p className="mt-2 text-sm font-semibold text-primary">Entregas en Río Ceballos, Unquillo y Salsipuedes.<br />Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</p>
         </div>
 
         <div className="mb-14" />
@@ -187,7 +187,7 @@ export default function FeaturedProducts() {
           <IntroText>Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón. En bloques, trabajamos con bloque cerámico y bloque de hormigón.</IntroText>
           <StockBadge />
           {ladrillsItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques" label="💬 Cotizá esta categoría por WhatsApp" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques" label="💬 Contános cuántos necesitás y te cotizamos" />
         </Accordion>
 
         <Accordion title="Hierros y Estructuras">
@@ -208,13 +208,13 @@ export default function FeaturedProducts() {
           <IntroText>Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado. Consultanos por WhatsApp para disponibilidad de medidas.</IntroText>
           <StockBadge />
           {techosItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos" label="💬 Cotizá esta categoría por WhatsApp" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos" label="💬 Consultanos medidas y te confirmamos stock" />
         </Accordion>
 
         <Accordion title="Servicio de Bolsón y Grúa">
           <IntroText>Servicio de áridos en bolsones para tu obra en Río Ceballos y alrededores. También contamos con grúa hidráulica.</IntroText>
           {bolsonItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20el%20Servicio%20de%20Grua%20y%20Bolson" label="💬 Cotizá esta categoría por WhatsApp" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20el%20Servicio%20de%20Grua%20y%20Bolson" label="💬 Reservá tu turno de grúa o bolsón" />
         </Accordion>
 
         <div className="text-center mt-10">
