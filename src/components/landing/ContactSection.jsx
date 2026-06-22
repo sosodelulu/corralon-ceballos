@@ -7,12 +7,12 @@ import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({ name: '', phone: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', phone: '', address: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const text = `Hola Corralón Ceballos! Soy ${formData.name}. Mi tel: ${formData.phone}. ${formData.message}`
+    const text = `Hola Corralón Ceballos, ¿cómo están? Mi nombre es ${formData.name} y les escribo desde la web para pedirles presupuesto por la siguiente lista de materiales:\n${formData.message}\nDomicilio de entrega: ${formData.address}\n¡Muchas gracias!`
     window.open(`https://wa.me/5493543530984?text=${encodeURIComponent(text)}`, '_blank')
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 3000)
@@ -26,10 +26,10 @@ export default function ContactSection() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">Contacto</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
-            Pedí tu <span className="text-primary">presupuesto</span>
+            ¿Tenés tu lista de <span className="text-primary">materiales</span> a mano?
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Completá el formulario o escribinos por WhatsApp. Te respondemos a la brevedad.
+            Pasanos el detalle por el formulario o envianos una foto de tu lista directamente por WhatsApp. Te respondemos en el día con precio y disponibilidad.
           </p>
         </div>
 
@@ -51,10 +51,14 @@ export default function ContactSection() {
                 <Input id="phone" placeholder="Ej: 03543 15xxxxxx" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required className="h-11 rounded-xl" />
               </div>
               <div className="space-y-2">
+                <Label htmlFor="address" className="text-sm font-semibold">Domicilio de entrega del material/obra</Label>
+                <Input id="address" placeholder="Ej: Calle Falsa 123, Río Ceballos" value={formData.address} onChange={(e) => setFormData({ ...formData, address: e.target.value })} required className="h-11 rounded-xl" />
+              </div>
+              <div className="space-y-2">
                 <Label htmlFor="message" className="text-sm font-semibold">Lista de materiales / Mensaje</Label>
                 <Textarea
                   id="message"
-                  placeholder="Hola, quisiera cotizar 50 bolsas de Cemento Holcim Forte y 20 bolsones de arena con entrega en Río Ceballos."
+                  placeholder="Ej: 20 bolsas de cemento Fuerte Holcim, 10 barras de hierro del 8..."
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -100,7 +104,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-foreground">Estacionamiento</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">Amplio estacionamiento para camiones</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Amplio estacionamiento propio para todo tipo de vehículos y camiones de carga.</p>
                 </div>
               </div>
               <div className="flex gap-3 p-4 rounded-xl bg-secondary/50 border border-border/50">
