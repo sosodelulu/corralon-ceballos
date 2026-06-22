@@ -23,11 +23,11 @@ function StockBadge() {
   )
 }
 
-function CTACategoria({ href }) {
+function CTACategoria({ href, label }) {
   return (
     <div style={{ gridColumn: '1 / -1' }}>
       <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', margin: '16px auto 0', border: '2px solid #166534', color: '#166834', background: 'transparent', borderRadius: '8px', padding: '10px 20px', fontWeight: '600', cursor: 'pointer', textDecoration: 'none' }}>
-        💬 Cotizá esta categoría por WhatsApp
+        {label}
       </a>
     </div>
   )
@@ -99,8 +99,8 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
 }
 
 const cementoItems = [
-  { id: 'img-cemento-holcim-fuerte', src: '/images/holcim-cemento-fuerte-ecoplanet-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Fuerte Holcim CPF 40 alta resistencia bolsa 25 kg Río Ceballos', title: 'Cemento Fuerte Holcim', desc: 'CPF 40 · Alta resistencia · Bolsa x 25 kg', waText: 'Cemento Fuerte Holcim' },
-  { id: 'img-cemento-maestro', src: '/images/holcim-maestro-cemento-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Maestro Holcim albañilería bolsa 25 kg', title: 'Cemento Maestro Holcim', desc: 'Cemento de albañilería · Bolsa x 25 kg', waText: 'Cemento Maestro Holcim' },
+  { id: 'img-cemento-holcim-fuerte', src: '/images/holcim-cemento-fuerte-ecoplanet-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Fuerte Holcim CPF 40 alta resistencia bolsa 25 kg Río Ceballos', title: 'Cemento Fuerte Holcim', desc: 'CPF 40 · Bolsa x 25 kg', waText: 'Cemento Fuerte Holcim' },
+  { id: 'img-cemento-maestro', src: '/images/holcim-maestro-cemento-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Maestro Holcim albañilería bolsa 25 kg', title: 'Cemento de albañilería Maestro Holcim', desc: 'Bolsa x 25 kg', waText: 'Cemento Maestro Holcim' },
   { id: 'img-cemento-tector', src: '/images/holcim-tector-rio-ceballos-corralon-ceballos.webp', alt: 'Pegamento Tector Holcim impermeable bolsa 25 kg', title: 'Pegamento Tector Holcim', desc: 'Bolsa x 25 kg · Impermeable', waText: 'Pegamento Tector Holcim' },
   { id: 'img-cemento-cal-fgh', src: '/images/fgh-cal-rio-ceballos-corralon-ceballos-bolsa.webp', alt: 'Cal FGH bolsa 25 kg Río Ceballos', title: 'Cal FGH', desc: 'Bolsa x 25 kg', waText: 'Cal FGH' },
   { id: 'img-cemento-cal-andina', src: '/images/fgh-andina-cal-rio-ceballos-corralon-ceballos-bolsa.webp', alt: 'Cal Andina bolsa 25 kg', title: 'Cal Andina', desc: 'Bolsa x 25 kg', waText: 'Cal Andina' },
@@ -108,9 +108,9 @@ const cementoItems = [
 ]
 
 const aridosItems = [
-  { id: 'img-aridos-arena-fina-comun', src: '/images/arena-fina-corralon-ceballos-rio-ceballos.webp', alt: 'Arena Fina Común por m³ o bolsón', title: 'Arena Fina Común', desc: 'Por m³ o bolsón · Río Ceballos y aledaños', waText: 'Arena Fina Común' },
-  { id: 'img-aridos-arena-fina-parana', src: '/images/arena-fina-parana-corralon-ceballos-rio-ceballos.webp', alt: 'Arena Fina del Paraná por m³ o bolsón', title: 'Arena Fina del Paraná', desc: 'Por m³ o bolsón', waText: 'Arena Fina del Paraná' },
-  { id: 'img-aridos-arena-gruesa', src: '/images/arena-gruesa-corralon-ceballos.webp', alt: 'Arena Gruesa Lavada por m³ o bolsón', title: 'Arena Gruesa Lavada', desc: 'Por m³ o bolsón', waText: 'Arena Gruesa Lavada' },
+  { id: 'img-aridos-arena-fina-comun', src: '/images/arena-fina-corralon-ceballos-rio-ceballos.webp', alt: 'Arena Fina Común por m³ o bolsón', title: 'Arena Fina Común', desc: 'Por m³, bolsón o bolsa x 15 kg', waText: 'Arena Fina Común' },
+  { id: 'img-aridos-arena-fina-parana', src: '/images/arena-fina-parana-corralon-ceballos-rio-ceballos.webp', alt: 'Arena Fina del Paraná por m³ o bolsón', title: 'Arena Fina del Paraná', desc: 'Por m³, bolsón o bolsa x 15 kg', waText: 'Arena Fina del Paraná' },
+  { id: 'img-aridos-arena-gruesa', src: '/images/arena-gruesa-corralon-ceballos.webp', alt: 'Arena Gruesa Lavada por m³ o bolsón', title: 'Arena Gruesa Lavada', desc: 'Por m³, bolsón o bolsa x 15 kg', waText: 'Arena Gruesa Lavada' },
   { id: 'img-aridos-granito-triturado', src: '/images/granito-triturado-granza-corralon-ceballos-rio-ceballos.webp', alt: 'Granito Triturado por m³ bolsón o bolsa 15 kg', title: 'Granito Triturado', desc: 'Por m³, bolsón o bolsa x 15 kg', waText: 'Granito Triturado' },
   { id: 'img-aridos-trit-blanco', src: '/images/Piedra-Triturado-Blanco-Jardineria-Paisajismo-Macetas-Rio-ceballos-corralon-ceballos.webp', alt: 'Piedra Triturado Blanco jardinería decoración', title: 'Piedra Triturado Blanco', desc: 'Para jardinería y decoración · Por m³, bolsón o bolsa x 15 kg', waText: 'Piedra Triturado Blanco' },
 ]
@@ -121,35 +121,35 @@ const ladrillsItems = [
   { id: 'img-ladrillos-ladrillon', src: '/images/ladrillon-corralon-ceballos-rio-ceballos.webp', alt: 'Ladrillón por millar', title: 'Ladrillón', desc: 'Por millar', waText: 'Ladrillon' },
   { id: 'img-ladrillos-bovedilla', src: '/images/bovedilla-corralon-ceballos.webp', alt: 'Bovedilla unidad', title: 'Bovedilla', desc: 'Unidad', waText: 'Bovedilla' },
   { id: 'img-ladrillos-liston', src: '/images/ladrillo-liston-corralon-ceballos.webp', alt: 'Listón unidad', title: 'Listón', desc: 'Unidad', waText: 'Listón' },
-  { id: 'img-ladrillos-block-ceramico', src: '/images/fantini-ladrillo-ceramico-portante-block-techo-rio-ceballos-corralon-ceballos.webp', alt: 'Block Cerámico Cerámica Fantini unidad varias medidas', title: 'Block Cerámico (Cerámica Fantini)', desc: 'Unidad · Varias medidas', waText: 'Block Cerámico' },
-  { id: 'img-ladrillos-block-x', src: '/images/blockx-block-hormigon-portante-rio-ceballos-corralon-ceballos.webp', alt: 'Block de Hormigón Común y Block X unidad', title: 'Block de Hormigón (Común y Block X)', desc: 'Unidad', waText: 'Block de Hormigón Block X' },
+  { id: 'img-ladrillos-block-ceramico', src: '/images/fantini-ladrillo-ceramico-portante-block-techo-rio-ceballos-corralon-ceballos.webp', alt: 'Block Cerámico Cerámica Fantini unidad varias medidas', title: 'Block Cerámico / Cerámica Fantini', desc: 'Varias medidas', waText: 'Block Cerámico' },
+  { id: 'img-ladrillos-block-x', src: '/images/blockx-block-hormigon-portante-rio-ceballos-corralon-ceballos.webp', alt: 'Block de Hormigón Común y Block X unidad', title: 'Block de Hormigón / Común y Block X', desc: 'Unidad', waText: 'Block de Hormigón Block X' },
 ]
 
 const hierrosItems = [
   { id: 'img-hierros-varilla', src: '/images/varilla-hierro-corralon-ceballos.webp', alt: 'Hierro en Varilla normas IRAM venta por unidad', title: 'Hierro en Varilla', desc: 'Venta por unidad · Normas IRAM', waText: 'Hierro en Varilla' },
   { id: 'img-hierros-malla-soldada', src: '/images/malla-electrosoldada-corralon-ceballos.webp', alt: 'Malla Electrosoldada venta por plancha', title: 'Malla Electrosoldada', desc: 'Venta por plancha', waText: 'Malla Electrosoldada' },
-  { id: 'img-hierros-canos-estructurales', src: '/images/cano-estructural-corralon-ceballos.webp', alt: 'Caños Estructurales y Perfilería consultar sección y largo', title: 'Caños Estructurales y Perfilería', desc: 'Consultar sección y largo · Venta por unidad', waText: 'Caños Estructurales y Perfilería' },
+  { id: 'img-hierros-canos-estructurales', src: '/images/cano-estructural-corralon-ceballos.webp', alt: 'Caños Estructurales y Perfilería consultar sección y largo', title: 'Caños Estructurales y Perfilería', desc: 'Consultar sección y espesor · Venta por unidad', waText: 'Caños Estructurales y Perfilería' },
   { id: 'img-hierros-columnas-armadas', src: '/images/columnas-armadas-corralon-ceballos-rio-ceballos.webp', alt: 'Columnas Armadas venta por unidad', title: 'Columnas Armadas', desc: 'Venta por unidad', waText: 'Columnas Armadas' },
-  { id: 'img-hierros-alambres', src: '/images/alambres-corralon-ceballos-rio-ceballos.webp', alt: 'Alambres venta por unidad', title: 'Alambres', desc: 'Venta por unidad', waText: 'Alambres' },
-  { id: 'img-hierros-estribos', src: '/images/estribos-armados-corralon-ceballos-rio-ceballos.webp', alt: 'Estribos Armados venta por unidad', title: 'Estribos Armados', desc: 'Venta por unidad', waText: 'Estribos Armados' },
+  { id: 'img-hierros-alambres', src: '/images/alambres-corralon-ceballos-rio-ceballos.webp', alt: 'Alambres venta por unidad', title: 'Alambres', desc: 'Venta por kg', waText: 'Alambres' },
+  { id: 'img-hierros-estribos', src: '/images/estribos-armados-corralon-ceballos-rio-ceballos.webp', alt: 'Estribos Armados venta por unidad', title: 'Estribos Armados', desc: 'Venta por paquete', waText: 'Estribos Armados' },
 ]
 
 const instalacionesItems = [
   { id: 'img-instalaciones-tanque-talpelit', src: '/images/tanque-agua-talpelit-corralon-ceballos-rio-ceballos.webp', alt: 'Tanque de Agua Talpelit consultar capacidad', title: 'Tanque de Agua Talpelit', desc: 'Consultar capacidad y medidas', waText: 'Tanque de Agua Talpelit' },
   { id: 'img-instalaciones-casilla-gas', src: '/images/casilla-gas-premoldeada-talpelit-corralon-ceballos-rio-ceballos.webp', alt: 'Casilla de Gas Premoldeada unidad', title: 'Casilla de Gas Premoldeada', desc: 'Unidad · Consultar disponibilidad', waText: 'Casilla de Gas Premoldeada' },
-  { id: 'img-instalaciones-tubos-alcantarilla', src: '/images/tubo-alcantarilla-corralon-ceballos-rio-ceballos.webp', alt: 'Tubo de Alcantarilla consultar diámetro y largo', title: 'Tubo de Alcantarilla', desc: 'Consultar diámetro y largo', waText: 'Tubo de Alcantarilla' },
+  { id: 'img-instalaciones-tubos-alcantarilla', src: '/images/tubo-alcantarilla-corralon-ceballos-rio-ceballos.webp', alt: 'Tubo de Alcantarilla consultar diámetro y largo', title: 'Tubo de Alcantarilla', desc: 'Consultar.', waText: 'Tubo de Alcantarilla' },
   { id: 'img-instalaciones-tapa-camara', src: '/images/tapa-camara-talpelit-corralon-ceballos-rio-ceballos.webp', alt: 'Tapa de Cámara unidad', title: 'Tapa de Cámara', desc: 'Unidad', waText: 'Tapa de Cámara' },
   { id: 'img-instalaciones-camara-septica', src: '/images/camara-septica-talpelit-corralon-ceballos.webp', alt: 'Cámara Séptica consultar medidas', title: 'Cámara Séptica', desc: 'Consultar medidas', waText: 'Cámara Séptica' },
-  { id: 'img-instalaciones-canos-pvc', src: '/images/cano-pvc-corralon-ceballos-rio-ceballos.webp', alt: 'Caños y Accesorios PVC agua y cloaca', title: 'Caños y Accesorios PVC', desc: 'Agua y Cloaca · No incluye PVC para gas', waText: 'Caños y Accesorios PVC' },
+  { id: 'img-instalaciones-canos-pvc', src: '/images/cano-pvc-corralon-ceballos-rio-ceballos.webp', alt: 'Caños y Accesorios PVC agua y cloaca', title: 'Caños PVC polietileno', desc: 'Agua y Cloaca', waText: 'Caños y Accesorios PVC' },
 ]
 
 const techosItems = [
-  { id: 'img-techos-chapas', src: '/images/chapa-corralon-ceballos-rio-ceballos.webp', alt: 'Chapa consultar medidas y disponibilidad', title: 'Chapa', desc: 'Consultar medidas y disponibilidad', waText: 'Chapa' },
-  { id: 'img-techos-teja-colonial', src: '/images/teja-colonial-techo-corralon-ceballos-rio-ceballos.webp', alt: 'Teja Colonial unidad consultar color y disponibilidad', title: 'Teja Colonial', desc: 'Unidad · Consultar color y disponibilidad', waText: 'Teja Colonial' },
+  { id: 'img-techos-chapas', src: '/images/chapa-corralon-ceballos-rio-ceballos.webp', alt: 'Chapa consultar medidas y disponibilidad', title: 'Chapa Acanalada', desc: 'Consultar medidas y disponibilidad', waText: 'Chapa' },
+  { id: 'img-techos-teja-colonial', src: '/images/teja-colonial-techo-corralon-ceballos-rio-ceballos.webp', alt: 'Teja Colonial unidad consultar color y disponibilidad', title: 'Teja Colonial', desc: 'Unidad · Consultar disponibilidad', waText: 'Teja Colonial' },
 ]
 
 const bolsonItems = [
-  { id: 'img-bolson-aridos', src: '/images/bolson-grua-corralon-ceballos.webp', alt: 'Bolsón de Áridos entrega Río Ceballos', title: 'Bolsón de Áridos', desc: 'Entrega de áridos en bolsón. No incluye retiro.', waText: 'Bolsón de Áridos' },
+  { id: 'img-bolson-aridos', src: '/images/bolson-grua-corralon-ceballos.webp', alt: 'Bolsón de Áridos entrega Río Ceballos', title: 'Bolsón de Áridos', desc: 'Entrega de áridos en bolsón', waText: 'Bolsón de Áridos' },
   { id: 'img-bolson-grua-hidraulica', src: '/images/grua-bolson-alquiler-corralon-ceballos-rio-ceballos.webp', alt: 'Servicio de Grúa Hidráulica descarga en obra', title: 'Servicio de Grúa Hidráulica', desc: 'Descarga en obra y movimientos especiales en espacios reducidos. Consultar disponibilidad.', waText: 'Servicio de Grúa Hidráulica' },
 ]
 
@@ -164,57 +164,57 @@ export default function FeaturedProducts() {
             Catálogo de <span className="text-primary">Materiales</span>
           </h2>
           <p className="mt-3 text-sm text-muted-foreground">Holcim, cal Andina, FGH, Block X, ladrillos, hierros, áridos y más.</p>
-          <p className="mt-2 text-sm font-semibold text-primary">Entregas en Río Ceballos, Unquillo y Salsipuedes. También llegamos a Agua de Oro y Mendiolaza.</p>
+          <p className="mt-2 text-sm font-semibold text-primary">Entregas en Río Ceballos, Unquillo y Salsipuedes. Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</p>
         </div>
 
         <div className="mb-14" />
 
         <Accordion title="Cemento y Cal" defaultOpen={true}>
-          <IntroText>Trabajamos con productos Holcim: Cemento Fuerte CPF 40, Cemento Maestro de albañilería y Pegamento Tector Impermeable. También cales FGH (viva e hidratada), y estuco Abacor. Stock permanente siempre.</IntroText>
+          <IntroText>Trabajamos con productos Holcim: Cemento Fuerte CPF 40, Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería.</IntroText>
           <StockBadge />
           {cementoItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Cemento%20y%20Cal" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Cemento%20y%20Cal" label="💬 Cotizar cemento y cal por WhatsApp" />
         </Accordion>
 
         <Accordion title="Áridos">
-          <IntroText>Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado, piedra triturado blanco y más. Entrega a granel o en bolsón.</IntroText>
+          <IntroText>Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado y piedra triturado blanco. ¿Necesitás a granel por m³ o bolsón? Coordinamos la descarga según la accesibilidad de tu terreno.</IntroText>
           <StockBadge />
           {aridosItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20%C3%81ridos" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20%C3%81ridos" label="💬 Pedir presupuesto de áridos por WhatsApp" />
         </Accordion>
 
         <Accordion title="Ladrillos y Bloques">
           <IntroText>Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón. En bloques, trabajamos con bloque cerámico y bloque de hormigón.</IntroText>
           <StockBadge />
           {ladrillsItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques" label="💬 Cotizá esta categoría por WhatsApp" />
         </Accordion>
 
         <Accordion title="Hierros y Estructuras">
           <IntroText>Aceros bajo normas IRAM: hierro en varilla, malla electrosoldada, caños estructurales, perfilería, columnas armadas, alambres y estribos armados.</IntroText>
           <StockBadge />
           {hierrosItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Hierros%20y%20Estructuras" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Hierros%20y%20Estructuras" label="💬 Enviar lista de hierros para presupuesto" />
         </Accordion>
 
         <Accordion title="Instalaciones">
-          <IntroText>Distribuidor oficial Talpelit: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca.</IntroText>
+          <IntroText>Distribuidor de productos Talpelit: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca.</IntroText>
           <StockBadge />
           {instalacionesItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Instalaciones" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Instalaciones" label="💬 Consultar medidas de tanques y caños por WhatsApp" />
         </Accordion>
 
         <Accordion title="Techos">
-          <IntroText>Trabajamos con chapas y tejas para todo tipo de techado. Consultanos por WhatsApp para disponibilidad de medidas y colores.</IntroText>
+          <IntroText>Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado. Consultanos por WhatsApp para disponibilidad de medidas.</IntroText>
           <StockBadge />
           {techosItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos" label="💬 Cotizá esta categoría por WhatsApp" />
         </Accordion>
 
         <Accordion title="Servicio de Bolsón y Grúa">
-          <IntroText>Servicio de áridos en bolsones para tu obra en Río Ceballos y alrededores. El bolsón no se alquila y no incluye retiro. También contamos con grúa hidráulica.</IntroText>
+          <IntroText>Servicio de áridos en bolsones para tu obra en Río Ceballos y alrededores. También contamos con grúa hidráulica.</IntroText>
           {bolsonItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20el%20Servicio%20de%20Grua%20y%20Bolson" />
+          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20el%20Servicio%20de%20Grua%20y%20Bolson" label="💬 Cotizá esta categoría por WhatsApp" />
         </Accordion>
 
         <div className="text-center mt-10">
