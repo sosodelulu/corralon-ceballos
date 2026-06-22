@@ -34,7 +34,7 @@ function CardMateriales() {
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Cales FGH y Andina · Estuco Abacor</li>
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Bloques cerámicos y hormigón</li>
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Premoldeados, hierros, áridos y más</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Reparto en Río Ceballos, Unquillo y Salsipuedes. Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</li>
+          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Reparto en Río Ceballos, Unquillo y Salsipuedes.<br />¿Tu obra está en Agua de Oro o Mendiolaza? Consultanos, también te ayudamos con envíos de gran volumen.</li>
         </ul>
         <div className="mt-auto pt-6 w-full">
           <a
@@ -83,8 +83,7 @@ function CardMaquinaria() {
           Retroexcavadora CAT 416E para movimientos de tierra y excavaciones. Servicio exclusivo en Río Ceballos.
         </p>
         <ul className="mt-3 space-y-1 text-sm text-muted-foreground flex-1">
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Ideal para excavaciones, zanjeos y nivelación de terrenos</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Especializada en movimientos de tierra (no disponible para demoliciones o carga pesada)</li>
+          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Ideal para excavaciones, zanjeos y nivelación de terrenos, especializada en movimientos de tierra.</li>
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Operario incluido</li>
         </ul>
         <div className="mt-auto pt-6 w-full">
@@ -171,9 +170,15 @@ function CardGrua() {
         <div className="absolute top-4 left-4 p-2.5 rounded-xl bg-white/90 backdrop-blur-sm shadow-sm">
           <Truck className="w-5 h-5 text-primary" />
         </div>
+        <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-green-500 text-white text-[10px] font-bold shadow">
+          Disponible ahora
+        </div>
       </div>
       <div className="p-6 flex flex-col flex-1">
         <h2 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Servicio de Grúa y Bolsón</h2>
+        <p className="mt-2 text-xs text-muted-foreground leading-relaxed italic">
+          ¿Sabías que? Nuestra grúa hidráulica formó parte del montaje de la Dama Blanca, la pieza de ajedrez más alta del mundo, inaugurada en Río Ceballos en 2025.<br />La misma precisión y cuidado que pusimos ahí, los ponemos en tu obra.
+        </p>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
           Áridos en bolsones y grúa hidráulica para descarga y movimientos especiales en obra. Río Ceballos y alrededores.
         </p>
@@ -182,9 +187,6 @@ function CardGrua() {
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Grúa para descarga de materiales en obra</li>
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Movimientos especiales en espacios reducidos</li>
         </ul>
-        <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
-          ¿Sabías que? Nuestra grúa hidráulica fue parte del montaje de la Dama Blanca, la pieza de ajedrez más alta del mundo, inaugurada en Río Ceballos en 2025. El mismo cuidado y precisión para tu obra.
-        </p>
         <div className="mt-auto pt-6 w-full">
           <a
             href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20consultar%20el%20servicio%20de%20gr%C3%BAa%20y%20bols%C3%B3n"
@@ -192,7 +194,7 @@ function CardGrua() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-full gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200"
           >
-            Consultar disponibilidad por WhatsApp
+            Consultá disponibilidad y reservá tu turno por WhatsApp
           </a>
         </div>
       </div>
@@ -211,7 +213,8 @@ export default function ServiceCards() {
             Soluciones integrales para que <span className="text-primary">tu obra no se detenga</span>
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Desde el cimiento hasta el techo. Hace más de 55 años abastecemos a Río Ceballos, Salsipuedes, Agua de Oro, Unquillo y Mendiolaza con entregas programadas, equipos listos para el suelo serrano y obradores seguros.
+            Desde el cimiento hasta el techo.<br />
+            Hace más de 55 años abastecemos a Río Ceballos, Salsipuedes, Agua de Oro, Unquillo y Mendiolaza con entregas programadas, equipos listos para el suelo serrano y obradores seguros.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
