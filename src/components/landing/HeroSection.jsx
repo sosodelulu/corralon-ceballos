@@ -48,7 +48,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg drop-shadow-md"
           >
-            Venta de materiales, alquiler de maquinaria y logística eficiente para tu construcción. Calidad, precio y servicio.
+            Materiales de primera, alquiler de maquinaria y la logística que tu obra en las Sierras Chicas necesita. Más de 55 años de respaldo, stock permanente y entregas seguras en terrenos difíciles.
           </motion.p>
 
           <motion.p
@@ -87,7 +87,7 @@ export default function HeroSection() {
               className="h-12 px-8 rounded-full text-base font-semibold"
               style={{ background: '#25D366', color: '#ffffff', border: 'none' }}
             >
-              <a href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar" target="_blank" rel="noopener noreferrer">Cotizá por WhatsApp ahora</a>
+              <a href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar" target="_blank" rel="noopener noreferrer">Cotizá tu lista por WhatsApp</a>
             </Button>
           </motion.div>
 
@@ -100,7 +100,7 @@ export default function HeroSection() {
           >
             <div>
               <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-primary drop-shadow-md">55+</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Años de trayectoria</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Años de trayectoria en el rubro</p>
             </div>
             <div>
               <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-primary drop-shadow-md">Miles</p>
