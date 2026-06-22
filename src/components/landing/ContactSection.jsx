@@ -26,10 +26,12 @@ export default function ContactSection() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">Contacto</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
-            ¿Tenés tu lista de <span className="text-primary">materiales</span> a mano?
+            ¿Tenés tu lista de <span className="text-primary">materiales</span> a mano?<br />
+            ¿O recién estás armando el presupuesto de tu obra?
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Pasanos el detalle por el formulario o envianos una foto de tu lista directamente por WhatsApp. Te respondemos en el día con precio y disponibilidad.
+            Contanos qué necesitás por el formulario, o enviános una foto de tu lista directamente por WhatsApp.<br />
+            Te respondemos en el día con precio y disponibilidad.
           </p>
         </div>
 
