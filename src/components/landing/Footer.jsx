@@ -14,7 +14,7 @@ export default function Footer() {
               <img src="https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/2047d2231_image.png" alt="Corralón Ceballos" className="h-10 object-contain py-1" />
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              Desde 1975 abasteciendo obras en Río Ceballos y aledaños con materiales de calidad y servicio confiable.
+              Una familia con más de 55 años de tradición en venta de productos para la construcción, abasteciendo obras en Río Ceballos y aledaños con materiales de calidad y servicio confiable.
             </p>
             <p className="text-xs text-white/35 leading-relaxed mt-3">
               Cobertura: Río Ceballos · Unquillo · Salsipuedes · Agua de Oro · Mendiolaza
@@ -78,9 +78,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center gap-3">
           <p className="text-xs text-white/30">© {currentYear} Corralón Ceballos. Todos los derechos reservados.</p>
-          <p className="text-xs text-white/30">Diseñado con dedicación para tu obra.</p>
         </div>
       </div>
     </footer>
