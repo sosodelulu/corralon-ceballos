@@ -116,11 +116,11 @@ const aridosItems = [
 ]
 
 const ladrillsItems = [
-  { id: 'img-ladrillos-comun', src: '/images/ladrillo-comun-corralon-ceballos.webp', alt: 'Ladrillo Común por millar', title: 'Ladrillo Común', desc: 'Por millar', waText: 'Ladrillo Común' },
-  { id: 'img-ladrillos-semivisto', src: '/images/ladrillo-semivisto-corralon-ceballos.webp', alt: 'Ladrillo Semivisto por millar', title: 'Ladrillo Semivisto', desc: 'Por millar', waText: 'Ladrillo Semivisto' },
-  { id: 'img-ladrillos-ladrillon', src: '/images/ladrillon-corralon-ceballos-rio-ceballos.webp', alt: 'Ladrillón por millar', title: 'Ladrillón', desc: 'Por millar', waText: 'Ladrillon' },
-  { id: 'img-ladrillos-bovedilla', src: '/images/bovedilla-corralon-ceballos.webp', alt: 'Bovedilla unidad', title: 'Bovedilla', desc: 'Unidad', waText: 'Bovedilla' },
-  { id: 'img-ladrillos-liston', src: '/images/ladrillo-liston-corralon-ceballos.webp', alt: 'Listón unidad', title: 'Listón', desc: 'Unidad', waText: 'Listón' },
+  { id: 'img-ladrillos-comun', src: '/images/ladrillo-comun-corralon-ceballos.webp', alt: 'Ladrillo Común por millar', title: 'Ladrillo Común', desc: '', waText: 'Ladrillo Común' },
+  { id: 'img-ladrillos-semivisto', src: '/images/ladrillo-semivisto-corralon-ceballos.webp', alt: 'Ladrillo Semivisto por millar', title: 'Ladrillo Semivisto', desc: '', waText: 'Ladrillo Semivisto' },
+  { id: 'img-ladrillos-ladrillon', src: '/images/ladrillon-corralon-ceballos-rio-ceballos.webp', alt: 'Ladrillón por millar', title: 'Ladrillón', desc: '', waText: 'Ladrillon' },
+  { id: 'img-ladrillos-bovedilla', src: '/images/bovedilla-corralon-ceballos.webp', alt: 'Bovedilla unidad', title: 'Bovedilla', desc: '', waText: 'Bovedilla' },
+  { id: 'img-ladrillos-liston', src: '/images/ladrillo-liston-corralon-ceballos.webp', alt: 'Listón unidad', title: 'Listón', desc: '', waText: 'Listón' },
   { id: 'img-ladrillos-block-ceramico', src: '/images/fantini-ladrillo-ceramico-portante-block-techo-rio-ceballos-corralon-ceballos.webp', alt: 'Block Cerámico Cerámica Fantini unidad varias medidas', title: 'Block Cerámico / Cerámica Fantini', desc: 'Varias medidas', waText: 'Block Cerámico' },
   { id: 'img-ladrillos-block-x', src: '/images/blockx-block-hormigon-portante-rio-ceballos-corralon-ceballos.webp', alt: 'Block de Hormigón Común y Block X unidad', title: 'Block de Hormigón / Común y Block X', desc: 'Unidad', waText: 'Block de Hormigón Block X' },
 ]
