@@ -26,12 +26,15 @@ function CardMateriales() {
       </div>
       <div className="p-6 flex flex-col flex-1">
         <h2 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Venta de Materiales</h2>
+        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+          Productos de las marcas líderes del mercado, con stock permanente y reparto en la zona.
+        </p>
         <ul className="mt-3 space-y-1 text-sm text-muted-foreground flex-1">
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Productos Holcim: Cemento Fuerte, Maestro y Tector</li>
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Cales FGH y Andina · Estuco Abacor</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Bloques cerámicos y hormigón (Block X — representantes exclusivos)</li>
+          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Bloques cerámicos y hormigón</li>
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Premoldeados, hierros, áridos y más</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Reparto en Río Ceballos, Unquillo y Salsipuedes</li>
+          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Reparto en Río Ceballos, Unquillo y Salsipuedes. Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</li>
         </ul>
         <div className="mt-auto pt-6 w-full">
           <a
@@ -80,10 +83,9 @@ function CardMaquinaria() {
           Retroexcavadora CAT 416E para movimientos de tierra y excavaciones. Servicio exclusivo en Río Ceballos.
         </p>
         <ul className="mt-3 space-y-1 text-sm text-muted-foreground flex-1">
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Ideal para excavaciones y movimientos de suelo</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>No apta para demolición o carga pesada</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Operario incluido bajo consulta</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Consultá disponibilidad y precio</li>
+          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Ideal para excavaciones, zanjeos y nivelación de terrenos</li>
+          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Especializada en movimientos de tierra (no disponible para demoliciones o carga pesada)</li>
+          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Operario incluido</li>
         </ul>
         <div className="mt-auto pt-6 w-full">
           <a
@@ -92,7 +94,7 @@ function CardMaquinaria() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-full gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200"
           >
-            Consultar disponibilidad por WhatsApp
+            Reservá el turno para tu obra por WhatsApp
           </a>
         </div>
       </div>
@@ -125,9 +127,9 @@ function CardObradores() {
       </div>
       <div className="p-6 flex flex-col flex-1">
         <h2 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Obradores</h2>
-        <p className="mt-1 text-xs font-semibold text-primary">Guardá tus herramientas en obra</p>
+        <p className="mt-1 text-xs font-semibold text-primary">Protegé tus herramientas y materiales en obra.</p>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-          Contamos con 3 obradores disponibles para resguardo seguro de herramientas y materiales durante tu construcción.
+          Contamos con 3 obradores para resguardo seguro de herramientas y materiales durante tu construcción.
         </p>
         <ul className="mt-3 space-y-1 text-sm text-muted-foreground flex-1">
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Contenedor metálico con cerradura</li>
@@ -142,7 +144,7 @@ function CardObradores() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-full gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200"
           >
-            Consultar fechas disponibles por WhatsApp
+            Reservar obrador por WhatsApp
           </a>
         </div>
       </div>
@@ -176,11 +178,13 @@ function CardGrua() {
           Áridos en bolsones y grúa hidráulica para descarga y movimientos especiales en obra. Río Ceballos y alrededores.
         </p>
         <ul className="mt-3 space-y-1 text-sm text-muted-foreground flex-1">
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Bolsón de áridos (no incluye retiro)</li>
+          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Bolsón de áridos</li>
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Grúa para descarga de materiales en obra</li>
           <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Movimientos especiales en espacios reducidos</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Consultar disponibilidad</li>
         </ul>
+        <p className="mt-3 text-xs text-muted-foreground leading-relaxed italic">
+          ¿Sabías que? Nuestra grúa hidráulica fue parte del montaje de la Dama Blanca, la pieza de ajedrez más alta del mundo, inaugurada en Río Ceballos en 2025. El mismo cuidado y precisión para tu obra.
+        </p>
         <div className="mt-auto pt-6 w-full">
           <a
             href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20consultar%20el%20servicio%20de%20gr%C3%BAa%20y%20bols%C3%B3n"
@@ -204,10 +208,10 @@ export default function ServiceCards() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nuestros Servicios</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
-            Soluciones integrales para <span className="text-primary">tu construcción</span>
+            Soluciones integrales para que <span className="text-primary">tu obra no se detenga</span>
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Hace más de 55 años acompañando obras en Río Ceballos, Salsipuedes, Agua de Oro, Unquillo, Mendiolaza y la región de las Sierras Chicas con materiales, equipos y logística.
+            Desde el cimiento hasta el techo. Hace más de 55 años abastecemos a Río Ceballos, Salsipuedes, Agua de Oro, Unquillo y Mendiolaza con entregas programadas, equipos listos para el suelo serrano y obradores seguros.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
