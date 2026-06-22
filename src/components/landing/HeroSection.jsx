@@ -48,7 +48,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg drop-shadow-md"
           >
-            Materiales de primera, alquiler de maquinaria y la logística que tu obra en las Sierras Chicas necesita. Más de 55 años de respaldo, stock permanente y entregas seguras en terrenos difíciles.
+            Materiales de primera calidad, maquinaria para alquilar y la logística que tu obra en Sierras Chicas necesita.
+            <br />
+            Más de 55 años de respaldo, stock permanente y entregas seguras incluso en los terrenos más difíciles.
           </motion.p>
 
           <motion.p
@@ -58,10 +60,14 @@ export default function HeroSection() {
             className="mt-3 text-sm text-muted-foreground/80 max-w-lg drop-shadow-md"
           >
             <span className="sm:hidden inline-block" style={{ background: 'rgba(0,0,0,0.55)', borderRadius: '8px', padding: '8px 12px', color: '#ffffff' }}>
-              Entregas en Río Ceballos, Unquillo y Salsipuedes. También llegamos a Agua de Oro y Mendiolaza.
+              Entregas en Río Ceballos, Unquillo y Salsipuedes.
+              <br />
+              También llegamos a Agua de Oro y Mendiolaza.
             </span>
             <span className="hidden sm:inline-block" style={{ background: 'rgba(0,0,0,0.55)', borderRadius: '8px', padding: '8px 12px', color: '#ffffff' }}>
-              Entregas en Río Ceballos, Unquillo y Salsipuedes. También llegamos a Agua de Oro y Mendiolaza.
+              Entregas en Río Ceballos, Unquillo y Salsipuedes.
+              <br />
+              También llegamos a Agua de Oro y Mendiolaza.
             </span>
           </motion.p>
 
