@@ -38,7 +38,7 @@ function Accordion({ title, children, defaultOpen = false }) {
   return (
     <div className="border border-border rounded-2xl overflow-hidden mb-4">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-6 py-4 bg-secondary/40 hover:bg-secondary/70 transition-colors text-left">
-        <span className="font-bold text-foreground text-base tracking-tight">{title}</span>
+        <h3 className="font-bold text-foreground text-base tracking-tight">{title}</h3>
         <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
@@ -80,7 +80,7 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
 
       {/* Textos y Botón Mobile */}
       <div className="p-3 flex flex-col gap-1.5 flex-1">
-        <p className="text-sm font-bold text-foreground leading-snug">{title}</p>
+        <h4 className="text-sm font-bold text-foreground leading-snug">{title}</h4>
         <p className="text-xs text-muted-foreground leading-relaxed flex-1">{desc}</p>
 
         {/* Botón Mobile Fijo (Oculto automáticamente en pantallas sm en adelante) */}
