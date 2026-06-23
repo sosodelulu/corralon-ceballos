@@ -1,0 +1,53 @@
+name: Build, Prerender y Deploy a Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias del proyecto
+        run: npm install
+
+      - name: Compilar el sitio (Vite build)
+        run: npm run build
+
+      - name: Prerenderizar el HTML final con Puppeteer
+        run: node scripts/prerender.js
+
+      - name: Instalar Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Descargar configuración del proyecto de Vercel
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Copiar nuestro dist/ ya prerenderizado al output de Vercel
+        run: |
+          mkdir -p .vercel/output/static
+          cp -r dist/* .vercel/output/static/
+
+      - name: Generar config.json de Vercel (modo estático)
+        run: |
+          cat > .vercel/output/config.json << 'EOF'
+          { "version": 3 }
+          EOF
+
+      - name: Publicar en Vercel (producción)
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
