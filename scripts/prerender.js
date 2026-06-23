@@ -63,19 +63,24 @@ async function prerender() {
 
   console.log('🧠 Abriendo Chrome headless...');
 
-  // En Vercel (entorno de build serverless) no hay un Chrome de sistema con
-  // todas sus librerías nativas instaladas, así que usamos @sparticuz/chromium
-  // (un Chromium precompilado para entornos serverless) junto a puppeteer-core.
-  // En tu máquina local (npm run build manual) seguimos usando el paquete
-  // "puppeteer" normal, que ya trae su propio Chrome de escritorio.
   let browser;
   if (process.env.VERCEL) {
     const chromium = (await import('@sparticuz/chromium')).default;
     const puppeteerCore = (await import('puppeteer-core')).default;
+    const { dirname } = await import('path');
+
+    const executablePath = await chromium.executablePath();
+
+    // Fix conocido: el loader de Linux necesita saber explícitamente
+    // dónde están las librerías compartidas (libnss3.so y otras) que
+    // @sparticuz/chromium extrae junto al binario. Sin esto, Chromium
+    // no las encuentra aunque existan físicamente en esa carpeta.
+    process.env.LD_LIBRARY_PATH = dirname(executablePath);
+
     browser = await puppeteerCore.launch({
       args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox'],
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(),
+      executablePath,
       headless: chromium.headless,
     });
   } else {
