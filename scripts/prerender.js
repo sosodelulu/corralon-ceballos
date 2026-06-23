@@ -1,16 +1,17 @@
 // scripts/prerender.js
 //
-// Este script se ejecuta DESPUÉS de "vite build".
-// Levanta un servidor local temporal sirviendo la carpeta "dist" ya compilada,
-// abre esa página en un Chrome headless real (Puppeteer), espera a que React
-// termine de renderizar todo el contenido, y reemplaza dist/index.html
-// por el HTML final ya resuelto.
+// Este script se ejecuta DESPUÉS de "vite build", dentro de GitHub Actions
+// (no en Vercel). Levanta un servidor local temporal sirviendo la carpeta
+// "dist" ya compilada, abre esa página en un Chrome headless real
+// (Puppeteer), espera a que React termine de renderizar todo el contenido,
+// y reemplaza dist/index.html por el HTML final ya resuelto.
 //
 // El usuario humano sigue recibiendo la SPA normal: los <script> originales
 // quedan intactos, React se "re-hidrata" en el cliente sin problemas.
 // Lo que cambia es que ahora el HTML crudo (lo que ve un bot sin JS,
 // como GPTBot o PerplexityBot) ya viene con todo el contenido adentro.
 
+import puppeteer from 'puppeteer';
 import { createServer } from 'http';
 import { createReadStream, existsSync, writeFileSync } from 'fs';
 import { extname, join } from 'path';
@@ -18,7 +19,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const distDir = join(__dirname, '..', 'dist');
-const PORT = 4173; // puerto temporal, no interfiere con "vite preview" (4174+ por defecto)
+const PORT = 4173;
 
 const MIME = {
   '.html': 'text/html',
@@ -40,7 +41,6 @@ function startServer() {
   return new Promise((resolve) => {
     const server = createServer((req, res) => {
       let filePath = join(distDir, decodeURIComponent(req.url.split('?')[0]));
-      // SPA fallback: cualquier ruta sin archivo real devuelve index.html
       if (!existsSync(filePath) || filePath.endsWith('/')) {
         filePath = join(distDir, 'index.html');
       }
@@ -62,34 +62,10 @@ async function prerender() {
   const server = await startServer();
 
   console.log('🧠 Abriendo Chrome headless...');
-
-  let browser;
-  if (process.env.VERCEL) {
-    const chromium = (await import('@sparticuz/chromium')).default;
-    const puppeteerCore = (await import('puppeteer-core')).default;
-    const { dirname } = await import('path');
-
-    const executablePath = await chromium.executablePath();
-
-    // Fix conocido: el loader de Linux necesita saber explícitamente
-    // dónde están las librerías compartidas (libnss3.so y otras) que
-    // @sparticuz/chromium extrae junto al binario. Sin esto, Chromium
-    // no las encuentra aunque existan físicamente en esa carpeta.
-    process.env.LD_LIBRARY_PATH = dirname(executablePath);
-
-    browser = await puppeteerCore.launch({
-      args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox'],
-      defaultViewport: chromium.defaultViewport,
-      executablePath,
-      headless: chromium.headless,
-    });
-  } else {
-    const puppeteer = (await import('puppeteer')).default;
-    browser = await puppeteer.launch({
-      headless: 'new',
-      args: ['--no-sandbox', '--disable-setuid-sandbox'],
-    });
-  }
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
 
   try {
     const page = await browser.newPage();
@@ -110,8 +86,6 @@ async function prerender() {
     console.log('📄 Cargando la página...');
     await page.goto(`http://localhost:${PORT}/`, { waitUntil: 'networkidle0', timeout: 30000 });
 
-    // Esperamos un margen extra fijo para que termine cualquier render
-    // asíncrono de React (fetch a APIs propias, animaciones de entrada, etc.)
     console.log('⏳ Esperando a que termine de renderizar el contenido...');
     await new Promise((r) => setTimeout(r, 3000));
 
