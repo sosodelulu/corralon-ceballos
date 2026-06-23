@@ -11,9 +11,8 @@
 // Lo que cambia es que ahora el HTML crudo (lo que ve un bot sin JS,
 // como GPTBot o PerplexityBot) ya viene con todo el contenido adentro.
 
-import puppeteer from 'puppeteer';
 import { createServer } from 'http';
-import { createReadStream, existsSync, writeFileSync, readFileSync } from 'fs';
+import { createReadStream, existsSync, writeFileSync } from 'fs';
 import { extname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -63,10 +62,29 @@ async function prerender() {
   const server = await startServer();
 
   console.log('🧠 Abriendo Chrome headless...');
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
+
+  // En Vercel (entorno de build serverless) no hay un Chrome de sistema con
+  // todas sus librerías nativas instaladas, así que usamos @sparticuz/chromium
+  // (un Chromium precompilado para entornos serverless) junto a puppeteer-core.
+  // En tu máquina local (npm run build manual) seguimos usando el paquete
+  // "puppeteer" normal, que ya trae su propio Chrome de escritorio.
+  let browser;
+  if (process.env.VERCEL) {
+    const chromium = (await import('@sparticuz/chromium')).default;
+    const puppeteerCore = (await import('puppeteer-core')).default;
+    browser = await puppeteerCore.launch({
+      args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox'],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  } else {
+    const puppeteer = (await import('puppeteer')).default;
+    browser = await puppeteer.launch({
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+  }
 
   try {
     const page = await browser.newPage();
