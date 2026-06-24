@@ -15,6 +15,10 @@ function CardMateriales() {
           src="/images/corralon-ceballos-materiales-venta-rio-ceballos.webp"
           alt="Venta de materiales de construcción Río Ceballos Córdoba"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width="600"
+          height="208"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute top-4 left-4 p-2.5 rounded-xl bg-white/90 backdrop-blur-sm shadow-sm">
@@ -65,6 +69,10 @@ function CardMaquinaria() {
           src="/images/Retroexcavadora-CAT-416E-rio-ceballos-corralon-ceballos-alquiler.webp"
           alt="Retroexcavadora CAT 416E alquiler Río Ceballos Córdoba"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width="600"
+          height="208"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute top-4 left-4 p-2.5 rounded-xl bg-white/90 backdrop-blur-sm shadow-sm">
@@ -115,6 +123,10 @@ function CardObradores() {
           src="/images/obrador-alquiler-corralon-ceballos-rio-ceballos-container-obra.webp"
           alt="Alquiler de obradores contenedor obra Río Ceballos Córdoba"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 rounded"
+          width="600"
+          height="208"
+          loading="lazy"
+          decoding="async"
           onError={(e) => { e.currentTarget.style.display = 'none' }}
         />
         <div className="absolute top-4 left-4 p-2.5 rounded-xl bg-white/90 backdrop-blur-sm shadow-sm">
@@ -165,6 +177,10 @@ function CardGrua() {
           src="/images/grua-bolson-alquiler-corralon-ceballos-rio-ceballos.webp"
           alt="Camión grúa hidráulica y bolsón áridos Río Ceballos Córdoba"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width="600"
+          height="208"
+          loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute top-4 left-4 p-2.5 rounded-xl bg-white/90 backdrop-blur-sm shadow-sm">
