@@ -3,7 +3,7 @@ import { Menu, X, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const LOGO_URL = 'https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/2047d2231_image.png'
+const LOGO_URL = '/images/logo-nombre-corralon-ceballos.webp'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
