@@ -63,6 +63,10 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
           src={src}
           alt={alt}
           className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          width="400"
+          height="160"
+          loading="lazy"
+          decoding="async"
         />
         
         {/* Botón Hover de Escritorio (Oculto en móviles y táctiles por defecto) */}
