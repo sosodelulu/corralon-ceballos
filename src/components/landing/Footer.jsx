@@ -29,6 +29,7 @@ export default function Footer() {
               <a href="#catalogo" className="text-sm text-white/50 hover:text-accent transition-colors">Catálogo</a>
               <a href="#servicios" className="text-sm text-white/50 hover:text-accent transition-colors">Servicios</a>
               <a href="#resenas" className="text-sm text-white/50 hover:text-accent transition-colors">Reseñas</a>
+              <a href="#faq" className="text-sm text-white/50 hover:text-accent transition-colors">Preguntas Frecuentes</a>
               <a href="#contacto" className="text-sm text-white/50 hover:text-accent transition-colors">Contacto</a>
             </nav>
           </div>
