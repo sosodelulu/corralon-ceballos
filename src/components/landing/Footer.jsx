@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <img src="https://media.base44.com/images/public/6a13a0a6728a7c4bad01483f/2047d2231_image.png" alt="Corralón Ceballos" className="h-10 object-contain py-1" />
+              <img src="/images/logo-nombre-corralon-ceballos.webp" alt="Corralón Ceballos" className="h-10 object-contain py-1" />
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
               Una familia con más de 55 años de tradición en venta de productos para la construcción, abasteciendo obras en Río Ceballos y aledaños con materiales de calidad y servicio confiable.
