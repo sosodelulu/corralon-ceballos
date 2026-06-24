@@ -45,13 +45,13 @@ export default function Header() {
           </button>
 
           <nav className="hidden lg:flex items-center gap-1 pointer-events-auto">
-            {['inicio','servicios','catalogo','marcas','resenas','pagos','contacto'].map((id) => (
+            {['inicio','servicios','catalogo','marcas','resenas','pagos','faq','contacto'].map((id) => (
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
                 className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-primary transition-colors rounded-lg hover:bg-secondary/60 capitalize"
               >
-                {id === 'resenas' ? 'Reseñas' : id === 'pagos' ? 'Medios de Pago' : id.charAt(0).toUpperCase() + id.slice(1)}
+                {id === 'resenas' ? 'Reseñas' : id === 'pagos' ? 'Medios de Pago' : id === 'faq' ? 'Preguntas Frecuentes' : id.charAt(0).toUpperCase() + id.slice(1)}
               </button>
             ))}
           </nav>
@@ -90,6 +90,7 @@ export default function Header() {
               <button onClick={() => scrollToSection('marcas')} className="text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-secondary/60 rounded-lg transition-colors">Marcas</button>
               <button onClick={() => scrollToSection('resenas')} className="text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-secondary/60 rounded-lg transition-colors">Reseñas</button>
               <button onClick={() => scrollToSection('pagos')} className="text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-secondary/60 rounded-lg transition-colors">Medios de Pago</button>
+              <button onClick={() => scrollToSection('faq')} className="text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-secondary/60 rounded-lg transition-colors">Preguntas Frecuentes</button>
               <button onClick={() => scrollToSection('contacto')} className="text-left px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-secondary/60 rounded-lg transition-colors">Contacto</button>
               <Button
                 onClick={handleWhatsApp}
