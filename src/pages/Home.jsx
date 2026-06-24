@@ -7,10 +7,10 @@ import FeaturedProducts from '@/components/landing/FeaturedProducts'
 import BrandsSection from '@/components/landing/BrandsSection'
 import ReviewsSection from '@/components/landing/ReviewsSection'
 import PaymentMethods from '@/components/landing/PaymentMethods'
+import FAQSection from '@/components/landing/FAQSection'
 import ContactSection from '@/components/landing/ContactSection'
 import Footer from '@/components/landing/Footer'
 import WhatsAppButton from '@/components/landing/WhatsAppButton'
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-background font-inter">
@@ -23,6 +23,7 @@ export default function Home() {
       <BrandsSection />
       <ReviewsSection />
       <PaymentMethods />
+      <FAQSection />
       <ContactSection />
       <Footer />
       <WhatsAppButton />
