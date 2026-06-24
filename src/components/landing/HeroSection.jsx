@@ -13,6 +13,10 @@ export default function HeroSection() {
           src={HERO_BG}
           alt="Materiales de construcción Corralón Ceballos Río Ceballos"
           className="w-full h-full object-cover object-center sm:object-[right_center]"
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
