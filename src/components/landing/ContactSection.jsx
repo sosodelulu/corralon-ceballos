@@ -12,7 +12,7 @@ export default function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const text = `Hola Corralón Ceballos, ¿cómo están? Mi nombre es ${formData.name} y les escribo desde la web para pedirles presupuesto por la siguiente lista de materiales:\n${formData.message}\nDomicilio de entrega: ${formData.address}\n¡Muchas gracias!`
+    const text = `Hola Corralón Ceballos, ¿cómo están? Mi nombre es ${formData.name} y les escribo desde la web para pedirles presupuesto por la siguiente lista de materiales:\n${formData.message}\nTeléfono de contacto: ${formData.phone}\nDomicilio de entrega: ${formData.address}\n¡Muchas gracias!`
     window.open(`https://wa.me/5493543530984?text=${encodeURIComponent(text)}`, '_blank')
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 3000)
