@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.corralonceballos.com.ar/sitemap.xml
