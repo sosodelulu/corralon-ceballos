@@ -18,9 +18,8 @@ export default function HeroSection() {
           fetchpriority="high"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
+        {/* Overlay único: oscuro a la izquierda (donde está el texto) hacia transparente a la derecha */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 sm:via-black/20 to-transparent" />
       </div>
 
       {/* Decorative lines */}
@@ -30,106 +29,97 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
         <div className="max-w-2xl">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold tracking-wide uppercase mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              Río Ceballos, Córdoba · Más de 55 años de experiencia
-            </span>
-          </motion.div>
+          {/* Tarjeta unificada en mobile: un solo fondo para todo el bloque de texto.
+              En desktop (sm+) se vuelve transparente y sin padding, ya que el overlay
+              de la imagen alcanza para garantizar el contraste. */}
+          <div className="rounded-2xl bg-black/55 backdrop-blur-[2px] p-5 sm:p-0 sm:bg-transparent sm:backdrop-blur-none">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold tracking-wide uppercase mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                Río Ceballos, Córdoba · Más de 55 años de experiencia
+              </span>
+            </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }}>
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold tracking-tighter leading-[1.08] text-foreground drop-shadow-md">
-              <span className="text-primary block">Corralón Ceballos.</span>
-              Todo para tu obra
-              <br />
-              <span className="text-primary">en un solo lugar.</span>
-            </h1>
-          </motion.div>
+            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }}>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold tracking-tighter leading-[1.08] text-white sm:text-foreground sm:drop-shadow-md">
+                <span className="text-secondary sm:text-primary block">Corralón Ceballos.</span>
+                Todo para tu obra
+                <br />
+                <span className="text-secondary sm:text-primary">en un solo lugar.</span>
+              </h1>
+            </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-6 text-lg leading-relaxed max-w-lg drop-shadow-md"
-          >
-            <span className="sm:hidden inline-block" style={{ background: 'rgba(0,0,0,0.55)', borderRadius: '8px', padding: '8px 12px', color: '#ffffff' }}>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-6 text-lg leading-relaxed max-w-lg text-white/90 sm:text-muted-foreground sm:drop-shadow-md"
+            >
               Materiales de primera calidad, maquinaria para alquilar y la logística que tu obra en Sierras Chicas necesita.
               <br />
               Más de 55 años de respaldo, stock permanente y entregas seguras incluso en los terrenos más difíciles.
-            </span>
-            <span className="hidden sm:inline-block text-muted-foreground">
-              Materiales de primera calidad, maquinaria para alquilar y la logística que tu obra en Sierras Chicas necesita.
-              <br />
-              Más de 55 años de respaldo, stock permanente y entregas seguras incluso en los terrenos más difíciles.
-            </span>
-          </motion.p>
+            </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.38 }}
-            className="mt-3 text-sm text-muted-foreground/80 max-w-lg drop-shadow-md"
-          >
-            <span className="sm:hidden inline-block" style={{ background: 'rgba(0,0,0,0.55)', borderRadius: '8px', padding: '8px 12px', color: '#ffffff' }}>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.38 }}
+              className="mt-3 text-sm text-white/75 sm:text-muted-foreground/80 max-w-lg sm:drop-shadow-md"
+            >
               Entregas en Río Ceballos, Unquillo y Salsipuedes.
               <br />
               También llegamos a Agua de Oro y Mendiolaza.
-            </span>
-            <span className="hidden sm:inline-block" style={{ background: 'rgba(0,0,0,0.55)', borderRadius: '8px', padding: '8px 12px', color: '#ffffff' }}>
-              Entregas en Río Ceballos, Unquillo y Salsipuedes.
-              <br />
-              También llegamos a Agua de Oro y Mendiolaza.
-            </span>
-          </motion.p>
+            </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
-            className="mt-8 flex flex-wrap gap-4"
-          >
-            <Button
-              onClick={() => {
-                const el = document.getElementById('catalogo')
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-              }}
-              className="h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full text-base shadow-xl shadow-primary/25 transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5"
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.45 }}
+              className="mt-8 flex flex-wrap gap-4"
             >
-              Ver Catálogo
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-12 px-8 rounded-full text-base font-semibold"
-              style={{ background: '#25D366', color: '#ffffff', border: 'none' }}
+              <Button
+                onClick={() => {
+                  const el = document.getElementById('catalogo')
+                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }}
+                className="h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full text-base shadow-xl shadow-primary/25 transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5"
+              >
+                Ver Catálogo
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 px-8 rounded-full text-base font-semibold"
+                style={{ background: '#25D366', color: '#ffffff', border: 'none' }}
+              >
+                <a href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar" target="_blank" rel="noopener noreferrer">Cotizá tu lista por WhatsApp</a>
+              </Button>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="mt-14 flex gap-10 sm:gap-14"
             >
-              <a href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar" target="_blank" rel="noopener noreferrer">Cotizá tu lista por WhatsApp</a>
-            </Button>
-          </motion.div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-secondary sm:text-primary sm:drop-shadow-md">55+</p>
+                <p className="text-xs text-white/70 sm:text-muted-foreground mt-0.5">Años de trayectoria en el rubro</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-secondary sm:text-primary sm:drop-shadow-md">Miles</p>
+                <p className="text-xs text-white/70 sm:text-muted-foreground mt-0.5">de obras abastecidas en la región</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-secondary sm:text-primary sm:drop-shadow-md">3</p>
+                <p className="text-xs text-white/70 sm:text-muted-foreground mt-0.5">Obradores disponibles</p>
+              </div>
+            </motion.div>
+          </div>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-14 flex gap-10 sm:gap-14"
-          >
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-primary drop-shadow-md">55+</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Años de trayectoria en el rubro</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-primary drop-shadow-md">Miles</p>
-              <p className="text-xs text-muted-foreground mt-0.5">de obras abastecidas en la región</p>
-            </div>
-            <div>
-              <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-primary drop-shadow-md">3</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Obradores disponibles</p>
-            </div>
-          </motion.div>
-
-          {/* Service chips */}
+          {/* Service chips (fuera de la tarjeta: ya tienen su propio fondo opaco, no necesitan contraste extra) */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
