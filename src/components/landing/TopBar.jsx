@@ -27,7 +27,7 @@ export default function TopBar() {
         {/* Sección Izquierda: Teléfonos */}
         <div className="flex items-center gap-3">
           <a 
-            href="tel:+5403543451079" 
+            href="tel:+543543451079" 
             className="flex items-center gap-1.5 hover:text-green-300 transition-colors py-2"
           >
             <Phone className="w-3 h-3 shrink-0" />
