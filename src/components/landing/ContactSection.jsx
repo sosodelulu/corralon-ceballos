@@ -125,7 +125,7 @@ export default function ContactSection() {
                 <div>
                   <p className="text-xs font-semibold text-foreground">Teléfono fijo</p>
                   <p className="text-xs text-muted-foreground mt-0.5">
-                    <a href="tel:03543451079" style={{ color: 'inherit', textDecoration: 'none' }}>03543 451079</a>
+                    <a href="tel:+543543451079" style={{ color: 'inherit', textDecoration: 'none' }}>03543 451079</a>
                   </p>
                 </div>
               </div>
@@ -136,7 +136,7 @@ export default function ContactSection() {
                 <div>
                   <p className="text-xs font-semibold text-foreground">WhatsApp / Celular</p>
                   <p className="text-xs text-muted-foreground mt-0.5">
-                    <a href="tel:0354315530984" style={{ color: 'inherit', textDecoration: 'none' }}>03543 15-530984</a>
+                    <a href="tel:+5493543530984" style={{ color: 'inherit', textDecoration: 'none' }}>03543 15-530984</a>
                   </p>
                 </div>
               </div>
