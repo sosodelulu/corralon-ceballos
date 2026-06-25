@@ -45,7 +45,7 @@ export default function Footer() {
               <div className="flex items-center gap-2.5">
                 <Phone className="w-3.5 h-3.5 text-accent shrink-0" />
                 <span className="text-sm text-white/50">
-                  Fijo: <a href="tel:03543451079" style={{ color: 'inherit', textDecoration: 'none' }}>03543 451079</a>
+                  Fijo: <a href="tel:+543543451079" style={{ color: 'inherit', textDecoration: 'none' }}>03543 451079</a>
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
