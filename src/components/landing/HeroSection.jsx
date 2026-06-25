@@ -18,8 +18,9 @@ export default function HeroSection() {
           fetchpriority="high"
           loading="eager"
         />
-        {/* Overlay único: oscuro a la izquierda (donde está el texto) hacia transparente a la derecha */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 sm:via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
       </div>
 
       {/* Decorative lines */}
@@ -29,10 +30,8 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
         <div className="max-w-2xl">
-          {/* Tarjeta unificada en mobile: un solo fondo para todo el bloque de texto.
-              En desktop (sm+) se vuelve transparente y sin padding, ya que el overlay
-              de la imagen alcanza para garantizar el contraste. */}
-          <div className="rounded-2xl bg-black/55 backdrop-blur-[2px] p-5 sm:p-0 sm:bg-transparent sm:backdrop-blur-none">
+          {/* Dark card wrapping all text content — now persistent across all breakpoints */}
+          <div className="bg-black/55 backdrop-blur-sm rounded-2xl p-6 sm:bg-black/45 sm:backdrop-blur-sm sm:rounded-3xl sm:p-8 lg:p-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold tracking-wide uppercase mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -41,11 +40,11 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }}>
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold tracking-tighter leading-[1.08] text-white sm:text-foreground sm:drop-shadow-md">
-                <span className="text-secondary sm:text-primary block">Corralón Ceballos.</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold tracking-tighter leading-[1.08] text-white drop-shadow-md">
+                <span className="text-secondary block">Corralón Ceballos.</span>
                 Todo para tu obra
                 <br />
-                <span className="text-secondary sm:text-primary">en un solo lugar.</span>
+                <span className="text-secondary">en un solo lugar.</span>
               </h1>
             </motion.div>
 
@@ -53,7 +52,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="mt-6 text-lg leading-relaxed max-w-lg text-white/90 sm:text-muted-foreground sm:drop-shadow-md"
+              className="mt-6 text-lg leading-relaxed max-w-lg text-white/90 drop-shadow-md"
             >
               Materiales de primera calidad, maquinaria para alquilar y la logística que tu obra en Sierras Chicas necesita.
               <br />
@@ -64,7 +63,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.38 }}
-              className="mt-3 text-sm text-white/75 sm:text-muted-foreground/80 max-w-lg sm:drop-shadow-md"
+              className="mt-3 text-sm text-white/75 max-w-lg drop-shadow-md"
             >
               Entregas en Río Ceballos, Unquillo y Salsipuedes.
               <br />
@@ -105,32 +104,32 @@ export default function HeroSection() {
               className="mt-14 flex gap-10 sm:gap-14"
             >
               <div>
-                <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-secondary sm:text-primary sm:drop-shadow-md">55+</p>
-                <p className="text-xs text-white/70 sm:text-muted-foreground mt-0.5">Años de trayectoria en el rubro</p>
+                <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-secondary drop-shadow-md">55+</p>
+                <p className="text-xs text-white/70 mt-0.5">Años de trayectoria en el rubro</p>
               </div>
               <div>
-                <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-secondary sm:text-primary sm:drop-shadow-md">Miles</p>
-                <p className="text-xs text-white/70 sm:text-muted-foreground mt-0.5">de obras abastecidas en la región</p>
+                <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-secondary drop-shadow-md">Miles</p>
+                <p className="text-xs text-white/70 mt-0.5">de obras abastecidas en la región</p>
               </div>
               <div>
-                <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-secondary sm:text-primary sm:drop-shadow-md">3</p>
-                <p className="text-xs text-white/70 sm:text-muted-foreground mt-0.5">Obradores disponibles</p>
+                <p className="text-2xl sm:text-3xl font-extrabold tracking-tighter text-secondary drop-shadow-md">3</p>
+                <p className="text-xs text-white/70 mt-0.5">Obradores disponibles</p>
               </div>
             </motion.div>
-          </div>
 
-          {/* Service chips (fuera de la tarjeta: ya tienen su propio fondo opaco, no necesitan contraste extra) */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.85 }}
-            className="mt-6 flex flex-wrap gap-2"
-          >
-            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">🚛 Entrega en zona</span>
-            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">🏗️ Retropala CAT disponible</span>
-            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">📦 3 Obradores disponibles</span>
-            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">💳 Efectivo, débito, crédito y transferencia</span>
-          </motion.div>
+            {/* Service chips */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.85 }}
+              className="mt-6 flex flex-wrap gap-2"
+            >
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">🚛 Entrega en zona</span>
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">🏗️ Retropala CAT disponible</span>
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">📦 3 Obradores disponibles</span>
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">💳 Efectivo, débito, crédito y transferencia</span>
+            </motion.div>
+          </div>
         </div>
       </div>
 
@@ -140,7 +139,10 @@ export default function HeroSection() {
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
-        <a href="#servicios" className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
+        <a
+          href="#servicios"
+          className="flex flex-col items-center gap-1 bg-black/55 backdrop-blur-sm rounded-full px-4 py-2 text-white hover:text-secondary transition-colors"
+        >
           <span className="text-[10px] font-medium uppercase tracking-widest">Explorar</span>
           <ChevronDown className="w-5 h-5" />
         </a>
