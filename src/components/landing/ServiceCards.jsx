@@ -29,7 +29,7 @@ function CardMateriales() {
         </div>
       </div>
       <div className="p-6 flex flex-col flex-1">
-        <h2 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Venta de Materiales</h2>
+        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Venta de Materiales</h3>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
           Productos de las marcas líderes del mercado, con stock permanente y reparto en la zona.
         </p>
@@ -86,7 +86,7 @@ function CardMaquinaria() {
         </div>
       </div>
       <div className="p-6 flex flex-col flex-1">
-        <h2 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Maquinaria</h2>
+        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Maquinaria</h3>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
           Retroexcavadora CAT 416E para movimientos de tierra y excavaciones. Servicio exclusivo en Río Ceballos.
         </p>
@@ -137,7 +137,7 @@ function CardObradores() {
         </div>
       </div>
       <div className="p-6 flex flex-col flex-1">
-        <h2 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Obradores</h2>
+        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Obradores</h3>
         <p className="mt-1 text-xs font-semibold text-primary">Protegé tus herramientas y materiales en obra.</p>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
           Contamos con 3 obradores para resguardo seguro de herramientas y materiales durante tu construcción.
@@ -191,7 +191,7 @@ function CardGrua() {
         </div>
       </div>
       <div className="p-6 flex flex-col flex-1">
-        <h2 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Servicio de Grúa y Bolsón</h2>
+        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Servicio de Grúa y Bolsón</h3>
         <p className="mt-2 text-xs text-muted-foreground leading-relaxed italic">
           ¿Sabías que? Nuestra grúa hidráulica formó parte del montaje de la Dama Blanca, la pieza de ajedrez más alta del mundo, inaugurada en Río Ceballos en 2025.<br />La misma precisión y cuidado que pusimos ahí, los ponemos en tu obra.
         </p>
