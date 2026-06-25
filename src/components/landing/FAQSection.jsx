@@ -3,6 +3,11 @@ import { HelpCircle } from 'lucide-react'
 
 const faqs = [
   {
+    question: '¿Tienen stock permanente de cemento y materiales básicos?',
+    answer:
+      'Sí, mantenemos stock permanente de cemento Holcim, cal, hierros y áridos para que tu obra no se detenga.',
+  },
+  {
     question: '¿Hacen envíos a Río Ceballos, Unquillo y Salsipuedes?',
     answer:
       'Sí, hacemos entregas regulares en Río Ceballos, Unquillo y Salsipuedes — son nuestra zona principal de reparto.',
@@ -18,14 +23,19 @@ const faqs = [
       'El costo del flete depende de la zona, el volumen del pedido y la accesibilidad del terreno. Escribinos por WhatsApp con tu dirección y lista de materiales y te confirmamos el costo al toque.',
   },
   {
+    question: '¿Cómo organizan las entregas cuando hay varios pedidos el mismo día?',
+    answer:
+      'Conocemos el ritmo de cada obra y sabemos que los tiempos de la construcción son dinámicos. Organizamos las entregas de forma estratégica para optimizar el reparto. Si tu obra está en un momento crítico —como un colado de losa— avisanos con tiempo por WhatsApp para que podamos coordinar y darle prioridad en la hoja de ruta del día. Siempre que puedas avisarnos con anticipación, nos ayuda a coordinar mejor para que el material llegue cuando realmente lo necesitás.',
+  },
+  {
     question: '¿Qué medios de pago aceptan?',
     answer:
       'Aceptamos efectivo, transferencia bancaria, tarjetas de débito y tarjetas de crédito (Visa y Mastercard).',
   },
   {
-    question: '¿Tienen stock permanente de cemento y materiales básicos?',
+    question: '¿Hacen factura?',
     answer:
-      'Sí, mantenemos stock permanente de cemento Holcim, cal, hierros y áridos para que tu obra no se detenga.',
+      'Sí, emitimos factura A y B según lo que necesite tu obra. Solo pedímosla al hacer tu pedido por WhatsApp y te la preparamos sin problema.',
   },
   {
     question: '¿Puedo retirar el material por el local?',
