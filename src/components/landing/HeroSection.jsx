@@ -50,11 +50,18 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg drop-shadow-md"
+            className="mt-6 text-lg leading-relaxed max-w-lg drop-shadow-md"
           >
-            Materiales de primera calidad, maquinaria para alquilar y la logística que tu obra en Sierras Chicas necesita.
-            <br />
-            Más de 55 años de respaldo, stock permanente y entregas seguras incluso en los terrenos más difíciles.
+            <span className="sm:hidden inline-block" style={{ background: 'rgba(0,0,0,0.55)', borderRadius: '8px', padding: '8px 12px', color: '#ffffff' }}>
+              Materiales de primera calidad, maquinaria para alquilar y la logística que tu obra en Sierras Chicas necesita.
+              <br />
+              Más de 55 años de respaldo, stock permanente y entregas seguras incluso en los terrenos más difíciles.
+            </span>
+            <span className="hidden sm:inline-block text-muted-foreground">
+              Materiales de primera calidad, maquinaria para alquilar y la logística que tu obra en Sierras Chicas necesita.
+              <br />
+              Más de 55 años de respaldo, stock permanente y entregas seguras incluso en los terrenos más difíciles.
+            </span>
           </motion.p>
 
           <motion.p
