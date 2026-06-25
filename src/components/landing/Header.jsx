@@ -49,7 +49,11 @@ export default function Header() {
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
-                className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-primary transition-colors rounded-lg hover:bg-secondary/60 capitalize"
+                className={`px-4 py-2 text-sm font-medium rounded-lg capitalize transition-colors ${
+                  scrolled
+                    ? 'text-foreground/70 hover:text-primary hover:bg-secondary/60'
+                    : 'text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.45)] hover:bg-white/15'
+                }`}
               >
                 {id === 'resenas' ? 'Reseñas' : id === 'pagos' ? 'Medios de Pago' : id === 'faq' ? 'Preguntas Frecuentes' : id.charAt(0).toUpperCase() + id.slice(1)}
               </button>
@@ -66,7 +70,11 @@ export default function Header() {
             </Button>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
+              className={`lg:hidden p-2 rounded-lg transition-colors ${
+                scrolled
+                  ? 'text-foreground hover:bg-secondary'
+                  : 'text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.45)] hover:bg-white/15'
+              }`}
               aria-label="Menú"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
