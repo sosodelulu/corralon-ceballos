@@ -104,6 +104,7 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
 
 const cementoItems = [
   { id: 'img-cemento-holcim-fuerte', src: '/images/holcim-cemento-fuerte-ecoplanet-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Fuerte Holcim CPF 40 alta resistencia bolsa 25 kg Río Ceballos', title: 'Cemento Fuerte Holcim', desc: 'CPF 40 · Bolsa x 25 kg', waText: 'Cemento Fuerte Holcim' },
+  { id: 'img-cemento-cpc30', src: '/images/holcim-cemento-cpc30-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Holcim CPC 30 bolsa 25 kg Río Ceballos', title: 'Cemento Holcim CPC 30', desc: 'CPC 30 · Bolsa x 25 kg', waText: 'Cemento Holcim CPC 30' },
   { id: 'img-cemento-maestro', src: '/images/holcim-maestro-cemento-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Maestro Holcim albañilería bolsa 25 kg', title: 'Cemento de albañilería Maestro Holcim', desc: 'Bolsa x 25 kg', waText: 'Cemento Maestro Holcim' },
   { id: 'img-cemento-tector', src: '/images/holcim-tector-rio-ceballos-corralon-ceballos.webp', alt: 'Pegamento Tector Holcim impermeable bolsa 25 kg', title: 'Pegamento Tector Holcim', desc: 'Bolsa x 25 kg · Impermeable', waText: 'Pegamento Tector Holcim' },
   { id: 'img-cemento-cal-fgh', src: '/images/fgh-cal-rio-ceballos-corralon-ceballos-bolsa.webp', alt: 'Cal FGH bolsa 25 kg Río Ceballos', title: 'Cal FGH', desc: 'Bolsa x 25 kg', waText: 'Cal FGH' },
@@ -174,42 +175,42 @@ export default function FeaturedProducts() {
         <div className="mb-14" />
 
         <Accordion title="Cemento y Cal" defaultOpen={true}>
-          <IntroText>Trabajamos con productos Holcim: Cemento Fuerte CPF 40, Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería.</IntroText>
+          <IntroText>Trabajamos con productos Holcim en Río Ceballos: Cemento Fuerte CPF 40, Cemento Holcim CPC 30 (recién incorporado a nuestro stock), Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería.</IntroText>
           <StockBadge />
           {cementoItems.map(p => <ProductCard key={p.id} {...p} />)}
           <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Cemento%20y%20Cal" label="💬 Cotizar cemento y cal por WhatsApp" />
         </Accordion>
 
         <Accordion title="Áridos">
-          <IntroText>Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado y piedra triturado blanco. ¿Necesitás a granel por m³ o bolsón? Coordinamos la descarga según la accesibilidad de tu terreno.</IntroText>
+          <IntroText>Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado y piedra triturado blanco para tu obra en Río Ceballos y zona. ¿Necesitás a granel por m³ o bolsón? Coordinamos la descarga según la accesibilidad de tu terreno.</IntroText>
           <StockBadge />
           {aridosItems.map(p => <ProductCard key={p.id} {...p} />)}
           <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20%C3%81ridos" label="💬 Pedir presupuesto de áridos por WhatsApp" />
         </Accordion>
 
         <Accordion title="Ladrillos y Bloques">
-          <IntroText>Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón. En bloques, trabajamos con bloque cerámico y bloque de hormigón.</IntroText>
+          <IntroText>Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón disponibles en Río Ceballos. En bloques, trabajamos con bloque cerámico y bloque de hormigón.</IntroText>
           <StockBadge />
           {ladrillsItems.map(p => <ProductCard key={p.id} {...p} />)}
           <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques" label="💬 Contános cuántos necesitás y te cotizamos" />
         </Accordion>
 
         <Accordion title="Hierros y Estructuras">
-          <IntroText>Aceros bajo normas IRAM: hierro en varilla, malla electrosoldada, caños estructurales, perfilería, columnas armadas, alambres y estribos armados.</IntroText>
+          <IntroText>Aceros bajo normas IRAM para obras en Río Ceballos: hierro en varilla, malla electrosoldada, caños estructurales, perfilería, columnas armadas, alambres y estribos armados.</IntroText>
           <StockBadge />
           {hierrosItems.map(p => <ProductCard key={p.id} {...p} />)}
           <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Hierros%20y%20Estructuras" label="💬 Enviar lista de hierros para presupuesto" />
         </Accordion>
 
         <Accordion title="Instalaciones">
-          <IntroText>Distribuidor de productos Talpelit: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca.</IntroText>
+          <IntroText>Distribuidor de productos Talpelit en Río Ceballos: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca.</IntroText>
           <StockBadge />
           {instalacionesItems.map(p => <ProductCard key={p.id} {...p} />)}
           <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Instalaciones" label="💬 Consultar medidas de tanques y caños por WhatsApp" />
         </Accordion>
 
         <Accordion title="Techos">
-          <IntroText>Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado. Consultanos por WhatsApp para disponibilidad de medidas.</IntroText>
+          <IntroText>Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado en Río Ceballos y zona. Consultanos por WhatsApp para disponibilidad de medidas.</IntroText>
           <StockBadge />
           {techosItems.map(p => <ProductCard key={p.id} {...p} />)}
           <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos" label="💬 Consultanos medidas y te confirmamos stock" />
