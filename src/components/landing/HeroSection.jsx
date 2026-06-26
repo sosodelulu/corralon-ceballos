@@ -47,10 +47,11 @@ export default function HeroSection() {
 
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }}>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold tracking-tighter leading-[1.08] text-white drop-shadow-md">
-                <span className={`text-[#4ADE80] block ${heroHeadingStrokeClass}`}>Corralón Ceballos.</span>
+                <span className={`text-primary bg-secondary inline-block px-3 py-1 rounded-xl ${heroHeadingStrokeClass}`}>Corralón Ceballos.</span>
+                <br />
                 Todo para tu obra
                 <br />
-                <span className={`text-[#4ADE80] ${heroHeadingStrokeClass}`}>en un solo lugar.</span>
+                <span className={`text-primary bg-secondary inline-block px-3 py-1 rounded-xl ${heroHeadingStrokeClass}`}>en un solo lugar.</span>
               </h1>
             </motion.div>
 
