@@ -4,6 +4,12 @@ import { Button } from '@/components/ui/button'
 
 const HERO_BG = '/images/bloques-ceramicos-camion-flete-rio-ceballos-corralon-ceballos.webp'
 
+// Contorno claro tipo "stroke" para separar el verde (text-primary) del fondo oscuro
+// de la tarjeta. Solo se aplica desde sm: en adelante (mobile queda intacto).
+// No cambia el color del texto, solo agrega sombras claras alrededor de cada letra.
+const heroHeadingStrokeClass =
+  'sm:[text-shadow:0_0_1px_rgba(255,255,255,0.9),0_0_2px_rgba(255,255,255,0.7),1px_0_0_rgba(255,255,255,0.6),-1px_0_0_rgba(255,255,255,0.6),0_1px_0_rgba(255,255,255,0.6),0_-1px_0_rgba(255,255,255,0.6),1px_1px_2px_rgba(255,255,255,0.5),-1px_-1px_2px_rgba(255,255,255,0.5)]'
+
 export default function HeroSection() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden pt-10">
@@ -29,7 +35,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
-        <div className="max-w-2xl sm:max-w-4xl lg:max-w-5xl">
+        <div className="max-w-2xl sm:max-w-5xl lg:max-w-6xl">
           {/* Dark card wrapping all text content — now persistent across all breakpoints */}
           <div className="bg-black/55 backdrop-blur-sm rounded-2xl p-6 sm:bg-black/45 sm:backdrop-blur-sm sm:rounded-3xl sm:p-8 lg:p-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -41,10 +47,10 @@ export default function HeroSection() {
 
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }}>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-extrabold tracking-tighter leading-[1.08] text-white drop-shadow-md">
-                <span className="text-primary block">Corralón Ceballos.</span>
+                <span className={`text-primary block ${heroHeadingStrokeClass}`}>Corralón Ceballos.</span>
                 Todo para tu obra
                 <br />
-                <span className="text-primary">en un solo lugar.</span>
+                <span className={`text-primary ${heroHeadingStrokeClass}`}>en un solo lugar.</span>
               </h1>
             </motion.div>
 
@@ -52,7 +58,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="mt-6 text-lg sm:text-xl leading-relaxed max-w-lg sm:max-w-2xl lg:max-w-3xl text-white/90 drop-shadow-md"
+              className="mt-6 text-lg sm:text-xl leading-relaxed max-w-lg sm:max-w-none text-white/90 drop-shadow-md"
             >
               Materiales de primera calidad, maquinaria para alquilar y la logística que tu obra en Sierras Chicas necesita.
               <br />
