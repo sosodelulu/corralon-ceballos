@@ -28,7 +28,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl sm:max-w-5xl lg:max-w-6xl">
           {/* Tarjeta unificada en mobile: un solo fondo para todo el bloque de texto.
               En desktop (sm+) se vuelve transparente y sin padding, ya que el overlay
               de la imagen alcanza para garantizar el contraste. */}
@@ -53,7 +53,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="mt-6 text-lg leading-relaxed max-w-lg text-white/90 sm:text-muted-foreground sm:drop-shadow-md"
+              className="mt-6 text-lg sm:text-xl leading-relaxed max-w-lg sm:max-w-none text-white/90 sm:text-muted-foreground sm:drop-shadow-md"
             >
               Materiales de primera calidad, maquinaria para alquilar y la logística que tu obra en Sierras Chicas necesita.
               <br />
@@ -64,7 +64,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.38 }}
-              className="mt-3 text-sm text-white/75 sm:text-muted-foreground/80 max-w-lg sm:drop-shadow-md"
+              className="mt-3 text-sm sm:text-base text-white/75 sm:text-muted-foreground/80 max-w-lg sm:max-w-2xl lg:max-w-3xl sm:drop-shadow-md"
             >
               Entregas en Río Ceballos, Unquillo y Salsipuedes.
               <br />
