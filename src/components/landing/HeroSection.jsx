@@ -6,7 +6,7 @@ const HERO_BG = '/images/bloques-ceramicos-camion-flete-rio-ceballos-corralon-ce
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative min-h-[90vh] sm:min-h-[85vh] flex items-center overflow-hidden pt-10 pb-10">
+    <section id="inicio" className="relative min-h-[600px] flex items-center overflow-hidden pt-10 pb-6">
       {/* Background */}
       <div className="absolute inset-0">
         <img
