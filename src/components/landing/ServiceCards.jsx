@@ -218,7 +218,7 @@ function CardGrua() {
 
 export default function ServiceCards() {
   return (
-    <section id="servicios" className="py-24 bg-background relative">
+    <section id="servicios" className="pt-24 pb-8 bg-background relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-5xl mx-auto mb-16">
