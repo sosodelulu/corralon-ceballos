@@ -221,12 +221,12 @@ export default function ServiceCards() {
     <section id="servicios" className="py-24 bg-background relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">Nuestros Servicios</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
+          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tighter text-foreground">
             Soluciones integrales para que <span className="text-primary">tu obra no se detenga</span>
           </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             Hace más de 55 años acompañamos cada obra en Río Ceballos, Salsipuedes, Unquillo, Agua de Oro y Mendiolaza, con entregas programadas, equipos listos para el suelo serrano y obradores seguros para tus materiales.
           </p>
         </div>
