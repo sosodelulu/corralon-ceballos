@@ -168,8 +168,8 @@ export default function FeaturedProducts() {
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
             Catálogo de <span className="text-primary">Materiales</span>
           </h2>
-          <p className="mt-3 text-sm text-muted-foreground max-w-3xl mx-auto">Todo lo que necesitás para tu obra, de las marcas en las que más confiamos: Holcim, Cal Andina, FGH, Block X y muchas más.</p>
-          <p className="mt-2 text-sm font-semibold text-primary max-w-3xl mx-auto">Entregas en Río Ceballos, Unquillo y Salsipuedes. Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</p>
+          <p className="mt-3 text-sm text-muted-foreground max-w-5xl mx-auto">Todo lo que necesitás para tu obra, de las marcas en las que más confiamos: Holcim, Cal Andina, FGH, Block X y muchas más.</p>
+          <p className="mt-2 text-sm font-semibold text-primary max-w-5xl mx-auto">Entregas en Río Ceballos, Unquillo y Salsipuedes. Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</p>
         </div>
 
         <Accordion title="Cemento y Cal" defaultOpen={true}>
