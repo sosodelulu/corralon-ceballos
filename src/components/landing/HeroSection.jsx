@@ -6,7 +6,7 @@ const HERO_BG = '/images/bloques-ceramicos-camion-flete-rio-ceballos-corralon-ce
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden pt-10">
+    <section id="inicio" className="relative min-h-[90vh] sm:min-h-[85vh] flex items-center overflow-hidden pt-10 pb-10">
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -25,7 +25,7 @@ export default function HeroSection() {
       {/* Decorative lines - ELIMINADAS (Líneas decorativas en T horizontal quitadas) */}
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 w-full">
         <div className="max-w-2xl sm:max-w-5xl lg:max-w-6xl">
           {/* Tarjeta gris eliminada en mobile (removido bg-black/55 y backdrop-blur) */}
           <div className="p-0 sm:p-0 bg-transparent">
@@ -138,7 +138,7 @@ export default function HeroSection() {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-8 left-0 right-0 mx-auto w-fit z-10"
+        className="absolute bottom-6 left-0 right-0 mx-auto w-fit z-10"
       >
         <a href="#servicios" className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
           <span className="text-[10px] font-medium uppercase tracking-widest">Explorar</span>
