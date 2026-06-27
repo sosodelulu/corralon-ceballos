@@ -39,7 +39,7 @@ export default function HeroSection() {
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15 }}>
               <h1 className="font-extrabold tracking-tighter text-foreground sm:text-foreground sm:drop-shadow-md">
                 <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] leading-[1.08] text-primary sm:text-primary">Corralón Ceballos.</span>
-                <span className="block mt-1 text-2xl sm:text-3xl lg:text-[2rem] xl:text-[2.25rem] leading-[1.15] max-w-xl">
+                <span className="block mt-1 text-2xl sm:text-3xl lg:text-[2rem] xl:text-[2.25rem] leading-[1.15] max-w-2xl">
                   Todo para tu obra{' '}
                   <span className="text-primary sm:text-primary">en un solo lugar.</span>
                 </span>
