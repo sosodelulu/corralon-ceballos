@@ -10,7 +10,7 @@ function CardMateriales() {
       transition={{ duration: 0.6, delay: 0 }}
       className="group relative bg-card rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
     >
-      <div className="relative min-h-[280px] overflow-hidden">
+      <div className="relative flex-1 min-h-[280px] overflow-hidden">
         <img
           src="/images/corralon-ceballos-materiales-venta-rio-ceballos.webp"
           alt="Venta de materiales de construcción Río Ceballos Córdoba"
@@ -63,7 +63,7 @@ function CardMaquinaria() {
       transition={{ duration: 0.6, delay: 0.1 }}
       className="group relative bg-card rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
     >
-      <div className="relative min-h-[280px] overflow-hidden">
+      <div className="relative flex-1 min-h-[280px] overflow-hidden">
         <img
           src="/images/Retroexcavadora-CAT-416E-rio-ceballos-corralon-ceballos-alquiler.webp"
           alt="Retroexcavadora CAT 416E alquiler Río Ceballos Córdoba"
@@ -114,7 +114,7 @@ function CardObradores() {
       transition={{ duration: 0.6, delay: 0.2 }}
       className="group relative bg-card rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
     >
-      <div className="relative min-h-[280px] overflow-hidden">
+      <div className="relative flex-1 min-h-[280px] overflow-hidden">
         <img
           src="/images/obrador-alquiler-corralon-ceballos-rio-ceballos-container-obra.webp"
           alt="Alquiler de obradores contenedor obra Río Ceballos Córdoba"
@@ -168,7 +168,7 @@ function CardGrua() {
       transition={{ duration: 0.6, delay: 0.3 }}
       className="group relative bg-card rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
     >
-      <div className="relative min-h-[280px] overflow-hidden">
+      <div className="relative flex-1 min-h-[280px] overflow-hidden">
         <img
           src="/images/grua-bolson-alquiler-corralon-ceballos-rio-ceballos.webp"
           alt="Camión grúa hidráulica y bolsón áridos Río Ceballos Córdoba"
