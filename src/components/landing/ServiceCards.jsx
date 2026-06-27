@@ -10,7 +10,7 @@ function CardMateriales() {
       transition={{ duration: 0.6, delay: 0 }}
       className="group relative bg-card rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
     >
-      <div className="relative h-44 overflow-hidden">
+      <div className="relative min-h-[280px] overflow-hidden">
         <img
           src="/images/corralon-ceballos-materiales-venta-rio-ceballos.webp"
           alt="Venta de materiales de construcción Río Ceballos Córdoba"
@@ -24,16 +24,19 @@ function CardMateriales() {
         <div className="absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold tracking-wide shadow">
           <MapPin className="w-2.5 h-2.5" />Envío local
         </div>
-      </div>
-      <div className="relative -mt-6 mx-3 bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg">
-        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Venta de Materiales</h3>
-        <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Productos Holcim: Cemento Fuerte, Maestro y Tector</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Cales FGH y Andina · Estuco Abacor</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Bloques cerámicos y hormigón</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Premoldeados, hierros, áridos y más</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Reparto en Río Ceballos, Unquillo y Salsipuedes.<br />¿Tu obra está en Agua de Oro o Mendiolaza? Consultanos, también te ayudamos con envíos de gran volumen.</li>
-        </ul>
+        <div className="absolute left-3 right-3 bottom-3 top-16 bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg overflow-y-auto">
+          <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Venta de Materiales</h3>
+          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            Productos de las marcas líderes del mercado, con stock permanente.
+          </p>
+          <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Productos Holcim: Cemento Fuerte, Maestro y Tector</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Cales FGH y Andina · Estuco Abacor</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Bloques cerámicos y hormigón</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Premoldeados, hierros, áridos y más</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Reparto en Río Ceballos, Unquillo y Salsipuedes.<br />¿Tu obra está en Agua de Oro o Mendiolaza? Consultanos, también te ayudamos con envíos de gran volumen.</li>
+          </ul>
+        </div>
       </div>
       <div className="p-6 bg-card mt-auto">
         <a
@@ -58,7 +61,7 @@ function CardMaquinaria() {
       transition={{ duration: 0.6, delay: 0.1 }}
       className="group relative bg-card rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
     >
-      <div className="relative h-44 overflow-hidden">
+      <div className="relative min-h-[280px] overflow-hidden">
         <img
           src="/images/Retroexcavadora-CAT-416E-rio-ceballos-corralon-ceballos-alquiler.webp"
           alt="Retroexcavadora CAT 416E alquiler Río Ceballos Córdoba"
@@ -75,16 +78,16 @@ function CardMaquinaria() {
         <div className="absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold tracking-wide shadow">
           <MapPin className="w-2.5 h-2.5" />Solo Río Ceballos
         </div>
-      </div>
-      <div className="relative -mt-6 mx-3 bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg">
-        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Maquinaria</h3>
-        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-          Retroexcavadora CAT 416E para movimientos de tierra y excavaciones. Servicio exclusivo en Río Ceballos.
-        </p>
-        <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Ideal para excavaciones, zanjeos y nivelación de terrenos, especializada en movimientos de tierra.</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Operario incluido</li>
-        </ul>
+        <div className="absolute left-3 right-3 bottom-3 top-16 bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg overflow-y-auto">
+          <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Maquinaria</h3>
+          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            Retroexcavadora CAT 416E para movimientos de tierra y excavaciones. Servicio exclusivo en Río Ceballos.
+          </p>
+          <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Ideal para excavaciones, zanjeos y nivelación de terrenos, especializada en movimientos de tierra.</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Operario incluido</li>
+          </ul>
+        </div>
       </div>
       <div className="p-6 bg-card mt-auto">
         <a
@@ -109,7 +112,7 @@ function CardObradores() {
       transition={{ duration: 0.6, delay: 0.2 }}
       className="group relative bg-card rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
     >
-      <div className="relative h-44 overflow-hidden">
+      <div className="relative min-h-[280px] overflow-hidden">
         <img
           src="/images/obrador-alquiler-corralon-ceballos-rio-ceballos-container-obra.webp"
           alt="Alquiler de obradores contenedor obra Río Ceballos Córdoba"
@@ -124,19 +127,19 @@ function CardObradores() {
         <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-green-500 text-white text-[10px] font-bold shadow">
           Disponible ahora
         </div>
-      </div>
-      <div className="relative -mt-6 mx-3 bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg">
-        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Obradores</h3>
-        <p className="mt-1 text-xs font-semibold text-primary">Protegé tus herramientas y materiales en obra.</p>
-        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-          Contamos con 3 obradores para resguardo seguro de herramientas y materiales durante tu construcción.
-        </p>
-        <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Contenedor metálico con cerradura</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Entrega y retiro con nuestro servicio de grúa</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Disponibilidad según fechas de obra</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Consultá por precio y condiciones</li>
-        </ul>
+        <div className="absolute left-3 right-3 bottom-3 top-16 bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg overflow-y-auto">
+          <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Obradores</h3>
+          <p className="mt-1 text-xs font-semibold text-primary">Protegé tus herramientas y materiales en obra.</p>
+          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            Contamos con 3 obradores para resguardo seguro de herramientas y materiales durante tu construcción.
+          </p>
+          <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Contenedor metálico con cerradura</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Entrega y retiro con nuestro servicio de grúa</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Disponibilidad según fechas de obra</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Consultá por precio y condiciones</li>
+          </ul>
+        </div>
       </div>
       <div className="p-6 bg-card mt-auto">
         <a
@@ -161,7 +164,7 @@ function CardGrua() {
       transition={{ duration: 0.6, delay: 0.3 }}
       className="group relative bg-card rounded-2xl border border-border overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 hover:-translate-y-1 flex flex-col h-full"
     >
-      <div className="relative h-44 overflow-hidden">
+      <div className="relative min-h-[280px] overflow-hidden">
         <img
           src="/images/grua-bolson-alquiler-corralon-ceballos-rio-ceballos.webp"
           alt="Camión grúa hidráulica y bolsón áridos Río Ceballos Córdoba"
@@ -175,21 +178,21 @@ function CardGrua() {
         <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-green-500 text-white text-[10px] font-bold shadow">
           Disponible ahora
         </div>
-      </div>
-      <div className="relative -mt-6 mx-3 bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg">
-        <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Servicio de Grúa y Bolsón</h3>
-        <p className="mt-2 text-xs font-semibold text-foreground/80 leading-relaxed">
-          ¿Sabías que? Nuestra grúa hidráulica formó parte del montaje de la Dama Blanca, la pieza de ajedrez más alta del mundo, inaugurada en Río Ceballos en 2025.<br />
-          La misma precisión y cuidado que pusimos ahí, los ponemos en tu obra.
-        </p>
-        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-          Áridos en bolsones y grúa hidráulica para descarga y movimientos especiales en obra. Río Ceballos y alrededores.
-        </p>
-        <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Bolsón de áridos</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Grúa para descarga de materiales en obra</li>
-          <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Movimientos especiales en espacios reducidos</li>
-        </ul>
+        <div className="absolute left-3 right-3 bottom-3 top-16 bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg overflow-y-auto">
+          <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Servicio de Grúa y Bolsón</h3>
+          <p className="mt-2 text-xs font-semibold text-foreground/80 leading-relaxed">
+            ¿Sabías que? Nuestra grúa hidráulica formó parte del montaje de la Dama Blanca, la pieza de ajedrez más alta del mundo, inaugurada en Río Ceballos en 2025.<br />
+            La misma precisión y cuidado que pusimos ahí, los ponemos en tu obra.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+            Áridos en bolsones y grúa hidráulica para descarga y movimientos especiales en obra. Río Ceballos y alrededores.
+          </p>
+          <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Bolsón de áridos</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Grúa para descarga de materiales en obra</li>
+            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Movimientos especiales en espacios reducidos</li>
+          </ul>
+        </div>
       </div>
       <div className="p-6 bg-card mt-auto">
         <a
