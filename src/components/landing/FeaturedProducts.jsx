@@ -160,10 +160,10 @@ const bolsonItems = [
 
 export default function FeaturedProducts() {
   return (
-    <section id="catalogo" className="py-24 bg-background relative">
+    <section id="catalogo" className="pt-8 pb-24 bg-background relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-6">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">Catálogo</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
             Catálogo de <span className="text-primary">Materiales</span>
@@ -171,8 +171,6 @@ export default function FeaturedProducts() {
           <p className="mt-3 text-sm text-muted-foreground">Todo lo que necesitás para tu obra, de las marcas en las que más confiamos: Holcim, Cal Andina, FGH, Block X y muchas más.</p>
           <p className="mt-2 text-sm font-semibold text-primary">Entregas en Río Ceballos, Unquillo y Salsipuedes.<br />Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</p>
         </div>
-
-        <div className="mb-14" />
 
         <Accordion title="Cemento y Cal" defaultOpen={true}>
           <IntroText>Trabajamos con productos Holcim en Río Ceballos: Cemento Fuerte CPF 40, Cemento Holcim CPC 30 (recién incorporado a nuestro stock), Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería.</IntroText>
