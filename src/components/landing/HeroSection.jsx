@@ -125,20 +125,20 @@ export default function HeroSection() {
             <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">📦 3 Obradores disponibles</span>
             <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">💳 Efectivo, débito, crédito y transferencia</span>
           </motion.div>
-
-          {/* Scroll indicator - ahora en el flujo normal, pegado al contenido */}
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="mt-6 w-fit"
-          >
-            <a href="#servicios" className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
-              <span className="text-[10px] font-medium uppercase tracking-widest">Explorar</span>
-              <ChevronDown className="w-5 h-5" />
-            </a>
-          </motion.div>
         </div>
       </div>
+
+      {/* Scroll indicator - fuera de todos los contenedores angostos, centrado en la sección completa */}
+      <motion.div
+        animate={{ y: [0, 8, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="relative z-10 w-full flex justify-center mt-2 mb-2"
+      >
+        <a href="#servicios" className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
+          <span className="text-[10px] font-medium uppercase tracking-widest">Explorar</span>
+          <ChevronDown className="w-5 h-5" />
+        </a>
+      </motion.div>
     </section>
   )
 }
