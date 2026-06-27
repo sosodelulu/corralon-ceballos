@@ -227,8 +227,7 @@ export default function ServiceCards() {
             Soluciones integrales para que <span className="text-primary">tu obra no se detenga</span>
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Desde el cimiento hasta el techo.<br />
-            Hace más de 55 años abastecemos a Río Ceballos, Salsipuedes, Agua de Oro, Unquillo y Mendiolaza con entregas programadas, equipos listos para el suelo serrano y obradores seguros.
+            Hace más de 55 años acompañamos cada obra en Río Ceballos, Salsipuedes, Unquillo, Agua de Oro y Mendiolaza, con entregas programadas, equipos listos para el suelo serrano y obradores seguros para tus materiales.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
