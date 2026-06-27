@@ -6,7 +6,7 @@ const HERO_BG = '/images/bloques-ceramicos-camion-flete-rio-ceballos-corralon-ce
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative min-h-[600px] flex items-center overflow-hidden pt-10 pb-6">
+    <section id="inicio" className="relative flex items-center overflow-hidden pt-28 pb-16">
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -131,20 +131,20 @@ export default function HeroSection() {
             <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">📦 3 Obradores disponibles</span>
             <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary text-primary text-xs font-semibold border border-primary/15">💳 Efectivo, débito, crédito y transferencia</span>
           </motion.div>
+
+          {/* Scroll indicator - ahora en el flujo normal, pegado al contenido */}
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="mt-10 w-fit"
+          >
+            <a href="#servicios" className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
+              <span className="text-[10px] font-medium uppercase tracking-widest">Explorar</span>
+              <ChevronDown className="w-5 h-5" />
+            </a>
+          </motion.div>
         </div>
       </div>
-
-      {/* Scroll indicator - Centrado absoluto corregido */}
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-6 left-0 right-0 mx-auto w-fit z-10"
-      >
-        <a href="#servicios" className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
-          <span className="text-[10px] font-medium uppercase tracking-widest">Explorar</span>
-          <ChevronDown className="w-5 h-5" />
-        </a>
-      </motion.div>
     </section>
   )
 }
