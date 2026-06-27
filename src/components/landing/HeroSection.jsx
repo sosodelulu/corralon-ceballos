@@ -6,6 +6,7 @@ const HERO_BG = '/images/bloques-ceramicos-camion-flete-rio-ceballos-corralon-ce
 
 export default function HeroSection() {
   return (
+    <>
     <section id="inicio" className="relative flex items-center overflow-hidden pt-24 pb-8">
       {/* Background */}
       <div className="absolute inset-0">
@@ -128,17 +129,19 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator - en su propio contenedor max-w-7xl, alineado con el resto de las secciones de la página */}
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-center mt-2 mb-4"
-      >
-        <a href="#servicios" className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
-          <span className="text-[10px] font-medium uppercase tracking-widest">Explorar</span>
-          <ChevronDown className="w-5 h-5" />
-        </a>
-      </motion.div>
     </section>
+
+    {/* Scroll indicator - fuera del section del Hero, porque ese section tiene overflow-hidden que lo recortaba */}
+    <motion.div
+      animate={{ y: [0, 8, 0] }}
+      transition={{ repeat: Infinity, duration: 2 }}
+      className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-center mt-2 mb-4"
+    >
+      <a href="#servicios" className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
+        <span className="text-[10px] font-medium uppercase tracking-widest">Explorar</span>
+        <ChevronDown className="w-5 h-5" />
+      </a>
+    </motion.div>
+    </>
   )
 }
