@@ -80,15 +80,17 @@ function CardMaquinaria() {
         <div className="absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold tracking-wide shadow">
           <MapPin className="w-2.5 h-2.5" />Solo Río Ceballos
         </div>
-        <div className="absolute left-3 right-3 bottom-3 top-16 bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg overflow-y-auto">
-          <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Maquinaria</h3>
-          <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            Retroexcavadora CAT 416E para movimientos de tierra y excavaciones. Servicio exclusivo en Río Ceballos.
-          </p>
-          <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Ideal para excavaciones, zanjeos y nivelación de terrenos, especializada en movimientos de tierra.</li>
-            <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Operario incluido</li>
-          </ul>
+        <div className="relative mx-3 pt-16 pb-3">
+          <div className="bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg">
+            <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Maquinaria</h3>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              Retroexcavadora CAT 416E para movimientos de tierra y excavaciones. Servicio exclusivo en Río Ceballos.
+            </p>
+            <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+              <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Ideal para excavaciones, zanjeos y nivelación de terrenos, especializada en movimientos de tierra.</li>
+              <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Operario incluido</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="p-6 bg-card mt-auto">
