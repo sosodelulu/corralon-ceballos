@@ -92,12 +92,12 @@ export default function HeroSection() {
               </Button>
             </motion.div>
 
-            {/* Stats */}
+            {/* Stats - OCULTOS en mobile (hidden) para evitar repetición de "55 años" y solapamiento con la imagen del camión. Visibles desde sm: en adelante, exactamente igual que antes en desktop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="mt-8 flex gap-10 sm:gap-14"
+              className="mt-8 hidden sm:flex gap-10 sm:gap-14"
             >
               <div>
                 <p className="text-xl sm:text-2xl font-extrabold tracking-tighter text-primary sm:text-primary sm:drop-shadow-md">55+</p>
