@@ -24,16 +24,18 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-transparent" />
       </div>
 
-      {/* Camión recortado - SOLO MOBILE. Imagen recortada y con bordes difuminados (fade) para que "flote" sobre el fondo blanco sin tapar el texto. No afecta desktop (oculto desde sm:) */}
-      <div className="absolute bottom-0 right-0 w-[60%] max-w-[320px] sm:hidden pointer-events-none" aria-hidden="true">
+      {/* Camión - SOLO MOBILE. Va de FONDO a ancho completo (no en una esquina chica), con un velo blanco degradado encima para que el texto siga siendo legible. No afecta desktop (oculto desde sm:) */}
+      <div className="absolute inset-0 sm:hidden" aria-hidden="true">
         <img
           src={HERO_TRUCK_MOBILE}
           alt=""
-          className="w-full h-auto"
+          className="w-full h-full object-cover object-[80%_30%]"
           width="582"
           height="553"
           loading="eager"
         />
+        {/* Velo: más opaco arriba (zona de texto), se aclara hacia abajo (zona de chips) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/40" />
       </div>
 
       {/* Decorative lines - ELIMINADAS (Líneas decorativas en T horizontal quitadas) */}
