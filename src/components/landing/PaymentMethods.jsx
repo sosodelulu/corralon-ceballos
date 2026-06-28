@@ -1,3 +1,5 @@
+import { Landmark } from 'lucide-react'
+
 const onImgError = (e) => {
   e.target.style.display = 'none'
   if (e.target.nextSibling) e.target.nextSibling.style.removeProperty('display')
@@ -7,14 +9,6 @@ function IconEfectivo() {
   return (
     <svg viewBox="0 0 24 24" className="w-7 h-7 fill-primary" xmlns="http://www.w3.org/2000/svg">
       <path d="M2 7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7zm2 0v1h16V7H4zm0 4v6h16v-6H4zm2 2h4v2H6v-2z"/>
-    </svg>
-  )
-}
-
-function IconTransferencia() {
-  return (
-    <svg viewBox="0 0 24 24" className="w-7 h-7 fill-primary" xmlns="http://www.w3.org/2000/svg">
-      <path d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/>
     </svg>
   )
 }
@@ -42,7 +36,7 @@ function PayTransferencia() {
   return (
     <div className="flex flex-col items-center gap-1.5 group">
       <div className="w-14 h-14 rounded-2xl border border-border bg-secondary/30 group-hover:border-primary/30 group-hover:bg-secondary/60 flex items-center justify-center transition-all duration-300 shadow-sm">
-        <IconTransferencia />
+        <Landmark className="w-7 h-7 text-primary" strokeWidth={1.75} />
       </div>
       <span className="text-[10px] font-medium text-muted-foreground">Transferencia Bancaria</span>
     </div>
@@ -64,7 +58,7 @@ function PayVisa() {
   return (
     <div className="flex flex-col items-center gap-1.5 group">
       <div className="w-14 h-14 rounded-2xl border border-border bg-secondary/30 group-hover:border-primary/30 group-hover:bg-secondary/60 flex items-center justify-center transition-all duration-300 shadow-sm p-2">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="w-full h-full object-contain" onError={onImgError} />
+        <img src="/images/visa-logo.webp" alt="Visa" className="w-full h-full object-contain" onError={onImgError} />
         <span style={{ display: 'none' }} className="text-xs font-bold text-blue-700">VISA</span>
       </div>
       <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Visa<br />Débito y Crédito</span>
@@ -76,7 +70,7 @@ function PayMastercard() {
   return (
     <div className="flex flex-col items-center gap-1.5 group">
       <div className="w-14 h-14 rounded-2xl border border-border bg-secondary/30 group-hover:border-primary/30 group-hover:bg-secondary/60 flex items-center justify-center transition-all duration-300 shadow-sm p-2">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="w-full h-full object-contain" onError={onImgError} />
+        <img src="/images/mastercard-logo.webp" alt="Mastercard" className="w-full h-full object-contain" onError={onImgError} />
         <span style={{ display: 'none' }} className="text-xs font-bold text-red-600">MC</span>
       </div>
       <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Mastercard<br />Débito y Crédito</span>
