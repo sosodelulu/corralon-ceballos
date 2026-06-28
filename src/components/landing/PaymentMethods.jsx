@@ -90,7 +90,10 @@ export default function PaymentMethods() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-4">
           <p className="text-xs font-bold uppercase tracking-widest text-primary">Medios de Pago</p>
-          <p className="text-sm text-muted-foreground mt-0.5">Aceptamos: Efectivo · Transferencia Bancaria · Tarjetas de Débito · Tarjetas de Crédito (Visa y Mastercard)</p>
+          <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tighter text-foreground">
+            Todas las formas de pago que <span className="text-primary">aceptamos</span>
+          </h2>
+          <p className="text-sm text-muted-foreground mt-2">Aceptamos: Efectivo · Transferencia Bancaria · Tarjetas de Débito · Tarjetas de Crédito (Visa y Mastercard)</p>
         </div>
         <div className="flex flex-wrap justify-center items-center gap-6 mt-6">
           <PayEfectivo />
