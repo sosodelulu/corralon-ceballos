@@ -67,7 +67,7 @@ export default function FAQSection() {
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">
             Preguntas frecuentes
           </span>
-          <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tighter text-foreground whitespace-nowrap">
+          <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tighter text-foreground sm:whitespace-nowrap">
             Todo lo que necesitás saber antes de <span className="text-primary">pedir tu material</span>
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -88,14 +88,14 @@ export default function FAQSection() {
               }`}
             >
               <div className="flex gap-3 items-start">
-                <div className="shrink-0 mt-0.5 w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
+                <div className="hidden sm:flex shrink-0 mt-0.5 w-9 h-9 rounded-lg bg-primary/10 items-center justify-center">
                   <HelpCircle className="w-4 h-4 text-primary" />
                 </div>
-                <div>
+                <div className="w-full">
                   <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug">
                     {faq.question}
                   </h3>
-                  <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
+                  <p className="mt-2 text-[13px] sm:text-sm text-foreground/80 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
