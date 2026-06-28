@@ -41,7 +41,6 @@ const faqs = [
     question: '¿Alquilan obradores para guardar herramientas y materiales en la obra?',
     answer:
       'Sí, contamos con 3 obradores (contenedores metálicos con cerradura) para alquilar y resguardar herramientas y materiales durante tu construcción. Somos uno de los pocos servicios de este tipo disponibles en Río Ceballos y la zona de Sierras Chicas — consultanos disponibilidad por WhatsApp.',
-    wide: true,
   },
 ]
 
