@@ -67,7 +67,7 @@ export default function FAQSection() {
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">
             Preguntas frecuentes
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tighter text-foreground whitespace-nowrap">
+          <h2 className="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tighter text-foreground whitespace-nowrap">
             Todo lo que necesitás saber antes de <span className="text-primary">pedir tu material</span>
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
