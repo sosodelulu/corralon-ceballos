@@ -4,7 +4,7 @@ import { ShoppingBag, ChevronDown } from 'lucide-react'
 function IntroText({ children }) {
   const [expanded, setExpanded] = useState(false)
   return (
-    <div style={{ gridColumn: '1 / -1', marginBottom: '0.75rem' }}>
+    <div style={{ marginBottom: '0.75rem' }}>
       <p className={`text-sm leading-relaxed text-gray-600 ${expanded ? '' : 'line-clamp-2 sm:line-clamp-none'}`}>{children}</p>
       <button onClick={() => setExpanded(!expanded)} className="sm:hidden mt-1 text-xs font-semibold text-primary underline">
         {expanded ? 'Leer menos' : 'Leer más'}
@@ -15,7 +15,7 @@ function IntroText({ children }) {
 
 function StockBadge() {
   return (
-    <div style={{ gridColumn: '1 / -1' }}>
+    <div>
       <p style={{ fontSize: '12px', color: '#166534', background: '#f0fdf4', display: 'inline-block', padding: '2px 10px', borderRadius: '99px', marginBottom: '8px' }}>
         ✓ Disponible ahora · Stock permanente
       </p>
@@ -25,7 +25,7 @@ function StockBadge() {
 
 function CTACategoria({ href, label }) {
   return (
-    <div style={{ gridColumn: '1 / -1' }}>
+    <div>
       <a href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', margin: '16px auto 0', border: '2px solid #166534', color: '#166834', background: 'transparent', borderRadius: '8px', padding: '10px 20px', fontWeight: '600', cursor: 'pointer', textDecoration: 'none' }}>
         {label}
       </a>
@@ -35,6 +35,13 @@ function CTACategoria({ href, label }) {
 
 function Accordion({ title, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen)
+
+  // Separamos los children: los textos/badges/CTA (que no son ProductCard)
+  // van arriba y abajo del riel; los ProductCard van adentro del carrusel en mobile.
+  const childArray = Array.isArray(children) ? children : [children]
+  const productCards = childArray.filter(c => c?.type === ProductCard)
+  const otherChildren = childArray.filter(c => c?.type !== ProductCard)
+
   return (
     <div className="border border-border rounded-2xl overflow-hidden mb-4">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-6 py-4 bg-secondary/40 hover:bg-secondary/70 transition-colors text-left">
@@ -42,8 +49,23 @@ function Accordion({ title, children, defaultOpen = false }) {
         <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
-        <div className="p-4 bg-white grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-          {children}
+        <div className="p-4 bg-white">
+          {/* Textos, badge de stock, etc. - van siempre arriba, full width */}
+          {otherChildren}
+
+          {/* MOBILE: carrusel horizontal con snap */}
+          <div className="flex sm:hidden gap-3 overflow-x-auto pb-2 -mx-1 px-1 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            {productCards.map(card => (
+              <div key={card.key} className="flex-shrink-0 w-[44%] snap-start">
+                {card}
+              </div>
+            ))}
+          </div>
+
+          {/* DESKTOP / TABLET: grid de siempre, sin cambios */}
+          <div className="hidden sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            {productCards}
+          </div>
         </div>
       )}
     </div>
@@ -54,7 +76,7 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
   const waUrl = `https://wa.me/5493543530984?text=${encodeURIComponent('Hola, quisiera consultar el precio de ' + waText)}`
 
   return (
-    <div className="group bg-white rounded-xl border border-border shadow-sm hover:shadow-md hover:border-[#166534]/20 overflow-hidden flex flex-col transition-all duration-300">
+    <div className="group bg-white rounded-xl border border-border shadow-sm hover:shadow-md hover:border-[#166534]/20 overflow-hidden flex flex-col transition-all duration-300 h-full">
       
       {/* Contenedor de Imagen con Efectos Hover en Desktop */}
       <div className="relative w-full h-[160px] flex-shrink-0 overflow-hidden">
@@ -83,18 +105,18 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
       </div>
 
       {/* Textos y Botón Mobile */}
-      <div className="p-3 flex flex-col gap-1.5 flex-1">
-        <h4 className="text-sm font-bold text-foreground leading-snug">{title}</h4>
-        <p className="text-xs text-muted-foreground leading-relaxed flex-1">{desc}</p>
+      <div className="p-2.5 sm:p-3 flex flex-col gap-1.5 flex-1">
+        <h4 className="text-xs sm:text-sm font-bold text-foreground leading-snug">{title}</h4>
+        <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed flex-1">{desc}</p>
 
         {/* Botón Mobile Fijo (Oculto automáticamente en pantallas sm en adelante) */}
         <a
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-1 inline-flex items-center justify-center gap-1.5 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary text-xs font-semibold px-3 py-2 rounded-lg transition-all duration-200 sm:hidden"
+          className="mt-1 inline-flex items-center justify-center gap-1 bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary text-[11px] font-semibold px-2 py-1.5 rounded-lg transition-all duration-200 sm:hidden whitespace-nowrap"
         >
-          <ShoppingBag className="w-3 h-3" />
+          <ShoppingBag className="w-3 h-3 flex-shrink-0" />
           Consultar precio
         </a>
       </div>
