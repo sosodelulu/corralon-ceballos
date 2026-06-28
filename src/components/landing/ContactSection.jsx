@@ -32,7 +32,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">Contacto</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
+          <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold tracking-tighter text-foreground">
             ¿Tenés tu <span className="text-primary">lista de materiales</span> a mano?<br />
             ¿O recién estás armando el presupuesto de tu obra?
           </h2>
