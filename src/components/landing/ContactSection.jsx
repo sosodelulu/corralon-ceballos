@@ -12,7 +12,14 @@ export default function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const text = `Hola Corralón Ceballos, ¿cómo están? Mi nombre es ${formData.name} y les escribo desde la web para pedirles presupuesto por la siguiente lista de materiales:\n${formData.message}\nTeléfono de contacto: ${formData.phone}\nDomicilio de entrega: ${formData.address}\n¡Muchas gracias!`
+    let text = `Hola Corralón Ceballos, ¿cómo están? Mi nombre es ${formData.name} y les escribo desde la web para pedirles presupuesto por la siguiente lista de materiales:\n${formData.message}`
+    if (formData.phone.trim()) {
+      text += `\nTeléfono de contacto: ${formData.phone}`
+    }
+    if (formData.address.trim()) {
+      text += `\nDomicilio de entrega: ${formData.address}`
+    }
+    text += `\n¡Muchas gracias!`
     window.open(`https://wa.me/5493543530984?text=${encodeURIComponent(text)}`, '_blank')
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 3000)
@@ -30,7 +37,7 @@ export default function ContactSection() {
             ¿O recién estás armando el presupuesto de tu obra?
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Contanos qué necesitás por el formulario, o enviános una foto de tu lista directamente por WhatsApp.<br />
+            Contanos qué necesitás por el formulario, o enviános una foto/archivo de tu lista por WhatsApp.<br />
             Te respondemos en el día con precio y disponibilidad.
           </p>
         </div>
@@ -45,19 +52,19 @@ export default function ContactSection() {
           >
             <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-5 shadow-sm">
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-semibold">Nombre</Label>
+                <Label htmlFor="name" className="text-sm font-semibold">Nombre <span className="text-primary">*</span></Label>
                 <Input id="name" placeholder="Tu nombre completo" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="h-11 rounded-xl" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-sm font-semibold">Teléfono</Label>
-                <Input id="phone" placeholder="Ej: 03543 15xxxxxx" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required className="h-11 rounded-xl" />
+                <Label htmlFor="phone" className="text-sm font-semibold">Teléfono <span className="text-muted-foreground font-normal">(opcional)</span></Label>
+                <Input id="phone" placeholder="Ej: 03543 15xxxxxx" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="h-11 rounded-xl" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="address" className="text-sm font-semibold">Domicilio de entrega del material/obra</Label>
-                <Input id="address" placeholder="Ej: Calle Falsa 123, Río Ceballos" value={formData.address} onChange={(e) => setFormData({ ...formData, address: e.target.value })} required className="h-11 rounded-xl" />
+                <Label htmlFor="address" className="text-sm font-semibold">Domicilio de entrega del material/obra <span className="text-muted-foreground font-normal">(opcional)</span></Label>
+                <Input id="address" placeholder="Ej: Calle Falsa 123, Río Ceballos" value={formData.address} onChange={(e) => setFormData({ ...formData, address: e.target.value })} className="h-11 rounded-xl" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="message" className="text-sm font-semibold">Lista de materiales / Mensaje</Label>
+                <Label htmlFor="message" className="text-sm font-semibold">Lista de materiales / Mensaje <span className="text-primary">*</span></Label>
                 <Textarea
                   id="message"
                   placeholder="Ej: 20 bolsas de cemento Fuerte Holcim, 10 barras de hierro del 8..."
