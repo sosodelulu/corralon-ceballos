@@ -27,7 +27,7 @@ function PayEfectivo() {
       <div className="w-14 h-14 rounded-2xl border border-border bg-secondary/30 group-hover:border-primary/30 group-hover:bg-secondary/60 flex items-center justify-center transition-all duration-300 shadow-sm">
         <IconEfectivo />
       </div>
-      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Efectivo</span>
+      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight min-h-[2.2em] flex items-start justify-center">Efectivo</span>
     </div>
   )
 }
@@ -38,7 +38,7 @@ function PayTransferencia() {
       <div className="w-14 h-14 rounded-2xl border border-border bg-secondary/30 group-hover:border-primary/30 group-hover:bg-secondary/60 flex items-center justify-center transition-all duration-300 shadow-sm">
         <Landmark className="w-7 h-7 text-primary" strokeWidth={1.75} />
       </div>
-      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Transferencia<br />Bancaria</span>
+      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight min-h-[2.2em] flex items-start justify-center">Transferencia<br />Bancaria</span>
     </div>
   )
 }
@@ -49,7 +49,7 @@ function PayDebito() {
       <div className="w-14 h-14 rounded-2xl border border-border bg-secondary/30 group-hover:border-primary/30 group-hover:bg-secondary/60 flex items-center justify-center transition-all duration-300 shadow-sm">
         <IconDebito />
       </div>
-      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Tarjetas<br />de Débito</span>
+      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight min-h-[2.2em] flex items-start justify-center">Tarjetas<br />de Débito</span>
     </div>
   )
 }
@@ -61,7 +61,7 @@ function PayVisa() {
         <img src="/images/visa-logo.webp" alt="Visa" className="w-full h-full object-contain" onError={onImgError} />
         <span style={{ display: 'none' }} className="text-xs font-bold text-blue-700">VISA</span>
       </div>
-      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Visa<br />Débito y Crédito</span>
+      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight min-h-[2.2em] flex items-start justify-center">Visa<br />Débito y Crédito</span>
     </div>
   )
 }
@@ -73,7 +73,7 @@ function PayMastercard() {
         <img src="/images/mastercard-logo.webp" alt="Mastercard" className="w-full h-full object-contain" onError={onImgError} />
         <span style={{ display: 'none' }} className="text-xs font-bold text-red-600">MC</span>
       </div>
-      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Mastercard<br />Débito y Crédito</span>
+      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight min-h-[2.2em] flex items-start justify-center">Mastercard<br />Débito y Crédito</span>
     </div>
   )
 }
