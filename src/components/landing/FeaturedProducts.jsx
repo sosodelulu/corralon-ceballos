@@ -4,7 +4,7 @@ import { ShoppingBag, ChevronDown } from 'lucide-react'
 function IntroText({ children }) {
   const [expanded, setExpanded] = useState(false)
   return (
-    <div style={{ marginBottom: '0.75rem' }}>
+    <div className="mb-3">
       <p className={`text-sm leading-relaxed text-gray-600 ${expanded ? '' : 'line-clamp-2 sm:line-clamp-none'}`}>{children}</p>
       <button onClick={() => setExpanded(!expanded)} className="sm:hidden mt-1 text-xs font-semibold text-primary underline">
         {expanded ? 'Leer menos' : 'Leer más'}
@@ -33,14 +33,11 @@ function CTACategoria({ href, label }) {
   )
 }
 
-function Accordion({ title, children, defaultOpen = false }) {
+// El Accordion recibe los productos en una prop explícita (`products`),
+// en vez de intentar "adivinar" cuáles children son ProductCard.
+// Esto evita el bug anterior de detección por tipo de componente.
+function Accordion({ title, intro, stockBadge = true, products, ctaHref, ctaLabel, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen)
-
-  // Separamos los children: los textos/badges/CTA (que no son ProductCard)
-  // van arriba y abajo del riel; los ProductCard van adentro del carrusel en mobile.
-  const childArray = Array.isArray(children) ? children : [children]
-  const productCards = childArray.filter(c => c?.type === ProductCard)
-  const otherChildren = childArray.filter(c => c?.type !== ProductCard)
 
   return (
     <div className="border border-border rounded-2xl overflow-hidden mb-4">
@@ -50,22 +47,25 @@ function Accordion({ title, children, defaultOpen = false }) {
       </button>
       {open && (
         <div className="p-4 bg-white">
-          {/* Textos, badge de stock, etc. - van siempre arriba, full width */}
-          {otherChildren}
+          {/* Texto e info de stock - igual en mobile y desktop */}
+          <IntroText>{intro}</IntroText>
+          {stockBadge && <StockBadge />}
 
-          {/* MOBILE: carrusel horizontal con snap */}
+          {/* MOBILE (hasta sm): carrusel horizontal con snap */}
           <div className="flex sm:hidden gap-3 overflow-x-auto pb-2 -mx-1 px-1 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-            {productCards.map(card => (
-              <div key={card.key} className="flex-shrink-0 w-[44%] snap-start">
-                {card}
+            {products.map(p => (
+              <div key={p.id} className="flex-shrink-0 w-[44%] snap-start">
+                <ProductCard {...p} />
               </div>
             ))}
           </div>
 
-          {/* DESKTOP / TABLET: grid de siempre, sin cambios */}
+          {/* DESKTOP / TABLET (desde sm): grid original, sin cambios de comportamiento */}
           <div className="hidden sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            {productCards}
+            {products.map(p => <ProductCard key={p.id} {...p} />)}
           </div>
+
+          <CTACategoria href={ctaHref} label={ctaLabel} />
         </div>
       )}
     </div>
@@ -77,7 +77,7 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
 
   return (
     <div className="group bg-white rounded-xl border border-border shadow-sm hover:shadow-md hover:border-[#166534]/20 overflow-hidden flex flex-col transition-all duration-300 h-full">
-      
+
       {/* Contenedor de Imagen con Efectos Hover en Desktop */}
       <div className="relative w-full h-[160px] flex-shrink-0 overflow-hidden">
         <img
@@ -90,7 +90,7 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
           loading="lazy"
           decoding="async"
         />
-        
+
         {/* Botón Hover de Escritorio (Oculto en móviles y táctiles por defecto) */}
         <a
           href={waUrl}
@@ -194,53 +194,63 @@ export default function FeaturedProducts() {
           <p className="mt-2 text-sm font-semibold text-primary max-w-5xl mx-auto">Entregas en Río Ceballos, Unquillo y Salsipuedes. Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</p>
         </div>
 
-        <Accordion title="Cemento y Cal" defaultOpen={true}>
-          <IntroText>Trabajamos con productos Holcim en Río Ceballos: Cemento Fuerte CPF 40, Cemento Holcim CPC 30 (recién incorporado a nuestro stock), Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería.</IntroText>
-          <StockBadge />
-          {cementoItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Cemento%20y%20Cal" label="💬 Cotizar cemento y cal por WhatsApp" />
-        </Accordion>
+        <Accordion
+          title="Cemento y Cal"
+          defaultOpen={true}
+          intro="Trabajamos con productos Holcim en Río Ceballos: Cemento Fuerte CPF 40, Cemento Holcim CPC 30 (recién incorporado a nuestro stock), Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería."
+          products={cementoItems}
+          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Cemento%20y%20Cal"
+          ctaLabel="💬 Cotizar cemento y cal por WhatsApp"
+        />
 
-        <Accordion title="Áridos">
-          <IntroText>Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado y piedra triturado blanco para tu obra en Río Ceballos y zona. ¿Necesitás a granel por m³ o bolsón? Coordinamos la descarga según la accesibilidad de tu terreno.</IntroText>
-          <StockBadge />
-          {aridosItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20%C3%81ridos" label="💬 Pedir presupuesto de áridos por WhatsApp" />
-        </Accordion>
+        <Accordion
+          title="Áridos"
+          intro="Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado y piedra triturado blanco para tu obra en Río Ceballos y zona. ¿Necesitás a granel por m³ o bolsón? Coordinamos la descarga según la accesibilidad de tu terreno."
+          products={aridosItems}
+          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20%C3%81ridos"
+          ctaLabel="💬 Pedir presupuesto de áridos por WhatsApp"
+        />
 
-        <Accordion title="Ladrillos y Bloques">
-          <IntroText>Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón disponibles en Río Ceballos. En bloques, trabajamos con bloque cerámico y bloque de hormigón.</IntroText>
-          <StockBadge />
-          {ladrillsItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques" label="💬 Contános cuántos necesitás y te cotizamos" />
-        </Accordion>
+        <Accordion
+          title="Ladrillos y Bloques"
+          intro="Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón disponibles en Río Ceballos. En bloques, trabajamos con bloque cerámico y bloque de hormigón."
+          products={ladrillsItems}
+          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques"
+          ctaLabel="💬 Contános cuántos necesitás y te cotizamos"
+        />
 
-        <Accordion title="Hierros y Estructuras">
-          <IntroText>Aceros bajo normas IRAM para obras en Río Ceballos: hierro en varilla, malla electrosoldada, caños estructurales, perfilería, columnas armadas, alambres y estribos armados.</IntroText>
-          <StockBadge />
-          {hierrosItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Hierros%20y%20Estructuras" label="💬 Enviar lista de hierros para presupuesto" />
-        </Accordion>
+        <Accordion
+          title="Hierros y Estructuras"
+          intro="Aceros bajo normas IRAM para obras en Río Ceballos: hierro en varilla, malla electrosoldada, caños estructurales, perfilería, columnas armadas, alambres y estribos armados."
+          products={hierrosItems}
+          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Hierros%20y%20Estructuras"
+          ctaLabel="💬 Enviar lista de hierros para presupuesto"
+        />
 
-        <Accordion title="Instalaciones">
-          <IntroText>Distribuidor de productos Talpelit en Río Ceballos: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca.</IntroText>
-          <StockBadge />
-          {instalacionesItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Instalaciones" label="💬 Consultar medidas de tanques y caños por WhatsApp" />
-        </Accordion>
+        <Accordion
+          title="Instalaciones"
+          intro="Distribuidor de productos Talpelit en Río Ceballos: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca."
+          products={instalacionesItems}
+          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Instalaciones"
+          ctaLabel="💬 Consultar medidas de tanques y caños por WhatsApp"
+        />
 
-        <Accordion title="Techos">
-          <IntroText>Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado en Río Ceballos y zona. Consultanos por WhatsApp para disponibilidad de medidas.</IntroText>
-          <StockBadge />
-          {techosItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos" label="💬 Consultanos medidas y te confirmamos stock" />
-        </Accordion>
+        <Accordion
+          title="Techos"
+          intro="Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado en Río Ceballos y zona. Consultanos por WhatsApp para disponibilidad de medidas."
+          products={techosItems}
+          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos"
+          ctaLabel="💬 Consultanos medidas y te confirmamos stock"
+        />
 
-        <Accordion title="Servicio de Bolsón y Grúa">
-          <IntroText>Servicio de áridos en bolsones para tu obra en Río Ceballos y alrededores. También contamos con grúa hidráulica.</IntroText>
-          {bolsonItems.map(p => <ProductCard key={p.id} {...p} />)}
-          <CTACategoria href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20el%20Servicio%20de%20Grua%20y%20Bolson" label="💬 Reservá tu turno de grúa o bolsón" />
-        </Accordion>
+        <Accordion
+          title="Servicio de Bolsón y Grúa"
+          intro="Servicio de áridos en bolsones para tu obra en Río Ceballos y alrededores. También contamos con grúa hidráulica."
+          stockBadge={false}
+          products={bolsonItems}
+          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20el%20Servicio%20de%20Grua%20y%20Bolson"
+          ctaLabel="💬 Reservá tu turno de grúa o bolsón"
+        />
 
         <div className="text-center mt-10">
           <a
