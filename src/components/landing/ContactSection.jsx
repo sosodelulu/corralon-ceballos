@@ -19,14 +19,14 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contacto" className="py-24 bg-background relative">
+    <section id="contacto" className="pt-12 pb-24 bg-background relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">Contacto</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
-            ¿Tenés tu lista de <span className="text-primary">materiales</span> a mano?<br />
+            ¿Tenés tu <span className="text-primary">lista de materiales</span> a mano?<br />
             ¿O recién estás armando el presupuesto de tu obra?
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
