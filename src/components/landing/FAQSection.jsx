@@ -64,23 +64,23 @@ const faqJsonLd = {
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="py-24 bg-secondary/30 relative">
+    <section id="faq" className="py-12 sm:py-16 bg-secondary/30 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">
-            Preguntas frecuentes
+            Dudas comunes
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tighter text-foreground">
+          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tighter text-foreground whitespace-nowrap">
             Todo lo que necesitás saber antes de <span className="text-primary">pedir tu material</span>
           </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             Si tu duda no está acá, escribinos por WhatsApp y te respondemos en el día.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={faq.question}
