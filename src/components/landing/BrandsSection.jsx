@@ -80,7 +80,7 @@ export default function BrandsSection() {
   const allItems = marcas.flatMap(g => g.items)
 
   return (
-    <section id="marcas" className="pt-8 pb-20 bg-muted/40 relative">
+    <section id="marcas" className="pt-8 pb-8 bg-muted/40 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
