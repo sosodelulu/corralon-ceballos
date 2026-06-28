@@ -61,7 +61,7 @@ export default function ContactSection() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="address" className="text-sm font-semibold">Domicilio de entrega del material/obra <span className="text-muted-foreground font-normal">(opcional)</span></Label>
-                <Input id="address" placeholder="Ej: Calle Falsa 123, Río Ceballos" value={formData.address} onChange={(e) => setFormData({ ...formData, address: e.target.value })} className="h-11 rounded-xl" />
+                <Input id="address" placeholder="Ej: Av. Remedios de Escalada 975, Río Ceballos" value={formData.address} onChange={(e) => setFormData({ ...formData, address: e.target.value })} className="h-11 rounded-xl" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message" className="text-sm font-semibold">Lista de materiales / Mensaje <span className="text-primary">*</span></Label>
