@@ -15,6 +15,9 @@ const marcas = [
     { name: 'Fantini', src: '/images/fantini-ceramicos-ladrillos-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Fantini' },
     { name: 'BlockX', src: '/images/blockx-bloque-hormigon-ceramicos-ladrillos-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo BlockX' },
   ]},
+  { group: 'Premoldeados', items: [
+    { name: 'Pretencord', src: '/images/logo-pretencord-corralon-ceballos.webp', alt: 'Logo Pretencord' },
+  ]},
   { group: 'Tanques y Cañerías', items: [
     { name: 'Talpelit', src: '/images/talpelit-logo-corralon-ceballos-rio-ceballos.webp', alt: 'Logo Talpelit' },
     { name: 'IPS', src: '/images/ips-rio-ceballos-corralon-ceballos-conexiones-canerias.webp', alt: 'Logo IPS' },
@@ -25,7 +28,7 @@ const marcas = [
   ]},
 ]
 
-// Fila 1: 5 logos de Cemento y Cal + 1 de Hierros y Estructuras
+// Fila 1 (desktop, 6 logos): Cemento y Cal + Hierros y Estructuras
 const filaUno = [
   ...marcas[0].items.map(item => ({ ...item, group: 'Cemento y Cal', firstOfGroup: false })),
   ...marcas[1].items.map(item => ({ ...item, group: 'Hierros y Estructuras', firstOfGroup: false })),
@@ -34,15 +37,26 @@ const filaUno = [
   firstOfGroup: i === 0 || item.group !== arr[i - 1].group,
 }))
 
-// Fila 2: 2 de Bloques y Ladrillos + 3 de Tanques y Cañerías + 1 de Otros
+// Fila 2 (desktop, 7 logos): Bloques y Ladrillos + Premoldeados + Tanques y Cañerías + Otros
 const filaDos = [
   ...marcas[2].items.map(item => ({ ...item, group: 'Bloques y Ladrillos', firstOfGroup: false })),
-  ...marcas[3].items.map(item => ({ ...item, group: 'Tanques y Cañerías', firstOfGroup: false })),
-  ...marcas[4].items.map(item => ({ ...item, group: 'Otros', firstOfGroup: false })),
+  ...marcas[3].items.map(item => ({ ...item, group: 'Premoldeados', firstOfGroup: false })),
+  ...marcas[4].items.map(item => ({ ...item, group: 'Tanques y Cañerías', firstOfGroup: false })),
+  ...marcas[5].items.map(item => ({ ...item, group: 'Otros', firstOfGroup: false })),
 ].map((item, i, arr) => ({
   ...item,
   firstOfGroup: i === 0 || item.group !== arr[i - 1].group,
 }))
+
+// Mobile (grid plano de 4 columnas, sin nombres de categoría): orden propio.
+// Fila 1: Holcim, Cal Andina, FGH, Canteras Amadeo, Abacor (5)
+// Fila 2: Serin, Fantini, BlockX, Pretencord (4)
+// Fila 3: Talpelit, IPS, Awaduct, Sika (4)
+const ordenMobile = [
+  'Holcim', 'Cal Andina', 'FGH', 'Canteras Amadeo', 'Abacor',
+  'Serin', 'Fantini', 'BlockX', 'Pretencord',
+  'Talpelit', 'IPS', 'Awaduct', 'Sika',
+]
 
 function MarcaCard({ name, src, alt }) {
   return (
@@ -53,10 +67,11 @@ function MarcaCard({ name, src, alt }) {
   )
 }
 
-function DesktopRow({ items }) {
+function DesktopRow({ items, cols = 6 }) {
+  const gridColsClass = cols === 7 ? 'grid-cols-7' : 'grid-cols-6'
   return (
-    <div className="grid grid-cols-6 gap-x-5 gap-y-1 w-full">
-      {/* Títulos de categoría — una fila de 6 celdas */}
+    <div className={`grid ${gridColsClass} gap-x-5 gap-y-1 w-full`}>
+      {/* Títulos de categoría — una fila de N celdas */}
       {items.map((item, i) => (
         <div key={`label-${i}`} className="flex items-end h-5">
           {item.firstOfGroup && (
@@ -66,7 +81,7 @@ function DesktopRow({ items }) {
           )}
         </div>
       ))}
-      {/* Logos — segunda fila de 6 celdas */}
+      {/* Logos — segunda fila de N celdas */}
       {items.map((item, i) => (
         <div key={`card-${i}`} className="w-full">
           <MarcaCard name={item.name} src={item.src} alt={item.alt} />
@@ -77,7 +92,8 @@ function DesktopRow({ items }) {
 }
 
 export default function BrandsSection() {
-  const allItems = marcas.flatMap(g => g.items)
+  const itemsByName = Object.fromEntries(marcas.flatMap(g => g.items).map(item => [item.name, item]))
+  const mobileItems = ordenMobile.map(name => itemsByName[name])
 
   return (
     <section id="marcas" className="pt-8 pb-8 bg-muted/40 relative">
@@ -99,15 +115,15 @@ export default function BrandsSection() {
           </p>
         </motion.div>
 
-        {/* Desktop: dos filas de 6 columnas, ancho completo */}
+        {/* Desktop: fila 1 con 6 columnas (6 logos), fila 2 con 7 columnas (7 logos) */}
         <div className="hidden md:flex flex-col gap-8 w-full">
-          <DesktopRow items={filaUno} />
-          <DesktopRow items={filaDos} />
+          <DesktopRow items={filaUno} cols={6} />
+          <DesktopRow items={filaDos} cols={7} />
         </div>
 
-        {/* Mobile: sin cambios */}
+        {/* Mobile: grid plano de 4 columnas, sin nombres de categoría. Orden propio (Abacor sube, Pretencord se inserta tras BlockX) */}
         <div className="grid grid-cols-4 md:hidden gap-2">
-          {allItems.map(m => <MarcaCard key={m.name} {...m} />)}
+          {mobileItems.map(m => <MarcaCard key={m.name} {...m} />)}
         </div>
       </div>
     </section>
