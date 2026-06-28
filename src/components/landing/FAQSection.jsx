@@ -8,29 +8,19 @@ const faqs = [
       'Sí, mantenemos stock permanente de cemento Holcim, cal, hierros y áridos para que tu obra no se detenga.',
   },
   {
+    question: '¿Qué medios de pago aceptan?',
+    answer:
+      'Aceptamos efectivo, transferencia bancaria, tarjetas de débito y tarjetas de crédito (Visa y Mastercard).',
+  },
+  {
     question: '¿Hacen envíos a Río Ceballos, Unquillo y Salsipuedes?',
     answer:
-      'Sí, hacemos entregas regulares en Río Ceballos, Unquillo y Salsipuedes — son nuestra zona principal de reparto.',
+      'Sí, hacemos entregas regulares en Río Ceballos, Unquillo y Salsipuedes — son nuestra zona principal de reparto. Si preferís retirar vos mismo, contamos con amplio estacionamiento propio para cualquier tipo de vehículo, incluso camiones de carga.',
   },
   {
     question: '¿Hacen envíos a Mendiolaza y Agua de Oro?',
     answer:
-      'Sí, llegamos también a Mendiolaza y Agua de Oro, especialmente para pedidos de mayor volumen. Para pedidos chicos o zonas de difícil acceso, escribinos por WhatsApp con tu dirección y te confirmamos la mejor opción según tu caso.',
-  },
-  {
-    question: '¿Cuánto cuesta el flete?',
-    answer:
-      'El costo del flete depende de la zona, el volumen del pedido y la accesibilidad del terreno. Escribinos por WhatsApp con tu dirección y lista de materiales y te confirmamos el costo al toque.',
-  },
-  {
-    question: '¿Cómo organizan las entregas cuando hay varios pedidos el mismo día?',
-    answer:
-      'Conocemos el ritmo de cada obra y sabemos que los tiempos de la construcción son dinámicos. Organizamos las entregas de forma estratégica para optimizar el reparto. Si tu obra está en un momento crítico —como un colado de losa— avisanos con tiempo por WhatsApp para que podamos coordinar y darle prioridad en la hoja de ruta del día. Siempre que puedas avisarnos con anticipación, nos ayuda a coordinar mejor para que el material llegue cuando realmente lo necesitás.',
-  },
-  {
-    question: '¿Qué medios de pago aceptan?',
-    answer:
-      'Aceptamos efectivo, transferencia bancaria, tarjetas de débito y tarjetas de crédito (Visa y Mastercard).',
+      'Sí, llegamos a Mendiolaza y Agua de Oro, especialmente para pedidos de mayor volumen. Para pedidos chicos o zonas de difícil acceso, escribinos por WhatsApp con tu dirección y te confirmamos la mejor opción según tu caso.',
   },
   {
     question: '¿Hacen factura?',
@@ -38,14 +28,20 @@ const faqs = [
       'Sí, emitimos factura A y B según lo que necesite tu obra. Solo pedila al hacer tu pedido por WhatsApp y te la preparamos sin problema.',
   },
   {
-    question: '¿Puedo retirar el material por el local?',
+    question: '¿Cuánto cuesta el flete?',
     answer:
-      'Sí, contamos con amplio estacionamiento propio para que retires tu pedido con cualquier tipo de vehículo, incluso camiones de carga.',
+      'El costo del flete depende de la zona, el volumen del pedido y la accesibilidad del terreno. Escribinos por WhatsApp con tu dirección y lista de materiales y te confirmamos el costo al toque.',
+  },
+  {
+    question: '¿Cómo organizan las entregas?',
+    answer:
+      'Conocemos el ritmo de cada obra y sabemos que los tiempos de la construcción son dinámicos. Organizamos las entregas de forma estratégica para optimizar el reparto. Si tu obra está en un momento crítico —como un colado de losa— avisanos con tiempo por WhatsApp para que podamos coordinar y darle prioridad en la hoja de ruta del día.',
   },
   {
     question: '¿Alquilan obradores para guardar herramientas y materiales en la obra?',
     answer:
       'Sí, contamos con 3 obradores (contenedores metálicos con cerradura) para alquilar y resguardar herramientas y materiales durante tu construcción. Somos uno de los pocos servicios de este tipo disponibles en Río Ceballos y la zona de Sierras Chicas — consultanos disponibilidad por WhatsApp.',
+    wide: true,
   },
 ]
 
@@ -70,7 +66,7 @@ export default function FAQSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <span className="text-xs font-semibold tracking-widest uppercase text-accent">
-            Dudas comunes
+            Preguntas frecuentes
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tighter text-foreground whitespace-nowrap">
             Todo lo que necesitás saber antes de <span className="text-primary">pedir tu material</span>
@@ -88,7 +84,9 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-card border border-border rounded-2xl p-6 sm:p-7 shadow-sm"
+              className={`bg-card border border-border rounded-2xl p-6 sm:p-7 shadow-sm ${
+                faq.wide ? 'md:col-span-2' : ''
+              }`}
             >
               <div className="flex gap-3 items-start">
                 <div className="shrink-0 mt-0.5 w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -98,7 +96,7 @@ export default function FAQSection() {
                   <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug">
                     {faq.question}
                   </h3>
-                  <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="mt-2 text-sm text-foreground/80 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
