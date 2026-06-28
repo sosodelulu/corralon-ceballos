@@ -23,33 +23,33 @@ function IconDebito() {
 
 function PayEfectivo() {
   return (
-    <div className="flex flex-col items-center gap-1.5 group">
+    <div className="flex flex-col items-center gap-1.5 group w-20">
       <div className="w-14 h-14 rounded-2xl border border-border bg-secondary/30 group-hover:border-primary/30 group-hover:bg-secondary/60 flex items-center justify-center transition-all duration-300 shadow-sm">
         <IconEfectivo />
       </div>
-      <span className="text-[10px] font-medium text-muted-foreground">Efectivo</span>
+      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Efectivo</span>
     </div>
   )
 }
 
 function PayTransferencia() {
   return (
-    <div className="flex flex-col items-center gap-1.5 group">
+    <div className="flex flex-col items-center gap-1.5 group w-20">
       <div className="w-14 h-14 rounded-2xl border border-border bg-secondary/30 group-hover:border-primary/30 group-hover:bg-secondary/60 flex items-center justify-center transition-all duration-300 shadow-sm">
         <Landmark className="w-7 h-7 text-primary" strokeWidth={1.75} />
       </div>
-      <span className="text-[10px] font-medium text-muted-foreground">Transferencia Bancaria</span>
+      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Transferencia<br />Bancaria</span>
     </div>
   )
 }
 
 function PayDebito() {
   return (
-    <div className="flex flex-col items-center gap-1.5 group">
+    <div className="flex flex-col items-center gap-1.5 group w-20">
       <div className="w-14 h-14 rounded-2xl border border-border bg-secondary/30 group-hover:border-primary/30 group-hover:bg-secondary/60 flex items-center justify-center transition-all duration-300 shadow-sm">
         <IconDebito />
       </div>
-      <span className="text-[10px] font-medium text-muted-foreground">Tarjetas de Débito</span>
+      <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight">Tarjetas<br />de Débito</span>
     </div>
   )
 }
