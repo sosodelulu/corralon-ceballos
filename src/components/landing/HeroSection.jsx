@@ -3,13 +3,14 @@ import { ArrowRight, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const HERO_BG = '/images/bloques-ceramicos-camion-flete-rio-ceballos-corralon-ceballos.webp'
+const HERO_TRUCK_MOBILE = '/images/truck-mobile-hero.webp'
 
 export default function HeroSection() {
   return (
     <>
     <section id="inicio" className="relative flex items-center overflow-hidden pt-24 pb-8">
-      {/* Background */}
-      <div className="absolute inset-0">
+      {/* Background - SOLO DESKTOP (sm: en adelante). En mobile no se renderiza: la sección queda blanca y la imagen del camión recortada se muestra como elemento aparte mas abajo */}
+      <div className="absolute inset-0 hidden sm:block">
         <img
           src={HERO_BG}
           alt="Materiales de construcción Corralón Ceballos Río Ceballos"
@@ -21,6 +22,18 @@ export default function HeroSection() {
         />
         {/* Overlay único modificado: eliminado el degradado gris/negro en toda la sección */}
         <div className="absolute inset-0 bg-transparent" />
+      </div>
+
+      {/* Camión recortado - SOLO MOBILE. Imagen recortada y con bordes difuminados (fade) para que "flote" sobre el fondo blanco sin tapar el texto. No afecta desktop (oculto desde sm:) */}
+      <div className="absolute bottom-0 right-0 w-[60%] max-w-[320px] sm:hidden pointer-events-none" aria-hidden="true">
+        <img
+          src={HERO_TRUCK_MOBILE}
+          alt=""
+          className="w-full h-auto"
+          width="582"
+          height="553"
+          loading="eager"
+        />
       </div>
 
       {/* Decorative lines - ELIMINADAS (Líneas decorativas en T horizontal quitadas) */}
