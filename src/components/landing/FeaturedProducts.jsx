@@ -33,19 +33,48 @@ function CTACategoria({ href, label }) {
   )
 }
 
+// Fila de chips de navegación rápida. Cada chip hace scroll suave hasta el
+// Accordion correspondiente y fuerza su apertura a través de onNavigate
+// (estado controlado por el padre, FeaturedProducts).
+function QuickNavChips({ categories, onNavigate }) {
+  const handleClick = (category) => {
+    onNavigate(category.id)
+    const target = document.getElementById(category.id)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  return (
+    <div className="flex flex-wrap justify-center gap-2 mb-8">
+      {categories.map((category) => (
+        <button
+          key={category.id}
+          onClick={() => handleClick(category)}
+          className="inline-flex items-center gap-1.5 bg-secondary/50 hover:bg-secondary/80 text-foreground text-xs font-bold px-4 py-2 rounded-full border border-border transition-colors"
+        >
+          <span aria-hidden="true">{category.emoji}</span>
+          {category.label}
+        </button>
+      ))}
+    </div>
+  )
+}
+
 // El Accordion recibe los productos en una prop explícita (`products`),
 // en vez de intentar "adivinar" cuáles children son ProductCard.
 // Esto evita el bug anterior de detección por tipo de componente.
-function Accordion({ title, intro, stockBadge = true, products, ctaHref, ctaLabel, defaultOpen = false }) {
-  const [open, setOpen] = useState(defaultOpen)
-
+// El estado de apertura ahora vive en el padre (FeaturedProducts) para que
+// los chips de navegación rápida puedan forzar la apertura de un Accordion
+// puntual; onToggle sigue permitiendo abrir/cerrar manualmente por título.
+function Accordion({ id, title, intro, stockBadge = true, products, ctaHref, ctaLabel, isOpen, onToggle }) {
   return (
-    <div className="border border-border rounded-2xl overflow-hidden mb-4">
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-6 py-4 bg-secondary/40 hover:bg-secondary/70 transition-colors text-left">
+    <div id={id} className="border border-border rounded-2xl overflow-hidden mb-4">
+      <button onClick={onToggle} className="w-full flex items-center justify-between px-6 py-4 bg-secondary/40 hover:bg-secondary/70 transition-colors text-left">
         <h3 className="font-bold text-foreground text-base tracking-tight">{title}</h3>
-        <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      {open && (
+      {isOpen && (
         <div className="p-4 bg-white">
           {/* Texto e info de stock - igual en mobile y desktop */}
           <IntroText>{intro}</IntroText>
@@ -179,7 +208,95 @@ const bolsonItems = [
   { id: 'img-bolson-grua-hidraulica', src: '/images/grua-bolson-alquiler-corralon-ceballos-rio-ceballos.webp', alt: 'Servicio de Grúa Hidráulica descarga en obra', title: 'Servicio de Grúa Hidráulica', desc: 'Descarga en obra y movimientos especiales en espacios reducidos', waText: 'Servicio de Grúa Hidráulica' },
 ]
 
+// Catálogo de categorías: cada Accordion tiene un id único que se usa tanto
+// para el scroll de los chips como para el estado de apertura controlado.
+const categories = [
+  {
+    id: 'accordion-cemento',
+    navLabel: 'Cemento y Cal',
+    navEmoji: '🧱',
+    title: 'Cemento y Cal',
+    intro: 'Trabajamos con productos Holcim en Río Ceballos: Cemento Holcim CPC 30, Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería.',
+    products: cementoItems,
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Cemento%20y%20Cal',
+    ctaLabel: '📋 Pedí tu cotización de cemento y cal',
+  },
+  {
+    id: 'accordion-aridos',
+    navLabel: 'Áridos',
+    navEmoji: '🪨',
+    title: 'Áridos',
+    intro: 'Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado y piedra triturado blanco para tu obra en Río Ceballos y zona. ¿Necesitás a granel por m³ o bolsón? Coordinamos la descarga según la accesibilidad de tu terreno.',
+    products: aridosItems,
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20%C3%81ridos',
+    ctaLabel: '📋 Pedí tu cotización de áridos',
+  },
+  {
+    id: 'accordion-ladrillos',
+    navLabel: 'Ladrillos y Bloques',
+    navEmoji: '🧱',
+    title: 'Ladrillos y Bloques',
+    intro: 'Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón disponibles en Río Ceballos. En bloques, trabajamos con bloque cerámico y bloque de hormigón.',
+    products: ladrillsItems,
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques',
+    ctaLabel: '📋 Pedí tu cotización de ladrillos y bloques',
+  },
+  {
+    id: 'accordion-hierros',
+    navLabel: 'Hierros',
+    navEmoji: '🔩',
+    title: 'Hierros y Estructuras',
+    intro: 'Aceros bajo normas IRAM para obras en Río Ceballos: hierro en varilla, malla electrosoldada, caños estructurales, perfilería, columnas armadas, alambres y estribos armados.',
+    products: hierrosItems,
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Hierros%20y%20Estructuras',
+    ctaLabel: '📋 Pedí tu cotización de hierros y estructuras',
+  },
+  {
+    id: 'accordion-instalaciones',
+    navLabel: 'Instalaciones',
+    navEmoji: '🚰',
+    title: 'Instalaciones',
+    intro: 'Distribuidor de productos Talpelit en Río Ceballos: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca.',
+    products: instalacionesItems,
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Instalaciones',
+    ctaLabel: '📋 Pedí tu cotización de instalaciones',
+  },
+  {
+    id: 'accordion-techos',
+    navLabel: 'Techos',
+    navEmoji: '🏠',
+    title: 'Techos',
+    intro: 'Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado en Río Ceballos y zona. Consultanos por WhatsApp para disponibilidad de medidas.',
+    products: techosItems,
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos',
+    ctaLabel: '📋 Pedí tu cotización de techos',
+  },
+  {
+    id: 'accordion-bolson-grua',
+    navLabel: 'Bolsón y Grúa',
+    navEmoji: '📦',
+    title: 'Servicio de Bolsón y Grúa',
+    intro: 'Servicio de áridos en bolsones para tu obra en Río Ceballos y alrededores. También contamos con grúa hidráulica.',
+    stockBadge: false,
+    products: bolsonItems,
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20el%20Servicio%20de%20Grua%20y%20Bolson',
+    ctaLabel: '📋 Reservá tu turno de grúa o bolsón',
+  },
+]
+
 export default function FeaturedProducts() {
+  // Único Accordion abierto a la vez, controlado desde el padre.
+  // Arrancan todos cerrados; se abren al hacer click en el título o en un chip.
+  const [openAccordionId, setOpenAccordionId] = useState(null)
+
+  const handleToggle = (id) => {
+    setOpenAccordionId((current) => (current === id ? null : id))
+  }
+
+  const handleNavigate = (id) => {
+    setOpenAccordionId(id)
+  }
+
   return (
     <section id="catalogo" className="pt-8 pb-24 bg-background relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
@@ -194,63 +311,25 @@ export default function FeaturedProducts() {
           <p className="mt-3 text-xs text-muted-foreground max-w-5xl mx-auto italic">Las imágenes son meramente ilustrativas y pueden no representar exactamente el producto entregado. Ante cualquier duda, consultanos por WhatsApp.</p>
         </div>
 
-        <Accordion
-          title="Cemento y Cal"
-          defaultOpen={true}
-          intro="Trabajamos con productos Holcim en Río Ceballos: Cemento Holcim CPC 30, Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería."
-          products={cementoItems}
-          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Cemento%20y%20Cal"
-          ctaLabel="💬 Cotizar cemento y cal por WhatsApp"
+        <QuickNavChips
+          categories={categories.map((c) => ({ id: c.id, label: c.navLabel, emoji: c.navEmoji }))}
+          onNavigate={handleNavigate}
         />
 
-        <Accordion
-          title="Áridos"
-          intro="Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado y piedra triturado blanco para tu obra en Río Ceballos y zona. ¿Necesitás a granel por m³ o bolsón? Coordinamos la descarga según la accesibilidad de tu terreno."
-          products={aridosItems}
-          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20%C3%81ridos"
-          ctaLabel="💬 Pedir presupuesto de áridos por WhatsApp"
-        />
-
-        <Accordion
-          title="Ladrillos y Bloques"
-          intro="Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón disponibles en Río Ceballos. En bloques, trabajamos con bloque cerámico y bloque de hormigón."
-          products={ladrillsItems}
-          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques"
-          ctaLabel="💬 Contános cuántos necesitás y te cotizamos"
-        />
-
-        <Accordion
-          title="Hierros y Estructuras"
-          intro="Aceros bajo normas IRAM para obras en Río Ceballos: hierro en varilla, malla electrosoldada, caños estructurales, perfilería, columnas armadas, alambres y estribos armados."
-          products={hierrosItems}
-          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Hierros%20y%20Estructuras"
-          ctaLabel="💬 Enviar lista de hierros para presupuesto"
-        />
-
-        <Accordion
-          title="Instalaciones"
-          intro="Distribuidor de productos Talpelit en Río Ceballos: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca."
-          products={instalacionesItems}
-          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Instalaciones"
-          ctaLabel="💬 Consultar medidas de tanques y caños por WhatsApp"
-        />
-
-        <Accordion
-          title="Techos"
-          intro="Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado en Río Ceballos y zona. Consultanos por WhatsApp para disponibilidad de medidas."
-          products={techosItems}
-          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos"
-          ctaLabel="💬 Consultanos medidas y te confirmamos stock"
-        />
-
-        <Accordion
-          title="Servicio de Bolsón y Grúa"
-          intro="Servicio de áridos en bolsones para tu obra en Río Ceballos y alrededores. También contamos con grúa hidráulica."
-          stockBadge={false}
-          products={bolsonItems}
-          ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20el%20Servicio%20de%20Grua%20y%20Bolson"
-          ctaLabel="💬 Reservá tu turno de grúa o bolsón"
-        />
+        {categories.map((category) => (
+          <Accordion
+            key={category.id}
+            id={category.id}
+            title={category.title}
+            intro={category.intro}
+            stockBadge={category.stockBadge}
+            products={category.products}
+            ctaHref={category.ctaHref}
+            ctaLabel={category.ctaLabel}
+            isOpen={openAccordionId === category.id}
+            onToggle={() => handleToggle(category.id)}
+          />
+        ))}
 
         <div className="text-center mt-10">
           <a
