@@ -20,22 +20,22 @@ const faqs = [
   {
     question: '¿Hacen envíos a Mendiolaza y Agua de Oro?',
     answer:
-      'Sí, llegamos a Mendiolaza y Agua de Oro, especialmente para pedidos de mayor volumen. Para pedidos chicos o zonas de difícil acceso, escribinos por WhatsApp con tu dirección y te confirmamos la mejor opción según tu caso.',
+      'Sí, llegamos a Mendiolaza y Agua de Oro para pedidos de mayor volumen. Para pedidos chicos o zonas de difícil acceso, escribinos por WhatsApp con tu dirección y te confirmamos la mejor opción según tu caso.',
   },
   {
-    question: '¿Hacen factura?',
+    question: '¿Hacen Factura A?',
     answer:
-      'Sí, emitimos factura A y B según lo que necesite tu obra. Solo pedila al hacer tu pedido por WhatsApp y te la preparamos sin problema.',
+      'Sí, emitimos factura A y B según lo que necesites.',
   },
   {
     question: '¿Cuánto cuesta el flete?',
     answer:
-      'El costo del flete depende de la zona, el volumen del pedido y la accesibilidad del terreno. Escribinos por WhatsApp con tu dirección y lista de materiales y te confirmamos el costo al toque.',
+      'El costo del flete depende de la zona, el volumen del pedido y la accesibilidad del terreno. Escribinos por WhatsApp con tu dirección y lista de materiales y te confirmamos el costo.',
   },
   {
     question: '¿Cómo organizan las entregas?',
     answer:
-      'Conocemos el ritmo de cada obra y sabemos que los tiempos de la construcción son dinámicos. Organizamos las entregas de forma estratégica para optimizar el reparto. Si tu obra está en un momento crítico —como un colado de losa— avisanos con tiempo por WhatsApp para que podamos coordinar y darle prioridad en la hoja de ruta del día.',
+      'Conocemos el ritmo de cada obra y sabemos que los tiempos de la construcción son dinámicos. Organizamos las entregas de forma estratégica para optimizar el reparto. Si tu obra está en un momento crítico —como un colado de losa— avisanos con tiempo por WhatsApp y haremos lo posible para coordinar y darte prioridad en la hoja de ruta del día.',
   },
   {
     question: '¿Alquilan obradores para guardar herramientas y materiales en la obra?',
