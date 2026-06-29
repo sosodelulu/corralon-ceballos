@@ -56,8 +56,8 @@ export default function HeroSection() {
               <h1 className="font-extrabold tracking-tighter text-foreground sm:text-foreground sm:drop-shadow-md">
                 <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] leading-[1.08] text-primary sm:text-primary">Corralón Ceballos.</span>
                 <span className="block mt-1 text-2xl sm:text-3xl lg:text-[2rem] xl:text-[2.25rem] leading-[1.15] max-w-2xl">
-                  Todo para tu obra{' '}
-                  <span className="text-primary sm:text-primary">en un solo lugar.</span>
+                  Todo para tu obra en{' '}
+                  <span className="text-primary sm:text-primary">Río Ceballos.</span>
                 </span>
               </h1>
             </motion.div>
@@ -85,25 +85,25 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.45 }}
-              className="mt-6 flex flex-wrap gap-4"
+              className="mt-6 flex flex-wrap gap-4 items-center"
             >
+              <Button
+                asChild
+                className="h-14 px-10 font-bold rounded-full text-base sm:text-lg shadow-2xl shadow-[#25D366]/40 transition-all hover:shadow-[0_0_35px_rgba(37,211,102,0.5)] hover:-translate-y-0.5 hover:scale-[1.02]"
+                style={{ background: '#25D366', color: '#ffffff', border: 'none' }}
+              >
+                <a href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar" target="_blank" rel="noopener noreferrer">Cotizá tu lista por WhatsApp</a>
+              </Button>
               <Button
                 onClick={() => {
                   const el = document.getElementById('catalogo')
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }}
-                className="h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full text-base shadow-xl shadow-primary/25 transition-all hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-0.5"
+                variant="outline"
+                className="h-12 px-6 bg-transparent border-2 border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 font-medium rounded-full text-sm shadow-none transition-all"
               >
                 Ver Catálogo
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="h-12 px-8 rounded-full text-base font-semibold"
-                style={{ background: '#25D366', color: '#ffffff', border: 'none' }}
-              >
-                <a href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar" target="_blank" rel="noopener noreferrer">Cotizá tu lista por WhatsApp</a>
               </Button>
             </motion.div>
 
