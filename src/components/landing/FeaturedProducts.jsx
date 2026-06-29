@@ -125,7 +125,6 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
 }
 
 const cementoItems = [
-  { id: 'img-cemento-holcim-fuerte', src: '/images/holcim-cemento-fuerte-ecoplanet-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Fuerte Holcim CPF 40 alta resistencia bolsa 25 kg Río Ceballos', title: 'Cemento Fuerte Holcim', desc: 'CPF 40 · Bolsa x 25 kg', waText: 'Cemento Fuerte Holcim' },
   { id: 'img-cemento-cpc30', src: '/images/holcim-cemento-cpc30-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Holcim CPC 30 bolsa 25 kg Río Ceballos', title: 'Cemento Holcim CPC 30', desc: 'CPC 30 · Bolsa x 25 kg', waText: 'Cemento Holcim CPC 30' },
   { id: 'img-cemento-maestro', src: '/images/holcim-maestro-cemento-rio-ceballos-corralon-ceballos.webp', alt: 'Cemento Maestro Holcim albañilería bolsa 25 kg', title: 'Cemento de albañilería Maestro Holcim', desc: 'Bolsa x 25 kg', waText: 'Cemento Maestro Holcim' },
   { id: 'img-cemento-tector', src: '/images/holcim-tector-rio-ceballos-corralon-ceballos.webp', alt: 'Pegamento Tector Holcim impermeable bolsa 25 kg', title: 'Pegamento Tector Holcim', desc: 'Bolsa x 25 kg · Impermeable', waText: 'Pegamento Tector Holcim' },
@@ -192,12 +191,13 @@ export default function FeaturedProducts() {
           </h2>
           <p className="mt-3 text-sm text-muted-foreground max-w-5xl mx-auto">Todo lo que necesitás para tu obra, de las marcas en las que más confiamos: Holcim, Cal Andina, FGH, Block X y muchas más.</p>
           <p className="mt-2 text-sm font-semibold text-primary max-w-5xl mx-auto">Entregas en Río Ceballos, Unquillo y Salsipuedes. Consultar para entregas de gran volumen en Agua de Oro y Mendiolaza.</p>
+          <p className="mt-3 text-xs text-muted-foreground max-w-5xl mx-auto italic">Las imágenes son meramente ilustrativas y pueden no representar exactamente el producto entregado. Ante cualquier duda, consultanos por WhatsApp.</p>
         </div>
 
         <Accordion
           title="Cemento y Cal"
           defaultOpen={true}
-          intro="Trabajamos con productos Holcim en Río Ceballos: Cemento Fuerte CPF 40, Cemento Holcim CPC 30 (recién incorporado a nuestro stock), Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería."
+          intro="Trabajamos con productos Holcim en Río Ceballos: Cemento Holcim CPC 30, Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería."
           products={cementoItems}
           ctaHref="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Cemento%20y%20Cal"
           ctaLabel="💬 Cotizar cemento y cal por WhatsApp"
