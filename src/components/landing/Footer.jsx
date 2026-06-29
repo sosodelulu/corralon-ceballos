@@ -29,7 +29,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-white text-sm mb-4 tracking-wide uppercase">Enlaces</h4>
+            <h3 className="font-bold text-white text-sm mb-4 tracking-wide uppercase">Enlaces</h3>
             <nav className="flex flex-col gap-2.5">
               <a href="#inicio" className="text-sm text-white/50 hover:text-accent transition-colors">Inicio</a>
               <a href="#catalogo" className="text-sm text-white/50 hover:text-accent transition-colors">Catálogo</a>
@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-white text-sm mb-4 tracking-wide uppercase">Contacto</h4>
+            <h3 className="font-bold text-white text-sm mb-4 tracking-wide uppercase">Contacto</h3>
             <div className="flex flex-col gap-3">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" />
@@ -69,7 +69,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="font-bold text-white text-sm mb-4 tracking-wide uppercase">Redes Sociales</h4>
+            <h3 className="font-bold text-white text-sm mb-4 tracking-wide uppercase">Redes Sociales</h3>
             <div className="flex gap-3">
               <a href="https://www.facebook.com/share/1UXUNaQh8W/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white/5 hover:bg-accent/20 flex items-center justify-center transition-colors group" aria-label="Facebook">
                 <svg className="w-4 h-4 fill-white/50 group-hover:fill-accent transition-colors" viewBox="0 0 24 24">
