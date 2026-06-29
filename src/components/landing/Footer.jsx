@@ -19,6 +19,9 @@ export default function Footer() {
             <p className="text-xs text-white/35 leading-relaxed mt-3">
               Cobertura: Río Ceballos · Unquillo · Salsipuedes · Agua de Oro · Mendiolaza
             </p>
+            <p className="text-xs text-white/35 leading-relaxed mt-3">
+              Dirección: Av. Remedios de Escalada 975, Río Ceballos, Córdoba, Argentina. Corralón Ceballos vende y entrega materiales de construcción a particulares, profesionales y empresas constructoras en Río Ceballos, Unquillo, Salsipuedes, Agua de Oro y Mendiolaza.
+            </p>
           </div>
 
           {/* Quick Links */}
