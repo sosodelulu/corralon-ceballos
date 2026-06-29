@@ -48,21 +48,30 @@ const filaDos = [
   firstOfGroup: i === 0 || item.group !== arr[i - 1].group,
 }))
 
-// Mobile (grid plano de 4 columnas, sin nombres de categoría): orden propio.
-// Fila 1: Holcim, Cal Andina, FGH, Canteras Amadeo, Abacor (5)
-// Fila 2: Serin, Fantini, BlockX, Pretencord (4)
-// Fila 3: Talpelit, IPS, Awaduct, Sika (4)
-const ordenMobile = [
-  'Holcim', 'Cal Andina', 'FGH', 'Canteras Amadeo', 'Abacor',
-  'Serin', 'Fantini', 'BlockX', 'Pretencord',
-  'Talpelit', 'IPS', 'Awaduct', 'Sika',
-]
+// Mobile (sin nombres de categoría): 3 filas explícitas con su propia cantidad de columnas.
+// Fila 1 (5 logos, 5 columnas): Holcim, Cal Andina, FGH, Canteras Amadeo, Abacor
+// Fila 2 (4 logos, 4 columnas): Serin, Fantini, BlockX, Pretencord
+// Fila 3 (4 logos, 4 columnas): Talpelit, IPS, Awaduct, Sika
+const mobileFilaUnoNombres = ['Holcim', 'Cal Andina', 'FGH', 'Canteras Amadeo', 'Abacor']
+const mobileFilaDosNombres = ['Serin', 'Fantini', 'BlockX', 'Pretencord']
+const mobileFilaTresNombres = ['Talpelit', 'IPS', 'Awaduct', 'Sika']
 
 function MarcaCard({ name, src, alt }) {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full p-3 border border-slate-200 rounded-lg bg-white gap-2">
       <img src={src} alt={alt} className="w-full h-14 object-contain" />
       <span className="hidden md:block text-[0.72rem] text-slate-600 font-medium text-center">{name}</span>
+    </div>
+  )
+}
+
+function MobileRow({ items, cols }) {
+  const gridColsClass = cols === 5 ? 'grid-cols-5' : 'grid-cols-4'
+  return (
+    <div className={`grid ${gridColsClass} gap-2 w-full`}>
+      {items.map((item) => (
+        <MarcaCard key={item.name} name={item.name} src={item.src} alt={item.alt} />
+      ))}
     </div>
   )
 }
@@ -93,7 +102,9 @@ function DesktopRow({ items, cols = 6 }) {
 
 export default function BrandsSection() {
   const itemsByName = Object.fromEntries(marcas.flatMap(g => g.items).map(item => [item.name, item]))
-  const mobileItems = ordenMobile.map(name => itemsByName[name])
+  const mobileFilaUno = mobileFilaUnoNombres.map(name => itemsByName[name])
+  const mobileFilaDos = mobileFilaDosNombres.map(name => itemsByName[name])
+  const mobileFilaTres = mobileFilaTresNombres.map(name => itemsByName[name])
 
   return (
     <section id="marcas" className="pt-8 pb-8 bg-muted/40 relative">
@@ -121,9 +132,11 @@ export default function BrandsSection() {
           <DesktopRow items={filaDos} cols={7} />
         </div>
 
-        {/* Mobile: grid plano de 4 columnas, sin nombres de categoría. Orden propio (Abacor sube, Pretencord se inserta tras BlockX) */}
-        <div className="grid grid-cols-4 md:hidden gap-2">
-          {mobileItems.map(m => <MarcaCard key={m.name} {...m} />)}
+        {/* Mobile: 3 filas explícitas, sin nombres de categoría. Fila 1 con 5 columnas (Abacor incluido), filas 2 y 3 con 4 columnas (Pretencord en fila 2) */}
+        <div className="flex flex-col gap-2 md:hidden">
+          <MobileRow items={mobileFilaUno} cols={5} />
+          <MobileRow items={mobileFilaDos} cols={4} />
+          <MobileRow items={mobileFilaTres} cols={4} />
         </div>
       </div>
     </section>
