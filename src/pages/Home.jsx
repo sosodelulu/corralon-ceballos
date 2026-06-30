@@ -18,14 +18,16 @@ export default function Home() {
       <ScrollProgress />
       <TopBar />
       <Header />
-      <HeroSection />
-      <ServiceCards />
-      <FeaturedProducts />
-      <ReviewsSection />
-      <BrandsSection />
-      <PaymentMethods />
-      <FAQSection />
-      <ContactSection />
+      <main>
+        <HeroSection />
+        <ServiceCards />
+        <FeaturedProducts />
+        <ReviewsSection />
+        <BrandsSection />
+        <PaymentMethods />
+        <FAQSection />
+        <ContactSection />
+      </main>
       <Footer />
       <WhatsAppButton />
     </div>
