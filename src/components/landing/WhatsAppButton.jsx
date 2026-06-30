@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
   return (
     <>
       {/* CORRECCIÓN: fixed primero, luego hidden, luego sm:flex para override correcto */}
-      <a
+      
         href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos!%20Quiero%20consultar%20sobre%20materiales"
         target="_blank"
         rel="noopener noreferrer"
@@ -24,15 +24,15 @@ export default function WhatsAppButton() {
 
       {/* Barra fija inferior — solo mobile */}
       <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-gray-200 bg-white shadow-lg">
-        <a
-          href="tel:03543451079"
+        
+          href="tel:+543543451079"
           className="flex-1 flex flex-col items-center justify-center gap-1 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
         >
           <Phone className="w-5 h-5" />
           <span className="text-xs font-semibold">Llamar</span>
         </a>
         <div className="w-px bg-gray-200" />
-        <a
+        
           href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos!%20Quiero%20consultar%20sobre%20materiales"
           target="_blank"
           rel="noopener noreferrer"
