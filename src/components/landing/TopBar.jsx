@@ -32,7 +32,7 @@ export default function TopBar() {
           >
             <Phone className="w-3 h-3 shrink-0" />
             <span className="hidden sm:inline">03543 451079</span>
-            <span className="sm:hidden font-semibold">Llamar</span>
+            <span className="sm:hidden font-semibold">Llamar (fijo)</span>
           </a>
           
           <span className="text-white/40">|</span>
@@ -55,7 +55,7 @@ export default function TopBar() {
         
         {/* Sección Derecha: Redes Sociales */}
         <div className="flex items-center gap-3">
-          <a
+          
             href="https://www.instagram.com/corralonceballos.rc"
             target="_blank"
             rel="noopener noreferrer"
@@ -65,7 +65,7 @@ export default function TopBar() {
             <IconInstagram />
           </a>
           
-          <a
+          
             href="https://www.facebook.com/share/1UXUNaQh8W/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
