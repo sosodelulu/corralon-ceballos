@@ -92,7 +92,7 @@ export default function HeroSection() {
                 className="h-14 px-10 font-bold rounded-full text-base sm:text-lg shadow-2xl shadow-[#25D366]/40 transition-all hover:shadow-[0_0_35px_rgba(37,211,102,0.5)] hover:-translate-y-0.5 hover:scale-[1.02]"
                 style={{ background: '#25D366', color: '#ffffff', border: 'none' }}
               >
-                <a href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar" target="_blank" rel="noopener noreferrer">Cotizá tu lista por WhatsApp</a>
+                <a href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20mi%20lista%20de%20materiales." target="_blank" rel="noopener noreferrer">Cotizá tu lista por WhatsApp</a>
               </Button>
               <Button
                 onClick={() => {
