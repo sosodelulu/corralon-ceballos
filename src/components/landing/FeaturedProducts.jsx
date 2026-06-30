@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ShoppingBag, ChevronDown } from 'lucide-react'
+import { ShoppingBag, ChevronDown, Warehouse, Mountain, Layers, Zap, Droplet, Home, Package } from 'lucide-react'
 
 function IntroText({ children }) {
   const [expanded, setExpanded] = useState(false)
@@ -47,16 +47,19 @@ function QuickNavChips({ categories, onNavigate }) {
 
   return (
     <div className="flex flex-wrap justify-center gap-2 mb-8">
-      {categories.map((category) => (
-        <button
-          key={category.id}
-          onClick={() => handleClick(category)}
-          className="inline-flex items-center gap-1.5 bg-secondary/50 hover:bg-secondary/80 text-foreground text-xs font-bold px-4 py-2 rounded-full border border-border transition-colors"
-        >
-          <span aria-hidden="true">{category.emoji}</span>
-          {category.label}
-        </button>
-      ))}
+      {categories.map((category) => {
+        const Icon = category.icon
+        return (
+          <button
+            key={category.id}
+            onClick={() => handleClick(category)}
+            className="inline-flex items-center gap-1.5 bg-secondary/50 hover:bg-secondary/80 text-foreground text-xs font-bold px-4 py-2 rounded-full border border-border transition-colors"
+          >
+            <Icon className="w-4 h-4" aria-hidden="true" />
+            {category.label}
+          </button>
+        )
+      })}
     </div>
   )
 }
@@ -214,7 +217,7 @@ const categories = [
   {
     id: 'accordion-cemento',
     navLabel: 'Cemento y Cal',
-    navEmoji: '🧱',
+    navIcon: Warehouse,
     title: 'Cemento y Cal',
     intro: 'Trabajamos con productos Holcim en Río Ceballos: Cemento Holcim CPC 30, Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería.',
     products: cementoItems,
@@ -224,7 +227,7 @@ const categories = [
   {
     id: 'accordion-aridos',
     navLabel: 'Áridos',
-    navEmoji: '🪨',
+    navIcon: Mountain,
     title: 'Áridos',
     intro: 'Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado y piedra triturado blanco para tu obra en Río Ceballos y zona. ¿Necesitás a granel por m³ o bolsón? Coordinamos la descarga según la accesibilidad de tu terreno.',
     products: aridosItems,
@@ -234,7 +237,7 @@ const categories = [
   {
     id: 'accordion-ladrillos',
     navLabel: 'Ladrillos y Bloques',
-    navEmoji: '🧱',
+    navIcon: Layers,
     title: 'Ladrillos y Bloques',
     intro: 'Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón disponibles en Río Ceballos. En bloques, trabajamos con bloque cerámico y bloque de hormigón.',
     products: ladrillsItems,
@@ -244,7 +247,7 @@ const categories = [
   {
     id: 'accordion-hierros',
     navLabel: 'Hierros',
-    navEmoji: '🔩',
+    navIcon: Zap,
     title: 'Hierros y Estructuras',
     intro: 'Aceros bajo normas IRAM para obras en Río Ceballos: hierro en varilla, malla electrosoldada, caños estructurales, perfilería, columnas armadas, alambres y estribos armados.',
     products: hierrosItems,
@@ -254,7 +257,7 @@ const categories = [
   {
     id: 'accordion-instalaciones',
     navLabel: 'Instalaciones',
-    navEmoji: '🚰',
+    navIcon: Droplet,
     title: 'Instalaciones',
     intro: 'Distribuidor de productos Talpelit en Río Ceballos: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca.',
     products: instalacionesItems,
@@ -264,7 +267,7 @@ const categories = [
   {
     id: 'accordion-techos',
     navLabel: 'Techos',
-    navEmoji: '🏠',
+    navIcon: Home,
     title: 'Techos',
     intro: 'Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado en Río Ceballos y zona. Consultanos por WhatsApp para disponibilidad de medidas.',
     products: techosItems,
@@ -274,7 +277,7 @@ const categories = [
   {
     id: 'accordion-bolson-grua',
     navLabel: 'Bolsón y Grúa',
-    navEmoji: '📦',
+    navIcon: Package,
     title: 'Servicio de Bolsón y Grúa',
     intro: 'Servicio de áridos en bolsones para tu obra en Río Ceballos y alrededores. También contamos con grúa hidráulica.',
     stockBadge: false,
@@ -312,7 +315,7 @@ export default function FeaturedProducts() {
         </div>
 
         <QuickNavChips
-          categories={categories.map((c) => ({ id: c.id, label: c.navLabel, emoji: c.navEmoji }))}
+          categories={categories.map((c) => ({ id: c.id, label: c.navLabel, icon: c.navIcon }))}
           onNavigate={handleNavigate}
         />
 
