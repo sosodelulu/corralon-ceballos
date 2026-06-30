@@ -55,7 +55,7 @@ export default function TopBar() {
         
         {/* Sección Derecha: Redes Sociales */}
         <div className="flex items-center gap-3">
-          
+          <a
             href="https://www.instagram.com/corralonceballos.rc"
             target="_blank"
             rel="noopener noreferrer"
@@ -65,7 +65,7 @@ export default function TopBar() {
             <IconInstagram />
           </a>
           
-          
+          <a
             href="https://www.facebook.com/share/1UXUNaQh8W/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
