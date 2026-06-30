@@ -14,13 +14,7 @@ export default function Footer() {
               <img src="/images/logo-nombre-corralon-ceballos.webp" alt="Corralón Ceballos" className="h-10 object-contain py-1" />
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              Una familia con más de 55 años de tradición en venta de productos para la construcción, abasteciendo obras en Río Ceballos y aledaños con materiales de calidad y servicio confiable.
-            </p>
-            <p className="text-xs text-white/35 leading-relaxed mt-3">
-              Cobertura: Río Ceballos · Unquillo · Salsipuedes · Agua de Oro · Mendiolaza
-            </p>
-            <p className="text-xs text-white/35 leading-relaxed mt-3">
-              Dirección: Av. Remedios de Escalada 975, Río Ceballos, Córdoba, Argentina.
+              Una familia con más de 55 años de tradición en venta de productos para la construcción, con servicio confiable y materiales de calidad.
             </p>
             <p className="text-xs text-white/35 leading-relaxed mt-3">
               Corralón Ceballos vende y entrega materiales de construcción a particulares, profesionales y empresas constructoras en Río Ceballos, Unquillo, Salsipuedes, Agua de Oro y Mendiolaza.
