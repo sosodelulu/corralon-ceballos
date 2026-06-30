@@ -42,7 +42,7 @@ function CardMateriales() {
       </div>
       <div className="p-6 bg-card mt-auto">
         <a
-          href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20una%20lista%20de%20materiales"
+          href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20una%20lista%20de%20materiales."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center w-full gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200"
@@ -95,7 +95,7 @@ function CardMaquinaria() {
       </div>
       <div className="p-6 bg-card mt-auto">
         <a
-          href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20consultar%20el%20alquiler%20de%20la%20Retroexcavadora%20CAT"
+          href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20consultar%20por%20el%20alquiler%20de%20la%20Retroexcavadora%20CAT."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center w-full gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200"
@@ -149,7 +149,7 @@ function CardObradores() {
       </div>
       <div className="p-6 bg-card mt-auto">
         <a
-          href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20obradores"
+          href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20consultar%20disponibilidad%20de%20obradores."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center w-full gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200"
@@ -204,7 +204,7 @@ function CardGrua() {
       </div>
       <div className="p-6 bg-card mt-auto">
         <a
-          href="https://wa.me/5493543530984?text=Hola%2C%20quisiera%20consultar%20el%20servicio%20de%20gr%C3%BAa%20y%20bols%C3%B3n"
+          href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20consultar%20por%20el%20servicio%20de%20gr%C3%BAa%20y%20bols%C3%B3n."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center w-full gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200"
