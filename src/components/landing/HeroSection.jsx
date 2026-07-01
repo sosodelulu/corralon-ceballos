@@ -32,6 +32,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover object-[80%_30%]"
           width="582"
           height="553"
+          fetchpriority="high"
           loading="eager"
         />
         {/* Velo: más opaco arriba (zona de texto), se aclara hacia abajo (zona de chips) */}
