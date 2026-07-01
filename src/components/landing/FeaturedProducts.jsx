@@ -64,42 +64,43 @@ function QuickNavChips({ categories, onNavigate }) {
   )
 }
 
-// El Accordion recibe los productos en una prop explícita (`products`),
-// en vez de intentar "adivinar" cuáles children son ProductCard.
-// Esto evita el bug anterior de detección por tipo de componente.
-// El estado de apertura ahora vive en el padre (FeaturedProducts) para que
-// los chips de navegación rápida puedan forzar la apertura de un Accordion
-// puntual; onToggle sigue permitiendo abrir/cerrar manualmente por título.
+// CAMBIO CLAVE: el contenido ya NO se desmonta del DOM cuando isOpen es false.
+// Antes: {isOpen && (<div>...</div>)}  -> el contenido desaparecía del HTML.
+// Ahora: <div className={isOpen ? 'block' : 'hidden'}>...</div> -> el contenido
+// sigue existiendo en el HTML (Google e IAs lo pueden leer), solo se oculta
+// visualmente con CSS. El comportamiento visual para el usuario es idéntico.
 function Accordion({ id, title, intro, stockBadge = true, products, ctaHref, ctaLabel, isOpen, onToggle }) {
   return (
     <div id={id} className="border border-border rounded-2xl overflow-hidden mb-4">
-      <button onClick={onToggle} className="w-full flex items-center justify-between px-6 py-4 bg-secondary/40 hover:bg-secondary/70 transition-colors text-left">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between px-6 py-4 bg-secondary/40 hover:bg-secondary/70 transition-colors text-left"
+        aria-expanded={isOpen}
+      >
         <h3 className="font-bold text-foreground text-base tracking-tight">{title}</h3>
         <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
-      {isOpen && (
-        <div className="p-4 bg-white">
-          {/* Texto e info de stock - igual en mobile y desktop */}
-          <IntroText>{intro}</IntroText>
-          {stockBadge && <StockBadge />}
+      <div className={`p-4 bg-white ${isOpen ? 'block' : 'hidden'}`}>
+        {/* Texto e info de stock - igual en mobile y desktop */}
+        <IntroText>{intro}</IntroText>
+        {stockBadge && <StockBadge />}
 
-          {/* MOBILE (hasta sm): carrusel horizontal con snap */}
-          <div className="flex sm:hidden gap-3 overflow-x-auto pb-2 -mx-1 px-1 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-            {products.map(p => (
-              <div key={p.id} className="flex-shrink-0 w-[44%] snap-start">
-                <ProductCard {...p} />
-              </div>
-            ))}
-          </div>
-
-          {/* DESKTOP / TABLET (desde sm): grid original, sin cambios de comportamiento */}
-          <div className="hidden sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-            {products.map(p => <ProductCard key={p.id} {...p} />)}
-          </div>
-
-          <CTACategoria href={ctaHref} label={ctaLabel} />
+        {/* MOBILE (hasta sm): carrusel horizontal con snap */}
+        <div className="flex sm:hidden gap-3 overflow-x-auto pb-2 -mx-1 px-1 snap-x snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          {products.map(p => (
+            <div key={p.id} className="flex-shrink-0 w-[44%] snap-start">
+              <ProductCard {...p} />
+            </div>
+          ))}
         </div>
-      )}
+
+        {/* DESKTOP / TABLET (desde sm): grid original, sin cambios de comportamiento */}
+        <div className="hidden sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          {products.map(p => <ProductCard key={p.id} {...p} />)}
+        </div>
+
+        <CTACategoria href={ctaHref} label={ctaLabel} />
+      </div>
     </div>
   )
 }
@@ -129,7 +130,7 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
         />
 
         {/* Botón Hover de Escritorio (Oculto en móviles y táctiles por defecto) */}
-        <a
+        
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -147,7 +148,7 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
         <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed flex-1">{desc}</p>
 
         {/* Botón Mobile Fijo (Oculto automáticamente en pantallas sm en adelante) */}
-        <a
+        
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -340,7 +341,7 @@ export default function FeaturedProducts() {
         ))}
 
         <div className="text-center mt-10">
-          <a
+          
             href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20una%20lista%20de%20materiales."
             target="_blank"
             rel="noopener noreferrer"
