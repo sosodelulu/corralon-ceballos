@@ -41,7 +41,7 @@ export default function Header() {
             onClick={() => scrollToSection('inicio')}
             className="flex items-center gap-2.5 shrink-0 pointer-events-auto"
           >
-            <img src={LOGO_URL} alt="Corralón Ceballos" className="h-14 object-contain" />
+            <img src={LOGO_URL} alt="Corralón Ceballos" className="h-14 object-contain" width="128" height="56" />
           </button>
 
           <nav className="hidden lg:flex items-center gap-1 pointer-events-auto">
