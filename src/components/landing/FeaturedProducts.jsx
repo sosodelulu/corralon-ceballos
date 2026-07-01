@@ -109,9 +109,10 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
   // Mensaje dinámico: agrega la medida/descripción entre paréntesis solo si existe.
   const baseMsg = 'Hola Corralón Ceballos, ¿cómo están? Les escribo desde la web para consultar el precio de '
   const fullMsg = desc
-    ? `${baseMsg}${waText} (${desc}).`
-    : `${baseMsg}${waText}.`
-  const waUrl = `https://wa.me/5493543530984?text=${encodeURIComponent(fullMsg)}`
+    ? baseMsg + waText + ' (' + desc + ').'
+    : baseMsg + waText + '.'
+  const waUrl = 'https://wa.me/5493543530984?text=' + encodeURIComponent(fullMsg)
+  const ariaLabelText = 'Consultar precio de ' + title + ' por WhatsApp'
 
   return (
     <div className="group bg-white rounded-xl border border-border shadow-sm hover:shadow-md hover:border-[#166534]/20 overflow-hidden flex flex-col transition-all duration-300 h-full">
@@ -130,11 +131,11 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
         />
 
         {/* Botón Hover de Escritorio (Oculto en móviles y táctiles por defecto) */}
-        
+        <a
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Consultar precio de ${title} por WhatsApp`}
+          aria-label={ariaLabelText}
           className="hidden sm:flex absolute bottom-2 left-2 right-2 items-center justify-center gap-1.5 bg-[#166534] hover:bg-[#114f29] text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out no-underline whitespace-nowrap z-10"
         >
           <ShoppingBag className="w-3.5 h-3.5 flex-shrink-0" />
@@ -148,7 +149,7 @@ function ProductCard({ id, src, alt, title, desc, waText }) {
         <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed flex-1">{desc}</p>
 
         {/* Botón Mobile Fijo (Oculto automáticamente en pantallas sm en adelante) */}
-        
+        <a
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -341,7 +342,7 @@ export default function FeaturedProducts() {
         ))}
 
         <div className="text-center mt-10">
-          
+          <a
             href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20una%20lista%20de%20materiales."
             target="_blank"
             rel="noopener noreferrer"
