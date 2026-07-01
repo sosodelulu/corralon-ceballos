@@ -105,7 +105,12 @@ function Accordion({ id, title, intro, stockBadge = true, products, ctaHref, cta
 }
 
 function ProductCard({ id, src, alt, title, desc, waText }) {
-  const waUrl = `https://wa.me/5493543530984?text=${encodeURIComponent('Hola, quisiera consultar el precio de ' + waText)}`
+  // Mensaje dinámico: agrega la medida/descripción entre paréntesis solo si existe.
+  const baseMsg = 'Hola Corralón Ceballos, ¿cómo están? Les escribo desde la web para consultar el precio de '
+  const fullMsg = desc
+    ? `${baseMsg}${waText} (${desc}).`
+    : `${baseMsg}${waText}.`
+  const waUrl = `https://wa.me/5493543530984?text=${encodeURIComponent(fullMsg)}`
 
   return (
     <div className="group bg-white rounded-xl border border-border shadow-sm hover:shadow-md hover:border-[#166534]/20 overflow-hidden flex flex-col transition-all duration-300 h-full">
@@ -221,7 +226,7 @@ const categories = [
     title: 'Cemento y Cal',
     intro: 'Trabajamos con productos Holcim en Río Ceballos: Cemento Holcim CPC 30, Cemento de albañilería Maestro y Pegamento Tector Impermeable. También cales FGH (viva e hidratada) y estuco Abacor. Stock permanente para que no pares tus tareas de albañilería.',
     products: cementoItems,
-    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Cemento%20y%20Cal',
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20Cemento%20y%20Cal.',
     ctaLabel: '📋 Pedí tu cotización de cemento y cal',
   },
   {
@@ -231,7 +236,7 @@ const categories = [
     title: 'Áridos',
     intro: 'Contamos con arena fina común y del Paraná, arena gruesa lavada, granito triturado y piedra triturado blanco para tu obra en Río Ceballos y zona. ¿Necesitás a granel por m³ o bolsón? Coordinamos la descarga según la accesibilidad de tu terreno.',
     products: aridosItems,
-    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20%C3%81ridos',
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20%C3%81ridos.',
     ctaLabel: '📋 Pedí tu cotización de áridos',
   },
   {
@@ -241,7 +246,7 @@ const categories = [
     title: 'Ladrillos y Bloques',
     intro: 'Tenemos ladrillo común, semivisto, ladrillón, bovedilla y listón disponibles en Río Ceballos. En bloques, trabajamos con bloque cerámico y bloque de hormigón.',
     products: ladrillsItems,
-    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Ladrillos%20y%20Bloques',
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20Ladrillos%20y%20Bloques.',
     ctaLabel: '📋 Pedí tu cotización de ladrillos y bloques',
   },
   {
@@ -251,7 +256,7 @@ const categories = [
     title: 'Hierros y Estructuras',
     intro: 'Aceros bajo normas IRAM para obras en Río Ceballos: hierro en varilla, malla electrosoldada, caños estructurales, perfilería, columnas armadas, alambres y estribos armados.',
     products: hierrosItems,
-    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Hierros%20y%20Estructuras',
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20Hierros%20y%20Estructuras.',
     ctaLabel: '📋 Pedí tu cotización de hierros y estructuras',
   },
   {
@@ -261,7 +266,7 @@ const categories = [
     title: 'Instalaciones',
     intro: 'Distribuidor de productos Talpelit en Río Ceballos: tanques de agua, casillas de gas premoldeadas, tubos de alcantarilla, tapas de cámara y cámaras sépticas. También PVC para agua y cloaca.',
     products: instalacionesItems,
-    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Instalaciones',
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20Instalaciones.',
     ctaLabel: '📋 Pedí tu cotización de instalaciones',
   },
   {
@@ -271,7 +276,7 @@ const categories = [
     title: 'Techos',
     intro: 'Trabajamos con chapas cincalum acanaladas y tejas coloniales para todo tipo de techado en Río Ceballos y zona. Consultanos por WhatsApp para disponibilidad de medidas.',
     products: techosItems,
-    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20productos%20de%20Techos',
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20Techos.',
     ctaLabel: '📋 Pedí tu cotización de techos',
   },
   {
@@ -282,7 +287,7 @@ const categories = [
     intro: 'Servicio de áridos en bolsones para tu obra en Río Ceballos y alrededores. También contamos con grúa hidráulica.',
     stockBadge: false,
     products: bolsonItems,
-    ctaHref: 'https://wa.me/5493543530984?text=Hola%2C%20quisiera%20cotizar%20el%20Servicio%20de%20Grua%20y%20Bolson',
+    ctaHref: 'https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20consultar%20por%20el%20servicio%20de%20gr%C3%BAa%20y%20bols%C3%B3n.',
     ctaLabel: '📋 Reservá tu turno de grúa o bolsón',
   },
 ]
@@ -336,7 +341,7 @@ export default function FeaturedProducts() {
 
         <div className="text-center mt-10">
           <a
-            href="https://wa.me/5493543530984?text=Hola!%20Quisiera%20consultar%20el%20stock%20completo%20de%20materiales."
+            href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20pedirles%20presupuesto%20de%20una%20lista%20de%20materiales."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm px-8 py-3.5 rounded-full shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5"
