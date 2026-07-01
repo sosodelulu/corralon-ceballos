@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <img src="/images/logo-nombre-corralon-ceballos.webp" alt="Corralón Ceballos" className="h-10 object-contain py-1" />
+              <img src="/images/logo-nombre-corralon-ceballos.webp" alt="Corralón Ceballos" width={225} height={98} className="h-10 object-contain py-1" />
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
               Una familia con más de 55 años de tradición en venta de productos para la construcción, con servicio confiable y materiales de calidad.
