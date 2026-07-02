@@ -1,0 +1,17 @@
+{
+  "name": "Corralón Ceballos",
+  "short_name": "Ceballos",
+  "description": "Materiales de construcción y maquinaria en Río Ceballos, Córdoba",
+  "start_url": "https://www.corralonceballos.com/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a4731",
+  "icons": [
+    {
+      "src": "/images/logo-corralon-ceballos-rio-ceballos.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    }
+  ]
+}
