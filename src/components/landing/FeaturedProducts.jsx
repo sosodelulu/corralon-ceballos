@@ -105,12 +105,15 @@ function Accordion({ id, title, intro, stockBadge = true, products, ctaHref, cta
   )
 }
 
-function ProductCard({ id, src, alt, title, desc, waText }) {
-  // Mensaje dinámico: agrega la medida/descripción entre paréntesis solo si existe.
+function ProductCard({ id, src, alt, title, desc, waText, waOverride }) {
+  // Mensaje dinámico: agrega la medida/descripción entre paréntesis solo si existe,
+  // salvo que el producto tenga un mensaje fijo definido en waOverride.
   const baseMsg = 'Hola Corralón Ceballos, ¿cómo están? Les escribo desde la web para consultar el precio de '
-  const fullMsg = desc
-    ? baseMsg + waText + ' (' + desc + ').'
-    : baseMsg + waText + '.'
+  const fullMsg = waOverride
+    ? baseMsg + waOverride + '.'
+    : desc
+      ? baseMsg + waText + ' (' + desc + ').'
+      : baseMsg + waText + '.'
   const waUrl = 'https://wa.me/5493543530984?text=' + encodeURIComponent(fullMsg)
   const ariaLabelText = 'Consultar precio de ' + title + ' por WhatsApp'
 
@@ -193,7 +196,7 @@ const ladrillsItems = [
 const hierrosItems = [
   { id: 'img-hierros-varilla', src: '/images/varilla-hierro-corralon-ceballos.webp', alt: 'Hierro en Varilla normas IRAM venta por unidad', title: 'Hierro en Varilla', desc: 'Venta por unidad · Normas IRAM', waText: 'Hierro en Varilla' },
   { id: 'img-hierros-malla-soldada', src: '/images/malla-electrosoldada-corralon-ceballos.webp', alt: 'Malla Electrosoldada venta por plancha', title: 'Malla Electrosoldada', desc: 'Venta por plancha', waText: 'Malla Electrosoldada' },
-  { id: 'img-hierros-canos-estructurales', src: '/images/cano-estructural-corralon-ceballos.webp', alt: 'Caños Estructurales y Perfilería consultar sección y largo', title: 'Caños Estructurales y Perfilería', desc: 'Consultar sección y espesor · Venta por unidad', waText: 'Caños Estructurales y Perfilería' },
+  { id: 'img-hierros-canos-estructurales', src: '/images/cano-estructural-corralon-ceballos.webp', alt: 'Caños Estructurales consultar sección y largo', title: 'Caños Estructurales', desc: 'Consultar sección y espesor · Venta por unidad', waText: 'Caños Estructurales', waOverride: 'Caños Estructurales' },
   { id: 'img-hierros-columnas-armadas', src: '/images/columnas-armadas-corralon-ceballos-rio-ceballos.webp', alt: 'Columnas Armadas venta por unidad', title: 'Columnas Armadas', desc: 'Venta por unidad', waText: 'Columnas Armadas' },
   { id: 'img-hierros-alambres', src: '/images/alambres-corralon-ceballos-rio-ceballos.webp', alt: 'Alambres venta por unidad', title: 'Alambres', desc: 'Venta por kg', waText: 'Alambres' },
   { id: 'img-hierros-estribos', src: '/images/estribos-armados-corralon-ceballos-rio-ceballos.webp', alt: 'Estribos Armados venta por unidad', title: 'Estribos Armados', desc: 'Venta por paquete', waText: 'Estribos Armados' },
