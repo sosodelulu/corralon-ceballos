@@ -74,8 +74,8 @@ function CardMaquinaria() {
           decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
-        <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-green-500 text-white text-[10px] font-bold shadow">
-          Disponible ahora
+        <div className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-amber-500 text-white text-[10px] font-bold shadow">
+          Servicio pausado
         </div>
         <div className="absolute top-4 right-4 flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold tracking-wide shadow">
           <MapPin className="w-2.5 h-2.5" />Solo Río Ceballos
@@ -84,23 +84,23 @@ function CardMaquinaria() {
           <div className="bg-white/85 backdrop-blur-sm rounded-xl p-5 shadow-lg">
             <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">Alquiler de Maquinaria</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Retroexcavadora CAT 416E para movimientos de tierra y excavaciones. Servicio exclusivo en Río Ceballos.
+              Retroexcavadora CAT 416E para movimientos de tierra y excavaciones. Por el momento el servicio está temporalmente pausado — escribinos para más información.
             </p>
             <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
               <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Ideal para excavaciones, zanjeos y nivelación de terrenos, especializada en movimientos de tierra.</li>
-              <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Operario incluido</li>
+              <li className="flex items-start gap-1.5"><span className="text-primary mt-0.5">•</span>Servicio exclusivo en Río Ceballos, sujeto a disponibilidad</li>
             </ul>
           </div>
         </div>
       </div>
       <div className="p-6 bg-card mt-auto">
         <a
-          href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20consultar%20por%20el%20alquiler%20de%20la%20Retroexcavadora%20CAT."
+          href="https://wa.me/5493543530984?text=Hola%20Corral%C3%B3n%20Ceballos%2C%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Les%20escribo%20desde%20la%20web%20para%20consultar%20por%20la%20disponibilidad%20del%20alquiler%20de%20la%20Retroexcavadora%20CAT."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center w-full gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200"
         >
-          Reservá el turno para tu obra por WhatsApp
+          Consultá disponibilidad por WhatsApp
         </a>
       </div>
     </motion.div>
